@@ -6,7 +6,7 @@ import org.eclipse.jetty.servlet.ServletHolder;
 import org.glassfish.jersey.servlet.ServletContainer;
 
 /**
- * @author esin88
+ * created by snach
  */
 public class Main {
     @SuppressWarnings("OverlyBroadThrowsClause")

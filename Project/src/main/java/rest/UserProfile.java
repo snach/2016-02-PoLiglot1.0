@@ -4,17 +4,17 @@ import org.jetbrains.annotations.NotNull;
 import java.util.concurrent.atomic.AtomicLong;
 
 /**
- * @author esin88
+ * created by snach
  */
 public class UserProfile {
     private static final AtomicLong ID_GENETATOR = new AtomicLong(0);
-    @NotNull
+
     private long userID;
     @NotNull
     private String login;
     @NotNull
     private String password;
-    @NotNull
+
     private String email;
 
     public UserProfile() {
@@ -29,7 +29,6 @@ public class UserProfile {
         this.email = email;
     }
 
-    @NotNull
     public long getUserID() {
         return userID;
     }
@@ -56,7 +55,6 @@ public class UserProfile {
         this.password = password;
     }
 
-    //@NotNull
     public String getEmail() {
         return email;
     }
