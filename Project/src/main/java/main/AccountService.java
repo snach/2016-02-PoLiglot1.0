@@ -1,5 +1,6 @@
 package main;
 
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import rest.UserProfile;
 
@@ -13,10 +14,9 @@ import java.util.Map;
 public class AccountService {
     private final Map<Long, UserProfile> users = new HashMap<>();
     private final Map<String, UserProfile> sessions = new HashMap<>();
-    private UserProfile onlineUser;
+
 
     public AccountService() {
-        this.onlineUser = null;
         UserProfile bufUser = new UserProfile("admin", "admin","admin@email.ru");
         users.put(bufUser.getUserID(), bufUser);
         bufUser = new UserProfile("guest", "12345","guest@email.ru");
@@ -26,12 +26,7 @@ public class AccountService {
     public Collection<UserProfile> getAllUsers() {
         return users.values();
     }
-    public UserProfile getOnlineUser(){
-        return onlineUser;
-    }
-    public void setOnlineUser(@Nullable UserProfile user){
-        onlineUser = user;
-    }
+
     public boolean addUser(UserProfile user) {
         if (this.getUserByLogin(user.getLogin()) != null || this.getUserByEmail(user.getEmail()) != null)
             return false;
@@ -44,9 +39,22 @@ public class AccountService {
                 .append(String.valueOf(String.valueOf(user.getEmail()))).append("}").append('\n');
         return true;
     }
+    @Nullable
+    public UserProfile getUserByID(long userID) {
 
-    public UserProfile getUser(long userID) {
-        return users.get(userID);
+        if (users.get(userID) != null){
+            return users.get(userID);
+        } else {
+            return null;
+        }
+    }
+    @Nullable
+    public UserProfile getUserByLoginInSession(String login){
+        for(Map.Entry<String,UserProfile> entry: sessions.entrySet()) {
+            if (entry.getValue().getLogin().equals(login))
+                return entry.getValue();
+        }
+        return  null;
     }
 
     @Nullable
@@ -66,24 +74,30 @@ public class AccountService {
         }
         return  null;
     }
-
-    public boolean addSession( UserProfile user) {
-        if (this.getUserByLogin(user.getLogin()).getPassword().equals(user.getPassword())){
-            sessions.put(user.getLogin(),user);
+   // @Nullable
+    public UserProfile getUserBySession(@Nullable  String sessionID){
+        //if (sessions.get(sessionID) != null){
+            return sessions.get(sessionID);
+        //} else {
+        //    return null;
+        //}
+    }
+    public boolean isEnter(String sessionID) {
+        return sessions.containsKey(sessionID);
+    }
+    public void addSession(String sessionID, UserProfile user) {
+            sessions.put(sessionID,user);
             System.out.append("Session add: {").append(String.valueOf(user.getUserID())).append(", ")
                     .append(String.valueOf(user.getLogin())).append(", ")
                     .append(String.valueOf(String.valueOf(user.getPassword()))).append(", ")
                     .append(String.valueOf(String.valueOf(user.getEmail()))).append("}").append('\n');
-            return true;
         }
-        return false;
-    }
-    public void deleteSession(String login){
-        sessions.remove(login);
-        if(sessions.containsKey(login)) System.out.append("Не удалилось\n");
+    public void deleteSession(String sessionID){
+        sessions.remove(sessionID);
+        if(sessions.containsKey(sessionID)) System.out.append("Не удалилось\n");
         else System.out.append("Сессия удалена\n");
     }
-    public void editUser(UserProfile oldUser, UserProfile newUser) {
+    public void editUser(@NotNull UserProfile oldUser, UserProfile newUser) {
         if(!oldUser.getLogin().equals(newUser.getLogin()) && !newUser.getLogin().isEmpty() && this.getUserByLogin(newUser.getLogin()) == null){
             users.get(oldUser.getUserID()).setLogin(newUser.getLogin());
         }
@@ -100,12 +114,15 @@ public class AccountService {
         if (users.containsKey(userID)) System.out.append("Пользователь не удалился \n");
         else System.out.append("Пользователь удален \n");
     }
-
-    /*public void printUser(){
-        for(Map.Entry<Long,UserProfile> entry: users.entrySet()) {
-            System.out.append("{ \"id\": " + entry.getValue().getUserID() + ",\n" + "\"login\": \"");
-            System.out.append(entry.getValue().getLogin() + "\",\n" + "\"email\": \"" + entry.getValue().getEmail() + "\" }");
+    public boolean userIsCorrect(UserProfile testUser) {
+        UserProfile realUser = this.getUserByLogin(testUser.getLogin());
+        return (realUser != null && realUser.getPassword().equals(testUser.getPassword()));
+    }
+    public void printSession(){
+        for(Map.Entry<String,UserProfile> entry: sessions.entrySet()) {
+            System.out.append(" " + entry.getKey() + " " + entry.getValue().getLogin());
         }
-    }*/
+    }
 
 }
+

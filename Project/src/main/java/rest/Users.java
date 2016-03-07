@@ -2,6 +2,7 @@ package rest;
 
 import main.AccountService;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.inject.Singleton;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
@@ -9,6 +10,8 @@ import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.Collection;
+
+
 
 /**
  * Created by snach
@@ -33,12 +36,12 @@ public class Users {
     @Path("{id}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getUserByID(@PathParam("id") long id) {
-        final UserProfile user = accountService.getUser(id);
+        final UserProfile user = accountService.getUserByID(id);
         if(user == null){
             return Response.status(Response.Status.FORBIDDEN).build();
         }else {
-            String status = "{ \"id\": " + user.getUserID() + ",\n" + "\"login\": \""
-                    + user.getLogin() + "\",\n" + "\"email\": \""+ user.getEmail() + "\" }";
+            String status = "{\n  \"id\": " + user.getUserID() + ",\n  " + "\"login\": \""
+                    + user.getLogin() + "\",\n" + "  \"email\": \""+ user.getEmail() + "\" \n}";
             return Response.status(Response.Status.OK).entity(status).build();
         }
     }
@@ -60,30 +63,31 @@ public class Users {
     @Path("{id}")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response editUser(UserProfile user,@PathParam("id") long id, @Context HttpHeaders headers) {
-        if (accountService.getOnlineUser().getUserID() != id || accountService.getOnlineUser() == null){
+    public Response editUser(UserProfile user,@PathParam("id") long id, @Context HttpHeaders headers, @Context HttpServletRequest request) {
+        String sessionID = request.getSession().getId();
+        if (accountService.getUserBySession(sessionID) != null){
+            accountService.editUser(accountService.getUserBySession(sessionID),user);
+            String status = "{ \"id\": \"" + id + "\" }";
+            return Response.status(Response.Status.OK).entity(status).build();
+        } else {
             String status = "{ \"status\": \"403\", \"message\": \"Чужой юзер\" }";
             return Response.status(Response.Status.FORBIDDEN).entity(status).build();
-        } else {
-            accountService.editUser(accountService.getOnlineUser(),user);
-            String status = "{ \"id\": \"" + user.getUserID() + "\" }";
-            return Response.status(Response.Status.OK).entity(status).build();
-
         }
     }
     @DELETE
     @Path("{id}")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response deleteUser(@PathParam("id") long id, @Context HttpHeaders headers) {
-        if (accountService.getOnlineUser().getUserID() != id){
-            String status = "{ \"status\": \"403\", \"message\": \"Чужой юзер\" }";
-            return Response.status(Response.Status.FORBIDDEN).entity(status).build();
-        } else {
-            accountService.deleteSession(accountService.getUser(id).getLogin());
+    public Response deleteUser(@PathParam("id") long id, @Context HttpHeaders headers, @Context HttpServletRequest request) {
+        String sessionID = request.getSession().getId();
+        UserProfile deleteUser = accountService.getUserByID(id);
+        if (accountService.getUserBySession(sessionID).equals(deleteUser) && accountService.isEnter(sessionID)) {
+            accountService.deleteSession(sessionID);
             accountService.deleteUser(id);
             return Response.status(Response.Status.OK).build();
-
+        } else {
+            String status = "{ \"status\": \"403\", \"message\": \"Чужой юзер\" }";
+            return Response.status(Response.Status.FORBIDDEN).entity(status).build();
         }
     }
 }
