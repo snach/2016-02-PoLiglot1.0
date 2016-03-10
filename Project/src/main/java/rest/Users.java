@@ -38,8 +38,8 @@ public class Users {
     public Response getUserByID(@PathParam("id") long id) {
         final UserProfile user = accountService.getUserByID(id);
         if(user == null){
-            return Response.status(Response.Status.FORBIDDEN).build();
-        }else {
+            return Response.status(Response.Status.UNAUTHORIZED).build();
+        } else {
             String status = "{\n  \"id\": " + user.getUserID() + ",\n  " + "\"login\": \""
                     + user.getLogin() + "\",\n" + "  \"email\": \""+ user.getEmail() + "\" \n}";
             return Response.status(Response.Status.OK).entity(status).build();
@@ -54,7 +54,6 @@ public class Users {
             String status = "{ \"id\": \"" + user.getUserID() + "\" }";
             return Response.status(Response.Status.OK).entity(status).build();
         } else {
-            System.out.append("Error: {403}\n");
             return Response.status(Response.Status.FORBIDDEN).build();
         }
     }
@@ -65,12 +64,13 @@ public class Users {
     @Produces(MediaType.APPLICATION_JSON)
     public Response editUser(UserProfile user,@PathParam("id") long id, @Context HttpHeaders headers, @Context HttpServletRequest request) {
         String sessionID = request.getSession().getId();
-        if (accountService.getUserBySession(sessionID) != null){
-            accountService.editUser(accountService.getUserBySession(sessionID),user);
+        UserProfile userTmp = accountService.getUserBySession(sessionID);
+        if ((user != null) && (userTmp.getUserID() == accountService.getUserByID(id).getUserID())){
+            accountService.editUser(userTmp,user);
             String status = "{ \"id\": \"" + id + "\" }";
             return Response.status(Response.Status.OK).entity(status).build();
         } else {
-            String status = "{ \"status\": \"403\", \"message\": \"Чужой юзер\" }";
+            String status = "{ \"status\": 403, \"message\": \"Чужой юзер\" }";
             return Response.status(Response.Status.FORBIDDEN).entity(status).build();
         }
     }

@@ -25,19 +25,12 @@ public class Sessions {
     @Produces(MediaType.APPLICATION_JSON)
     public Response checkSignInUser(@Context HttpServletRequest request) {
         final String sessionID = request.getSession().getId();
-        System.out.append(sessionID + " ");
-        accountService.printSession();
-        //System.out.append("{ " + sessionID +" }, {" + accountService.getUserBySession(sessionID).getLogin()+" }\n");
         if (accountService.isEnter(sessionID)){
-            System.out.append("\ntrue\n");
             String status = "{ \"id\": \"" + accountService.getUserBySession(sessionID).getUserID() + "\" }";
-            System.out.append("{ \"id\": \"" + accountService.getUserBySession(sessionID).getUserID() + "\" }\n");
             return Response.status(Response.Status.OK).entity(status).build();
         } else {
-            System.out.append("\nfalse\n");
             return Response.status(Response.Status.UNAUTHORIZED).build();
         }
-
     }
 
     @PUT
@@ -53,8 +46,7 @@ public class Sessions {
             return Response.status(Response.Status.OK).entity(status).build();
         } else {
         return Response.status(Response.Status.BAD_REQUEST).build();
-    }
-
+        }
     }
     @DELETE
     @Produces(MediaType.APPLICATION_JSON)
@@ -62,5 +54,4 @@ public class Sessions {
         accountService.deleteSession(request.getSession().getId());
         return Response.status(Response.Status.OK).build();
     }
-
 }

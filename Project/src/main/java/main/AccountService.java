@@ -15,6 +15,8 @@ public class AccountService {
     private final Map<Long, UserProfile> users = new HashMap<>();
     private final Map<String, UserProfile> sessions = new HashMap<>();
 
+    private Logger logAccountService = new Logger(AccountService.class);
+
 
     public AccountService() {
         UserProfile bufUser = new UserProfile("admin", "admin","admin@email.ru");
@@ -32,11 +34,10 @@ public class AccountService {
             return false;
         user.setUserID();
         users.put(user.getUserID(), user);
-        System.out.append("Добавлен : ").append(users.get(user.getUserID()).getLogin()).append("\n");
-        System.out.append("User created: {").append(String.valueOf(user.getUserID())).append(", ")
-                .append(String.valueOf(user.getLogin())).append(", ")
-                .append(String.valueOf(String.valueOf(user.getPassword()))).append(", ")
-                .append(String.valueOf(String.valueOf(user.getEmail()))).append("}").append('\n');
+
+        logAccountService.log("Пользователь добавлен: {" + String.valueOf(user.getUserID()) + ", " + String.valueOf(user.getLogin())
+            + ", " + String.valueOf(String.valueOf(user.getPassword())) + ", " + String.valueOf(user.getEmail()) + "}\n");
+
         return true;
     }
     @Nullable
@@ -74,55 +75,50 @@ public class AccountService {
         }
         return  null;
     }
-   // @Nullable
+    @Nullable
     public UserProfile getUserBySession(@Nullable  String sessionID){
-        //if (sessions.get(sessionID) != null){
+        if (sessions.get(sessionID) != null){
             return sessions.get(sessionID);
-        //} else {
-        //    return null;
-        //}
+        } else {
+            return null;
+        }
     }
     public boolean isEnter(String sessionID) {
         return sessions.containsKey(sessionID);
     }
     public void addSession(String sessionID, UserProfile user) {
-            sessions.put(sessionID,user);
-            System.out.append("Session add: {").append(String.valueOf(user.getUserID())).append(", ")
-                    .append(String.valueOf(user.getLogin())).append(", ")
-                    .append(String.valueOf(String.valueOf(user.getPassword()))).append(", ")
-                    .append(String.valueOf(String.valueOf(user.getEmail()))).append("}").append('\n');
+        sessions.put(sessionID,user);
+        logAccountService.log("Сессия добавлена: {" + String.valueOf(user.getUserID()) + ", " + String.valueOf(user.getLogin())
+                + ", " + String.valueOf(String.valueOf(user.getPassword())) + ", " + String.valueOf(user.getEmail()) + '}');
         }
     public void deleteSession(String sessionID){
+        UserProfile user = getUserBySession(sessionID);
         sessions.remove(sessionID);
-        if(sessions.containsKey(sessionID)) System.out.append("Не удалилось\n");
-        else System.out.append("Сессия удалена\n");
+
+        logAccountService.log("Сессия удалена: {" + String.valueOf(user.getUserID()) + ", " + String.valueOf(user.getLogin())
+                + ", " + String.valueOf(String.valueOf(user.getPassword())) + ", " + String.valueOf(user.getEmail()) + '}');
     }
     public void editUser(@NotNull UserProfile oldUser, UserProfile newUser) {
-        if(!oldUser.getLogin().equals(newUser.getLogin()) && !newUser.getLogin().isEmpty() && this.getUserByLogin(newUser.getLogin()) == null){
+        if(!newUser.getLogin().isEmpty() && this.getUserByLogin(newUser.getLogin()) == null) {
             users.get(oldUser.getUserID()).setLogin(newUser.getLogin());
         }
-        if(!oldUser.getEmail().equals(newUser.getEmail()) && !newUser.getEmail().isEmpty() && this.getUserByEmail(newUser.getEmail()) == null){
+        if(!newUser.getEmail().isEmpty() && this.getUserByEmail(newUser.getEmail()) == null) {
             users.get(oldUser.getUserID()).setEmail(newUser.getEmail());
         }
-        if(!oldUser.getPassword().equals(newUser.getPassword()) && !newUser.getPassword().isEmpty()){
+        if(!newUser.getPassword().isEmpty()) {
             users.get(oldUser.getUserID()).setPassword(newUser.getPassword());
         }
-
+        logAccountService.log("Пользователь изменен: {" + String.valueOf(oldUser.getUserID()) + '}');
     }
     public void deleteUser(long userID){
+        UserProfile user = users.get(userID);
         users.remove(userID);
-        if (users.containsKey(userID)) System.out.append("Пользователь не удалился \n");
-        else System.out.append("Пользователь удален \n");
+        logAccountService.log("Пользователь удален: {" + String.valueOf(user.getUserID()) + ", " + String.valueOf(user.getLogin())
+                + ", " + String.valueOf(String.valueOf(user.getPassword())) + ", " + String.valueOf(user.getEmail()) + '}');
     }
     public boolean userIsCorrect(UserProfile testUser) {
         UserProfile realUser = this.getUserByLogin(testUser.getLogin());
         return (realUser != null && realUser.getPassword().equals(testUser.getPassword()));
     }
-    public void printSession(){
-        for(Map.Entry<String,UserProfile> entry: sessions.entrySet()) {
-            System.out.append(" " + entry.getKey() + " " + entry.getValue().getLogin());
-        }
-    }
-
 }
 
