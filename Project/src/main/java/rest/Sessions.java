@@ -1,4 +1,5 @@
 package rest;
+
 import main.AccountService;
 
 import javax.inject.Singleton;
@@ -25,7 +26,7 @@ public class Sessions {
     @Produces(MediaType.APPLICATION_JSON)
     public Response checkSignInUser(@Context HttpServletRequest request) {
         final String sessionID = request.getSession().getId();
-        if (accountService.isEnter(sessionID)){
+        if (accountService.isLoggedIn(sessionID)) {
             String status = "{ \"id\": \"" + accountService.getUserBySession(sessionID).getUserID() + "\" }";
             return Response.status(Response.Status.OK).entity(status).build();
         } else {
@@ -38,16 +39,18 @@ public class Sessions {
     @Produces(MediaType.APPLICATION_JSON)
     public Response signInUser(UserProfile user, @Context HttpHeaders headers, @Context HttpServletRequest request) {
         UserProfile onlineUser = accountService.getUserByLogin(user.getLogin());
-        if (onlineUser != null && accountService.userIsCorrect(onlineUser)
-                && accountService.getUserByLoginInSession(onlineUser.getLogin()) == null) {
+        final String sessionID = request.getSession().getId();
+        if (onlineUser != null && accountService.checkAuth(onlineUser.getLogin(), onlineUser.getPassword())
+                && !accountService.isLoggedIn(sessionID)) {
             final String sessionId = request.getSession().getId();
             accountService.addSession(sessionId, onlineUser);
             String status = "{ \"id\": \"" + onlineUser.getUserID() + "\" }";
             return Response.status(Response.Status.OK).entity(status).build();
         } else {
-        return Response.status(Response.Status.BAD_REQUEST).build();
+            return Response.status(Response.Status.BAD_REQUEST).build();
         }
     }
+
     @DELETE
     @Produces(MediaType.APPLICATION_JSON)
     public Response logOut(@Context HttpServletRequest request) {

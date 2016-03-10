@@ -7,9 +7,11 @@ import org.jetbrains.annotations.NotNull;
  */
 public class Logger {
     private Class clazz;
+
     public Logger(Class clazz) {
         this.clazz = clazz;
     }
+
     public void log(@NotNull String msg) {
         System.out.append(clazz.getName() + ": " + msg + '\n');
     }

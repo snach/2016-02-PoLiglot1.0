@@ -12,7 +12,6 @@ import javax.ws.rs.core.Response;
 import java.util.Collection;
 
 
-
 /**
  * Created by snach
  */
@@ -37,11 +36,11 @@ public class Users {
     @Produces(MediaType.APPLICATION_JSON)
     public Response getUserByID(@PathParam("id") long id) {
         final UserProfile user = accountService.getUserByID(id);
-        if(user == null){
+        if (user == null) {
             return Response.status(Response.Status.UNAUTHORIZED).build();
         } else {
             String status = "{\n  \"id\": " + user.getUserID() + ",\n  " + "\"login\": \""
-                    + user.getLogin() + "\",\n" + "  \"email\": \""+ user.getEmail() + "\" \n}";
+                    + user.getLogin() + "\",\n" + "  \"email\": \"" + user.getEmail() + "\" \n}";
             return Response.status(Response.Status.OK).entity(status).build();
         }
     }
@@ -49,8 +48,8 @@ public class Users {
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response createUser(UserProfile user, @Context HttpHeaders headers){
-        if(accountService.addUser(user)){
+    public Response createUser(UserProfile user, @Context HttpHeaders headers) {
+        if (accountService.addUser(user)) {
             String status = "{ \"id\": \"" + user.getUserID() + "\" }";
             return Response.status(Response.Status.OK).entity(status).build();
         } else {
@@ -62,11 +61,11 @@ public class Users {
     @Path("{id}")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response editUser(UserProfile user,@PathParam("id") long id, @Context HttpHeaders headers, @Context HttpServletRequest request) {
+    public Response editUser(UserProfile user, @PathParam("id") long id, @Context HttpHeaders headers, @Context HttpServletRequest request) {
         String sessionID = request.getSession().getId();
         UserProfile userTmp = accountService.getUserBySession(sessionID);
-        if ((user != null) && (userTmp.getUserID() == accountService.getUserByID(id).getUserID())){
-            accountService.editUser(userTmp,user);
+        if ((user != null) && (userTmp.getUserID() == accountService.getUserByID(id).getUserID())) {
+            accountService.editUser(userTmp, user);
             String status = "{ \"id\": \"" + id + "\" }";
             return Response.status(Response.Status.OK).entity(status).build();
         } else {
@@ -74,6 +73,7 @@ public class Users {
             return Response.status(Response.Status.FORBIDDEN).entity(status).build();
         }
     }
+
     @DELETE
     @Path("{id}")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -81,7 +81,7 @@ public class Users {
     public Response deleteUser(@PathParam("id") long id, @Context HttpHeaders headers, @Context HttpServletRequest request) {
         String sessionID = request.getSession().getId();
         UserProfile deleteUser = accountService.getUserByID(id);
-        if (accountService.getUserBySession(sessionID).equals(deleteUser) && accountService.isEnter(sessionID)) {
+        if (accountService.getUserBySession(sessionID).equals(deleteUser) && accountService.isLoggedIn(sessionID)) {
             accountService.deleteSession(sessionID);
             accountService.deleteUser(id);
             return Response.status(Response.Status.OK).build();

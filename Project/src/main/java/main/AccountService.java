@@ -15,13 +15,13 @@ public class AccountService {
     private final Map<Long, UserProfile> users = new HashMap<>();
     private final Map<String, UserProfile> sessions = new HashMap<>();
 
-    private Logger logAccountService = new Logger(AccountService.class);
+    private static final Logger logger = new Logger(AccountService.class);
 
 
     public AccountService() {
-        UserProfile bufUser = new UserProfile("admin", "admin","admin@email.ru");
+        UserProfile bufUser = new UserProfile("admin", "admin", "admin@email.ru");
         users.put(bufUser.getUserID(), bufUser);
-        bufUser = new UserProfile("guest", "12345","guest@email.ru");
+        bufUser = new UserProfile("guest", "12345", "guest@email.ru");
         users.put(bufUser.getUserID(), bufUser);
     }
 
@@ -35,90 +35,103 @@ public class AccountService {
         user.setUserID();
         users.put(user.getUserID(), user);
 
-        logAccountService.log("Пользователь добавлен: {" + String.valueOf(user.getUserID()) + ", " + String.valueOf(user.getLogin())
-            + ", " + String.valueOf(String.valueOf(user.getPassword())) + ", " + String.valueOf(user.getEmail()) + "}\n");
+        logger.log("Пользователь добавлен: {" + String.valueOf(user.getUserID()) + ", " + String.valueOf(user.getLogin())
+                + ", " + String.valueOf(String.valueOf(user.getPassword())) + ", " + String.valueOf(user.getEmail()) + "}\n");
 
         return true;
     }
+
     @Nullable
     public UserProfile getUserByID(long userID) {
 
-        if (users.get(userID) != null){
+        if (users.get(userID) != null) {
             return users.get(userID);
         } else {
             return null;
         }
     }
+/*
     @Nullable
-    public UserProfile getUserByLoginInSession(String login){
-        for(Map.Entry<String,UserProfile> entry: sessions.entrySet()) {
+    public UserProfile getUserByLoginInSession(String login) {
+        for (Map.Entry<String, UserProfile> entry : sessions.entrySet()) {
             if (entry.getValue().getLogin().equals(login))
                 return entry.getValue();
         }
-        return  null;
-    }
+        return null;
+    }*/
 
     @Nullable
-    public UserProfile getUserByLogin(String login){
-        for(Map.Entry<Long,UserProfile> entry: users.entrySet()) {
+    public UserProfile getUserByLogin(String login) {
+        for (Map.Entry<Long, UserProfile> entry : users.entrySet()) {
             if (entry.getValue().getLogin().equals(login))
                 return entry.getValue();
         }
-        return  null;
+        return null;
     }
 
     @Nullable
-    public UserProfile getUserByEmail(String email){
-        for(Map.Entry<Long,UserProfile> entry: users.entrySet()) {
+    public UserProfile getUserByEmail(String email) {
+        for (Map.Entry<Long, UserProfile> entry : users.entrySet()) {
             if (entry.getValue().getEmail().equals(email))
                 return entry.getValue();
         }
-        return  null;
+        return null;
     }
+
     @Nullable
-    public UserProfile getUserBySession(@Nullable  String sessionID){
-        if (sessions.get(sessionID) != null){
+    public UserProfile getUserBySession(@Nullable String sessionID) {
+        if (sessions.get(sessionID) != null) {
             return sessions.get(sessionID);
         } else {
             return null;
         }
     }
-    public boolean isEnter(String sessionID) {
+
+    public boolean isLoggedIn(String sessionID) {
         return sessions.containsKey(sessionID);
     }
+
     public void addSession(String sessionID, UserProfile user) {
-        sessions.put(sessionID,user);
-        logAccountService.log("Сессия добавлена: {" + String.valueOf(user.getUserID()) + ", " + String.valueOf(user.getLogin())
+        sessions.put(sessionID, user);
+        logger.log("Сессия добавлена: {" + String.valueOf(user.getUserID()) + ", " + String.valueOf(user.getLogin())
                 + ", " + String.valueOf(String.valueOf(user.getPassword())) + ", " + String.valueOf(user.getEmail()) + '}');
-        }
-    public void deleteSession(String sessionID){
+    }
+
+    public void deleteSession(String sessionID) {
         UserProfile user = getUserBySession(sessionID);
         sessions.remove(sessionID);
 
-        logAccountService.log("Сессия удалена: {" + String.valueOf(user.getUserID()) + ", " + String.valueOf(user.getLogin())
+        logger.log("Сессия удалена: {" + String.valueOf(user.getUserID()) + ", " + String.valueOf(user.getLogin())
                 + ", " + String.valueOf(String.valueOf(user.getPassword())) + ", " + String.valueOf(user.getEmail()) + '}');
     }
+
     public void editUser(@NotNull UserProfile oldUser, UserProfile newUser) {
-        if(!newUser.getLogin().isEmpty() && this.getUserByLogin(newUser.getLogin()) == null) {
+        if (!newUser.getLogin().isEmpty() && this.getUserByLogin(newUser.getLogin()) == null) {
             users.get(oldUser.getUserID()).setLogin(newUser.getLogin());
         }
-        if(!newUser.getEmail().isEmpty() && this.getUserByEmail(newUser.getEmail()) == null) {
+        if (!newUser.getEmail().isEmpty() && this.getUserByEmail(newUser.getEmail()) == null) {
             users.get(oldUser.getUserID()).setEmail(newUser.getEmail());
         }
-        if(!newUser.getPassword().isEmpty()) {
+        if (!newUser.getPassword().isEmpty()) {
             users.get(oldUser.getUserID()).setPassword(newUser.getPassword());
         }
-        logAccountService.log("Пользователь изменен: {" + String.valueOf(oldUser.getUserID()) + '}');
+        logger.log("Пользователь изменен: {" + String.valueOf(oldUser.getUserID()) + '}');
     }
-    public void deleteUser(long userID){
+
+    public void deleteUser(long userID) {
         UserProfile user = users.get(userID);
         users.remove(userID);
-        logAccountService.log("Пользователь удален: {" + String.valueOf(user.getUserID()) + ", " + String.valueOf(user.getLogin())
+        logger.log("Пользователь удален: {" + String.valueOf(user.getUserID()) + ", " + String.valueOf(user.getLogin())
                 + ", " + String.valueOf(String.valueOf(user.getPassword())) + ", " + String.valueOf(user.getEmail()) + '}');
     }
-    public boolean userIsCorrect(UserProfile testUser) {
+
+    public boolean checkAuth(@NotNull String userName, @NotNull String password){
+        return (getUserByLogin(userName) != null && getUserByLogin(userName).getPassword().equals(password));
+    }
+
+   /* public boolean userIsCorrect(UserProfile testUser) {
         UserProfile realUser = this.getUserByLogin(testUser.getLogin());
         return (realUser != null && realUser.getPassword().equals(testUser.getPassword()));
-    }
+    }*/
 }
 
