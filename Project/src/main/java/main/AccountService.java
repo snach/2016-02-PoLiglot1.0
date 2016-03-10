@@ -50,15 +50,6 @@ public class AccountService {
             return null;
         }
     }
-/*
-    @Nullable
-    public UserProfile getUserByLoginInSession(String login) {
-        for (Map.Entry<String, UserProfile> entry : sessions.entrySet()) {
-            if (entry.getValue().getLogin().equals(login))
-                return entry.getValue();
-        }
-        return null;
-    }*/
 
     @Nullable
     public UserProfile getUserByLogin(String login) {
@@ -129,9 +120,5 @@ public class AccountService {
         return (getUserByLogin(userName) != null && getUserByLogin(userName).getPassword().equals(password));
     }
 
-   /* public boolean userIsCorrect(UserProfile testUser) {
-        UserProfile realUser = this.getUserByLogin(testUser.getLogin());
-        return (realUser != null && realUser.getPassword().equals(testUser.getPassword()));
-    }*/
 }
 
