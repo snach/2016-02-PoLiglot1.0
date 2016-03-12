@@ -63,9 +63,10 @@ public class Users {
     @Produces(MediaType.APPLICATION_JSON)
     public Response editUser(UserProfile user, @PathParam("id") long id, @Context HttpHeaders headers, @Context HttpServletRequest request) {
         String sessionID = request.getSession().getId();
-        UserProfile userTmp = accountService.getUserBySession(sessionID);
-        if ((user != null) && (userTmp.getUserID() == accountService.getUserByID(id).getUserID())) {
-            accountService.editUser(userTmp, user);
+        UserProfile userSelf = accountService.getUserBySession(sessionID);
+        if ((user != null) && (userSelf.getUserID() == id)) {
+            UserProfile userToEdit = accountService.getUserByID(id);
+            accountService.editUser(userToEdit, user);
             String status = "{ \"id\": \"" + id + "\" }";
             return Response.status(Response.Status.OK).entity(status).build();
         } else {

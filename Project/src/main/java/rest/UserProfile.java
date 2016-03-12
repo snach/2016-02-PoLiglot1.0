@@ -21,6 +21,7 @@ public class UserProfile {
     public UserProfile() {
         login = "";
         password = "";
+        email = "";
     }
 
     public UserProfile(@NotNull String login, @NotNull String password, @NotNull String email) {

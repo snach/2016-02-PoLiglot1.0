@@ -32,6 +32,8 @@ public class AccountService {
     public boolean addUser(UserProfile user) {
         if (this.getUserByLogin(user.getLogin()) != null || this.getUserByEmail(user.getEmail()) != null)
             return false;
+        if (user.getLogin().isEmpty() || user.getPassword().isEmpty() || user.getEmail().isEmpty())
+            return false;
         user.setUserID();
         users.put(user.getUserID(), user);
 
