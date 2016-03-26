@@ -15,6 +15,7 @@ public class AccountService {
     private final Map<Long, UserProfile> users = new HashMap<>();
     private final Map<String, UserProfile> sessions = new HashMap<>();
 
+    @SuppressWarnings("ConstantNamingConvention")
     private static final Logger logger = new Logger(AccountService.class);
 
 

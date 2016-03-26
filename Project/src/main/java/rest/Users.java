@@ -64,6 +64,7 @@ public class Users {
     public Response editUser(UserProfile user, @PathParam("id") long id, @Context HttpHeaders headers, @Context HttpServletRequest request) {
         String sessionID = request.getSession().getId();
         UserProfile userSelf = accountService.getUserBySession(sessionID);
+        UserProfile bufUser = new UserProfile("admin", "admin", "admin@email.ru");
         if ((user != null) && (userSelf.getUserID() == id)) {
             UserProfile userToEdit = accountService.getUserByID(id);
             accountService.editUser(userToEdit, user);
