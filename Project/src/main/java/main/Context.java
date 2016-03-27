@@ -1,7 +1,7 @@
 package main;
 
 import org.jetbrains.annotations.NotNull;
-
+import org.jetbrains.annotations.Nullable;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -13,12 +13,22 @@ public class Context {
     private final Map<Class, Object> contextMap = new HashMap<>();
 
     public void put(@NotNull Class clazz, @NotNull Object object){
-        contextMap.put(clazz, object);
+        if (contextMap.containsKey(clazz))
+            System.out.append("В Context уже есть класс " + clazz.getName() );
+        else
+            contextMap.put(clazz, object);
     }
 
-    @NotNull
+    @Nullable
     public <T> T get(@NotNull Class<T> clazz){
-        //noinspection unchecked
-        return (T) contextMap.get(clazz);
+
+        try {
+            //noinspection unchecked
+            return (T) contextMap.get(clazz);
+        }
+        catch (NullPointerException e) {
+            System.out.append("В Context нет класса " + clazz.getName());
+            return null;
+        }
     }
 }
