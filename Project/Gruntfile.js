@@ -12,7 +12,7 @@ module.exports = function (grunt) {
                 stderr: true
             },
             server: {
-                command: 'java -jar target/Poliglot-1.0.jar 8081'
+                command: 'java -jar target/Poliglot-1.0.jar 8080'
             }
 		},
 

@@ -1,7 +1,9 @@
 rest/Users.class
 rest/UserProfile.class
 main/AccountService.class
-main/RestApplication.class
+main/Main$1.class
+main/Context.class
+main/AccountServiceImpl.class
 rest/Sessions.class
 main/Main.class
 main/Logger.class
