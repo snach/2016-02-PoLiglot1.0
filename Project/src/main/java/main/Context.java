@@ -16,12 +16,11 @@ public class Context {
     private static final Logger logger = new Logger(Context.class);
 
     public void put(@NotNull Class clazz, @NotNull Object object){
-        try {
-            contextMap.containsKey(clazz);
+
+        if (contextMap.containsKey(clazz)) {
+            throw new IllegalStateException("Context already has a " + clazz.getName() + " instance");
+        } else {
             contextMap.put(clazz, object);
-        }
-        catch (IllegalStateException e) {
-            logger.log("В Context уже есть класс " + clazz.getName() );
         }
     }
 
@@ -29,11 +28,10 @@ public class Context {
     public <T> T get(@NotNull Class<T> clazz){
 
         //noinspection unchecked
-        if (contextMap.get(clazz) == null) {
-            logger.log("В Context нет класса " + clazz.getName());
+        if (!contextMap.containsKey(clazz)) {
+            logger.log("Context don\'t have " + clazz.getName());
             return null;
-        }
-        else {
+        } else {
             //noinspection unchecked
             return (T) contextMap.get(clazz);
         }
