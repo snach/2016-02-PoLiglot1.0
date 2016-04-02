@@ -1,5 +1,7 @@
 package main;
 
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
 import rest.UserProfile;
 import org.junit.Before;
 import org.junit.Test;
@@ -14,8 +16,21 @@ public class AccountServiceTest {
     private AccountServiceImpl accountService;
 
     @Before
-    public void setupAccountService(){
-        accountService = new AccountServiceImpl();
+    public void setUpDatabase(){
+        final SessionFactory sessionFactory;
+        Configuration configuration = new Configuration();
+        configuration.addAnnotatedClass(UserProfile.class);
+
+        configuration.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
+        configuration.setProperty("hibernate.connection.driver_class", "com.mysql.jdbc.Driver");
+        configuration.setProperty("hibernate.connection.url", "jdbc:mysql://localhost:3306/db_Poliglot");
+        configuration.setProperty("hibernate.connection.username", "root");
+        configuration.setProperty("hibernate.connection.password", "rootPassword");
+        configuration.setProperty("hibernate.show_sql", "true");
+        configuration.setProperty("hibernate.hbm2ddl.auto", "create");
+
+        sessionFactory = configuration.buildSessionFactory();
+        accountService = new AccountServiceImpl(sessionFactory);
     }
 
     @Test
@@ -160,5 +175,10 @@ public class AccountServiceTest {
                 && users.get(2).getLogin().equals("test3"));
     }
 
+    @Test
+    public void testShuffleString() {
+        String test = accountService.shuffleString("language");
+        assertFalse(test.equals("language"));
+    }
 
 }

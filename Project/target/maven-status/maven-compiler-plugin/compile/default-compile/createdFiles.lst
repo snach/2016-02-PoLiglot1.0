@@ -6,4 +6,5 @@ main/Context.class
 main/AccountServiceImpl.class
 rest/Sessions.class
 main/Main.class
+main/UserProfileDAO.class
 main/Logger.class

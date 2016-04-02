@@ -10,6 +10,8 @@ import rest.UserProfile;
 import java.util.List;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * created by snach
@@ -23,19 +25,9 @@ public class AccountServiceImpl implements AccountService{
     @SuppressWarnings("ConstantNamingConvention")
     private static final Logger logger = new Logger(AccountServiceImpl.class);
 
-    public AccountServiceImpl() {
-        Configuration configuration = new Configuration();
-        configuration.addAnnotatedClass(UserProfile.class);
+    public AccountServiceImpl(SessionFactory getSessionFactory) {
+        this.sessionFactory = getSessionFactory;
 
-        configuration.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
-        configuration.setProperty("hibernate.connection.driver_class", "com.mysql.jdbc.Driver");
-        configuration.setProperty("hibernate.connection.url", "jdbc:mysql://localhost:3306/db_Poliglot");
-        configuration.setProperty("hibernate.connection.username", "root");
-        configuration.setProperty("hibernate.connection.password", "rootPassword");
-        configuration.setProperty("hibernate.show_sql", "true");
-        configuration.setProperty("hibernate.hbm2ddl.auto", "update");
-
-        sessionFactory = configuration.buildSessionFactory();
     }
 
     @Override
@@ -163,6 +155,25 @@ public class AccountServiceImpl implements AccountService{
             logger.log("Юзер " + userName + " не найден");
             return false;
         }
+    }
+
+    static void shuffleCharArray(char[] ar) {
+        Random rnd = ThreadLocalRandom.current();
+        for (int i = ar.length - 1; i > 0; i--) {
+            int index = rnd.nextInt(i + 1);
+
+            char a = ar[index];
+            ar[index] = ar[i];
+            ar[i] = a;
+        }
+    }
+
+    public String shuffleString(String word){
+        char [] wordInChar = word.toCharArray ();
+        shuffleCharArray(wordInChar);
+        String shuffleWord = new String(wordInChar);
+        logger.log(word + " -> " + shuffleWord);
+        return shuffleWord;
     }
 }
 
