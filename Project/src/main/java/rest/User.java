@@ -1,7 +1,7 @@
 package rest;
 
-import main.AccountService;
-import main.AccountServiceImpl;
+import account.UserProfile;
+import account.AccountService;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
@@ -18,7 +18,7 @@ import java.util.Collection;
  */
 @Singleton
 @Path("/user")
-public class Users {
+public class User {
     @Inject
     private main.Context context;
 

@@ -25,4 +25,19 @@ public class ShuffleWord implements Serializable {
         this.id = -1;
         this.word = word;
     }
+    public ShuffleWord() {
+        word = "";
+    }
+
+    public void setWord(@NotNull String word) {
+        this.word = word;
+    }
+    @NotNull
+    public String getWord() {
+        return word;
+    }
+
+    public long getId() {
+        return id;
+    }
 }

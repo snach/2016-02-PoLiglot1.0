@@ -1,6 +1,7 @@
 package rest;
 
-import main.AccountService;
+import account.UserProfile;
+import account.AccountService;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 import javax.servlet.http.HttpServletRequest;
@@ -15,7 +16,7 @@ import javax.ws.rs.core.Response;
  */
 @Singleton
 @Path("/session")
-public class Sessions {
+public class Session {
 
     @Inject
     private main.Context context;

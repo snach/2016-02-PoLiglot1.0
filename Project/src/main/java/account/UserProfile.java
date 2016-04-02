@@ -1,4 +1,4 @@
-package rest;
+package account;
 
 import org.jetbrains.annotations.NotNull;
 

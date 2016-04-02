@@ -1,11 +1,11 @@
-package main;
+package account;
 
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import rest.UserProfile;
+import account.UserProfile;
 import java.util.List;
 
 

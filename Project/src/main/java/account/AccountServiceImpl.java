@@ -1,12 +1,12 @@
-package main;
+package account;
 
+import main.Logger;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.hibernate.cfg.Configuration;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import rest.UserProfile;
+
 import java.util.List;
 import java.util.HashMap;
 import java.util.Map;
@@ -16,7 +16,7 @@ import java.util.concurrent.ThreadLocalRandom;
 /**
  * created by snach
  */
-public class AccountServiceImpl implements AccountService{
+public class AccountServiceImpl implements AccountService {
 
     private final Map<String, UserProfile> sessions = new HashMap<>();
 
@@ -157,23 +157,6 @@ public class AccountServiceImpl implements AccountService{
         }
     }
 
-    static void shuffleCharArray(char[] ar) {
-        Random rnd = ThreadLocalRandom.current();
-        for (int i = ar.length - 1; i > 0; i--) {
-            int index = rnd.nextInt(i + 1);
 
-            char a = ar[index];
-            ar[index] = ar[i];
-            ar[i] = a;
-        }
-    }
-
-    public String shuffleString(String word){
-        char [] wordInChar = word.toCharArray ();
-        shuffleCharArray(wordInChar);
-        String shuffleWord = new String(wordInChar);
-        logger.log(word + " -> " + shuffleWord);
-        return shuffleWord;
-    }
 }
 

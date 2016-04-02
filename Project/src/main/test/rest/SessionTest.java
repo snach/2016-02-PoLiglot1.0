@@ -1,7 +1,8 @@
 package rest;
 
-import main.AccountService;
-import main.AccountServiceImpl;
+import account.UserProfile;
+import account.AccountService;
+import account.AccountServiceImpl;
 import main.Context;
 import org.glassfish.hk2.utilities.binding.AbstractBinder;
 import org.glassfish.jersey.server.ResourceConfig;
@@ -24,7 +25,7 @@ import static org.mockito.Mockito.*;
 /**
  * Created by Snach on 28.03.16.
  */
-public class SessionsTest extends JerseyTest {
+public class SessionTest extends JerseyTest {
     @Override
     protected Application configure() {
 
@@ -45,7 +46,7 @@ public class SessionsTest extends JerseyTest {
         final Context context = new Context();
         context.put(AccountService.class, new AccountServiceImpl(sessionFactory));
 
-        final ResourceConfig config = new ResourceConfig(Users.class, Sessions.class);
+        final ResourceConfig config = new ResourceConfig(User.class, Session.class);
         final HttpServletRequest request = mock(HttpServletRequest.class);
         final HttpSession session = mock(HttpSession.class);
         //noinspection AnonymousInnerClassMayBeStatic

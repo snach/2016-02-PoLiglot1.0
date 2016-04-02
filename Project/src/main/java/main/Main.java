@@ -1,5 +1,7 @@
 package main;
 
+import account.AccountService;
+import account.AccountServiceImpl;
 import level_1.ShuffleWordService;
 import level_1.ShuffleWord;
 import org.eclipse.jetty.server.Server;
@@ -13,9 +15,10 @@ import org.glassfish.hk2.utilities.binding.AbstractBinder;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-import rest.Sessions;
-import rest.UserProfile;
-import rest.Users;
+import rest.FirstLevel;
+import rest.Session;
+import account.UserProfile;
+import rest.User;
 import org.hibernate.HibernateException;
 
 
@@ -62,7 +65,7 @@ public class Main {
             context.put(AccountService.class, new AccountServiceImpl(sessionFactory));
             context.put(ShuffleWordService.class, new ShuffleWordService(sessionFactory));
 
-            final ResourceConfig config = new ResourceConfig(Users.class, Sessions.class);
+            final ResourceConfig config = new ResourceConfig(User.class, Session.class, FirstLevel.class);
             config.register(new AbstractBinder() {
                 @Override
                 protected void configure() {

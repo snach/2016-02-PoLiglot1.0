@@ -1,8 +1,9 @@
 package main;
 
+import account.AccountServiceImpl;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-import rest.UserProfile;
+import account.UserProfile;
 import org.junit.Before;
 import org.junit.Test;
 import java.util.List;
@@ -173,12 +174,6 @@ public class AccountServiceTest {
         assertTrue(users.get(0).getLogin().equals("test")
                 && users.get(1).getLogin().equals("test2")
                 && users.get(2).getLogin().equals("test3"));
-    }
-
-    @Test
-    public void testShuffleString() {
-        String test = accountService.shuffleString("language");
-        assertFalse(test.equals("language"));
     }
 
 }
