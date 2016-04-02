@@ -1,5 +1,7 @@
 package main;
 
+import level_1.ShuffleWordService;
+import level_1.ShuffleWord;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.Handler;
 import org.eclipse.jetty.servlet.ServletContextHandler;
@@ -44,6 +46,7 @@ public class Main {
 
             Configuration configuration = new Configuration();
             configuration.addAnnotatedClass(UserProfile.class);
+            configuration.addAnnotatedClass(ShuffleWord.class);
 
             configuration.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
             configuration.setProperty("hibernate.connection.driver_class", "com.mysql.jdbc.Driver");
@@ -57,6 +60,7 @@ public class Main {
 
             final Context context = new Context();
             context.put(AccountService.class, new AccountServiceImpl(sessionFactory));
+            context.put(ShuffleWordService.class, new ShuffleWordService(sessionFactory));
 
             final ResourceConfig config = new ResourceConfig(Users.class, Sessions.class);
             config.register(new AbstractBinder() {
