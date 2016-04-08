@@ -157,6 +157,13 @@ public class AccountServiceImpl implements AccountService {
         }
     }
 
+    public void editScore(String login, int newScore) {
+        final Session session = sessionFactory.openSession();
+        final UserProfileDAO dao = new UserProfileDAO(session);
+        dao.editUserScore(login,newScore);
+        session.close();
+    }
+
 
 }
 

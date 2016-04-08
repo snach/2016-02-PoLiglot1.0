@@ -66,4 +66,10 @@ public class UserProfileDAO {
         return (List<UserProfile>) criteria.list();
     }
 
+    public void editUserScore(@NotNull String login,@NotNull Integer newScore) {
+
+        this.readUserByLogin(login).setScore(newScore);
+        session.flush();
+        }
+
 }

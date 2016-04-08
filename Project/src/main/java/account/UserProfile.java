@@ -30,10 +30,15 @@ public class UserProfile implements Serializable { // Serializable Important to 
     @Column(name = "email")
     private String email;
 
+    @NotNull
+    @Column(name = "score", columnDefinition = "int default 0")
+    private Integer score;
+
     public UserProfile() {
         login = "";
         password = "";
         email = "";
+        score = 0;
     }
 
     public UserProfile(@NotNull String login, @NotNull String password, @NotNull String email) {
@@ -41,6 +46,7 @@ public class UserProfile implements Serializable { // Serializable Important to 
         this.login = login;
         this.password = password;
         this.email = email;
+        this.score = 0;
     }
 
     public long getUserID() {
@@ -75,6 +81,15 @@ public class UserProfile implements Serializable { // Serializable Important to 
 
     public void setEmail(@NotNull String email) {
         this.email = email;
+    }
+
+    @NotNull
+    public Integer  getScore() {
+        return score;
+    }
+
+    public void  setScore(int score) {
+        this.score = score;
     }
 
 

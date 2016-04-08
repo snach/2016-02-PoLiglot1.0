@@ -61,7 +61,7 @@ public class User {
     @Produces(MediaType.APPLICATION_JSON)
     public Response editUser(UserProfile user, @PathParam("id") long id, @Context HttpHeaders headers, @Context HttpServletRequest request) {
         String sessionID = request.getSession().getId();
-        UserProfile               userSelf = context.get(AccountService.class).getUserBySession(sessionID);
+        UserProfile userSelf = context.get(AccountService.class).getUserBySession(sessionID);
 
         if ((user != null) && (userSelf != null) && (userSelf.getUserID() == id)) {
             UserProfile userToEdit = context.get(AccountService.class).getUserByID(id);
