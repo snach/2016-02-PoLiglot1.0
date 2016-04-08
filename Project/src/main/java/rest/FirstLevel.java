@@ -35,7 +35,9 @@ public class FirstLevel {
     @Produces(MediaType.APPLICATION_JSON)
     public Response getRandShuffleWord() {
         ShuffleWord sendWord = context.get(ShuffleWordService.class).getShuffleWord();
-        String status = "{ \"id\": " + sendWord.getId() + ", \"shuffle\": \""+ sendWord.getWord() + "\" }";
+        ShuffleWord rightWord = context.get(ShuffleWordService.class).getWordById(sendWord.getId());
+        String status = "{ \"id\": " + sendWord.getId() + ", \"shuffle\": \""+ sendWord.getWord() +
+                "\",\"right\": \"" + rightWord.getWord() + "\" }";
         return Response.status(Response.Status.OK).entity(status).build();
     }
 
@@ -52,7 +54,8 @@ public class FirstLevel {
             boolean check;
             if (rightWord.getWord().equals(userWord.getWord())) {
                 check = true;
-                context.get(ShuffleWordService.class).addPointUser(userWord.getLogin());
+                UserProfile user = context.get(AccountService.class).getUserBySession(sessionID);
+                context.get(ShuffleWordService.class).addPointUser(user.getLogin());
             } else {
                 check = false;
             }
@@ -67,12 +70,13 @@ public class FirstLevel {
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getCurrentUserScore(UserProfile user, @Context HttpHeaders headers, @Context HttpServletRequest request) {
+    public Response getCurrentUserScore( @Context HttpHeaders headers, @Context HttpServletRequest request) {
 
         String sessionID = request.getSession().getId();
 
         if (context.get(AccountService.class).isLoggedIn(sessionID)) {
 
+            UserProfile user = context.get(AccountService.class).getUserBySession(sessionID);
             int currentScore = context.get(ShuffleWordService.class).getUserScoreFromMap(user.getLogin());
             int prevScore = context.get(AccountService.class).getUserByLogin(user.getLogin()).getScore();
             boolean isBestScore;

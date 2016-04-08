@@ -38,12 +38,15 @@ public class ShuffleWordService {
     public ShuffleWordService(SessionFactory getSessionFactory){
         this.sessionFactory = getSessionFactory;
         try {
+            Session session = sessionFactory.openSession();
+            ShuffleWordDAO dao = new ShuffleWordDAO(session);
+            dao.deleteAll();
             try (BufferedReader in = new BufferedReader(new FileReader("sourse/words.txt"))) {
 
                 String s;
-                Session session = sessionFactory.openSession();
+                //Session session = sessionFactory.openSession();
                 while ((s = in.readLine()) != null) {
-                    ShuffleWordDAO dao = new ShuffleWordDAO(session);
+                    //ShuffleWordDAO dao = new ShuffleWordDAO(session);
                     dao.addWord(new ShuffleWord(s));
                     logger.log(s);
                 }

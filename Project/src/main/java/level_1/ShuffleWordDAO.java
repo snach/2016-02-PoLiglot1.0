@@ -3,6 +3,8 @@ package level_1;
 
 import account.UserProfile;
 import org.hibernate.Criteria;
+
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
@@ -16,6 +18,12 @@ public class ShuffleWordDAO {
     public ShuffleWordDAO(Session session) {
         this.session = session;
     }
+
+    public boolean deleteAll() {
+        session.createQuery("delete from ShuffleWord").executeUpdate();
+        return true;
+    }
+
 
     public boolean addWord(ShuffleWord word) {
         session.save(word);

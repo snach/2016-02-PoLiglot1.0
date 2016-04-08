@@ -40,7 +40,7 @@ public class Main {
 
         logger.log("Starting at port: " + String.valueOf(port) + '\n');
 
-        try {
+        //try {
             final Server server = new Server(port);
 
             final ServletContextHandler contextHandler = new ServletContextHandler(server, "/api/", ServletContextHandler.SESSIONS);
@@ -54,10 +54,10 @@ public class Main {
             configuration.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
             configuration.setProperty("hibernate.connection.driver_class", "com.mysql.jdbc.Driver");
             configuration.setProperty("hibernate.connection.url", "jdbc:mysql://localhost:3306/db_Poliglot");
-            configuration.setProperty("hibernate.connection.username", "root");
-            configuration.setProperty("hibernate.connection.password", "rootPassword");
+            configuration.setProperty("hibernate.connection.username", "poliglot_game");
+            configuration.setProperty("hibernate.connection.password", "poliglot");
             configuration.setProperty("hibernate.show_sql", "true");
-            configuration.setProperty("hibernate.hbm2ddl.auto", "create");
+            configuration.setProperty("hibernate.hbm2ddl.auto", "update");
 
             sessionFactory = configuration.buildSessionFactory();
 
@@ -86,9 +86,10 @@ public class Main {
             contextHandler.addServlet(servletHolder, "/*");
             server.start();
             server.join();
-        } catch (HibernateException e) {
+        //}
+        /*catch (HibernateException e) {
             logger.log("Fail to connect to db_Poliglot");
             System.exit(1);
-        }
+        }*/
     }
 }
