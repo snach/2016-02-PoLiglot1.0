@@ -1,11 +1,11 @@
-package main;
+package account;
 
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import rest.UserProfile;
+
 import java.util.List;
 
 
@@ -13,7 +13,7 @@ import java.util.List;
  * Created by Snach on 27.03.16.
  */
 public class UserProfileDAO {
-    private Session session;
+    final Session session;
 
     public UserProfileDAO(Session session) {
         this.session = session;

@@ -1,7 +1,8 @@
 package rest;
 
-import main.AccountService;
-import main.AccountServiceImpl;
+import account.AccountService;
+import account.AccountServiceImpl;
+import account.UserProfile;
 import main.Context;
 import org.glassfish.hk2.utilities.binding.AbstractBinder;
 import org.glassfish.jersey.server.ResourceConfig;
@@ -14,9 +15,6 @@ import javax.ws.rs.core.Response;
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.core.Application;
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.mock;
-
-
 import static org.mockito.Mockito.*;
 
 /**

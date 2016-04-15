@@ -1,8 +1,7 @@
-package main;
+package account;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import rest.UserProfile;
 
 import java.util.Collection;
 

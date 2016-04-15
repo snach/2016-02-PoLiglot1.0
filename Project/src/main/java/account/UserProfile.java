@@ -1,10 +1,9 @@
-package rest;
+package account;
 
 import org.jetbrains.annotations.NotNull;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.concurrent.atomic.AtomicLong;
 
 /**
  * created by snach
@@ -45,10 +44,6 @@ public class UserProfile implements Serializable { // Serializable Important to 
 
     public long getUserID() {
         return id;
-    }
-
-    public void setUserID(long id) {
-        this.id = id;
     }
 
     @NotNull

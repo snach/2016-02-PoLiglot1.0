@@ -6,7 +6,7 @@ import org.jetbrains.annotations.NotNull;
  * Created by Snach on 08.03.16.
  */
 public class Logger {
-    private Class clazz;
+    final Class clazz;
 
     public Logger(Class clazz) {
         this.clazz = clazz;

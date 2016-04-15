@@ -1,6 +1,7 @@
-package main;
+package account;
 
-import rest.UserProfile;
+import account.AccountServiceImpl;
+import account.UserProfile;
 import org.junit.Before;
 import org.junit.Test;
 import java.util.List;
@@ -42,7 +43,9 @@ public class AccountServiceTest {
     public void testGetUserByID(){
         UserProfile user = new UserProfile("test1", "testpass1","1@mail.com");
         accountService.addUser(user);
-        assertEquals("test1", accountService.getUserByID(user.getUserID()).getLogin());
+        UserProfile findUser = accountService.getUserByID(user.getUserID());
+        assertFalse(findUser == null);
+        assertEquals("test1", findUser.getLogin());
     }
 
     @Test
@@ -50,6 +53,7 @@ public class AccountServiceTest {
         UserProfile user = new UserProfile("test1", "testpass1","1@mail.com");
         accountService.addUser(user);
         UserProfile compareUser = accountService.getUserByLogin("test1");
+        assertFalse(compareUser == null);
         assertEquals(compareUser.getLogin(),"test1");
     }
 
@@ -57,7 +61,10 @@ public class AccountServiceTest {
     public void testGetUserByEmail(){
         UserProfile user = new UserProfile("test1", "testpass1","1@mail.com");
         accountService.addUser(user);
-        assertEquals(accountService.getUserByEmail(user.getEmail()).getLogin(),"test1");
+        UserProfile findUser = accountService.getUserByEmail(user.getEmail());
+
+        assertFalse(findUser == null);
+        assertEquals(findUser.getLogin(),"test1");
     }
 
     @Test
@@ -77,8 +84,10 @@ public class AccountServiceTest {
         accountService.addUser(oldUser);
         UserProfile newUser = new UserProfile("test","testpass2","1@mail.com");
         accountService.editUser(oldUser,newUser);
+        UserProfile findNewUser = accountService.getUserByLogin("test");
 
-        assertEquals("testpass2", accountService.getUserByLogin("test").getPassword());
+        assertFalse(findNewUser == null);
+        assertEquals("testpass2", findNewUser.getPassword());
     }
 
     @Test
@@ -87,8 +96,10 @@ public class AccountServiceTest {
         accountService.addUser(oldUser);
         UserProfile newUser = new UserProfile("test","testpass1","2@mail.com");
         accountService.editUser(oldUser,newUser);
+        UserProfile findNewUser = accountService.getUserByLogin("test");
 
-        assertEquals("2@mail.com", accountService.getUserByLogin("test").getEmail());
+        assertFalse(findNewUser == null);
+        assertEquals("2@mail.com", findNewUser.getEmail());
     }
 
     @Test

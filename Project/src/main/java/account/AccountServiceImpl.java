@@ -1,12 +1,13 @@
-package main;
+package account;
 
+import main.Logger;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import rest.UserProfile;
+
 import java.util.List;
 import java.util.HashMap;
 import java.util.Map;
@@ -14,26 +15,26 @@ import java.util.Map;
 /**
  * created by snach
  */
-public class AccountServiceImpl implements AccountService{
+public class AccountServiceImpl implements AccountService {
 
     private final Map<String, UserProfile> sessions = new HashMap<>();
 
-    private SessionFactory sessionFactory;
+    final  SessionFactory sessionFactory;
 
     @SuppressWarnings("ConstantNamingConvention")
     private static final Logger logger = new Logger(AccountServiceImpl.class);
 
     public AccountServiceImpl() {
-        Configuration configuration = new Configuration();
+        final Configuration configuration = new Configuration();
         configuration.addAnnotatedClass(UserProfile.class);
 
         configuration.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
         configuration.setProperty("hibernate.connection.driver_class", "com.mysql.jdbc.Driver");
         configuration.setProperty("hibernate.connection.url", "jdbc:mysql://localhost:3306/db_Poliglot");
-        configuration.setProperty("hibernate.connection.username", "root");
-        configuration.setProperty("hibernate.connection.password", "rootPassword");
+        configuration.setProperty("hibernate.connection.username", "poliglot_game");
+        configuration.setProperty("hibernate.connection.password", "poliglot");
         configuration.setProperty("hibernate.show_sql", "true");
-        configuration.setProperty("hibernate.hbm2ddl.auto", "update");
+        configuration.setProperty("hibernate.hbm2ddl.auto", "create");
 
         sessionFactory = configuration.buildSessionFactory();
     }
@@ -49,10 +50,10 @@ public class AccountServiceImpl implements AccountService{
 
     @Override
     public boolean addUser(UserProfile user) {
-        boolean status;
+        final boolean status;
         try (Session session = sessionFactory.openSession()) {
-            Transaction transaction = session.beginTransaction();
-            UserProfileDAO dao = new UserProfileDAO(session);
+            final Transaction transaction = session.beginTransaction();
+            final UserProfileDAO dao = new UserProfileDAO(session);
             if (dao.addUser(user)) {
                 status = true;
                 logger.log("Пользователь добавлен: {" + String.valueOf(user.getUserID()) + ", " + String.valueOf(user.getLogin())
@@ -63,15 +64,17 @@ public class AccountServiceImpl implements AccountService{
                 logger.log("Пользователь НЕ добавлен");
             }
             transaction.commit();
+
         }
+
         return status;
     }
 
     @Override
     public void editUser(@NotNull UserProfile oldUser, UserProfile newUser) {
         try (Session session = sessionFactory.openSession()) {
-            Transaction transaction = session.beginTransaction();
-            UserProfileDAO dao = new UserProfileDAO(session);
+            final Transaction transaction = session.beginTransaction();
+            final UserProfileDAO dao = new UserProfileDAO(session);
             dao.editUser(oldUser,newUser);
             transaction.commit();
             logger.log("Пользователь изменен: {" + String.valueOf(oldUser.getUserID()) + '}');
@@ -81,8 +84,8 @@ public class AccountServiceImpl implements AccountService{
     @Override
     public void deleteUser(long userID) {
         try (Session session = sessionFactory.openSession()) {
-            Transaction transaction = session.beginTransaction();
-            UserProfileDAO dao = new UserProfileDAO(session);
+            final Transaction transaction = session.beginTransaction();
+            final UserProfileDAO dao = new UserProfileDAO(session);
             dao.deleteUser(userID);
             transaction.commit();
             logger.log("Пользователь удален: {" + String.valueOf(userID)  + '}');
@@ -144,7 +147,7 @@ public class AccountServiceImpl implements AccountService{
 
     @Override
     public void deleteSession(String sessionID) {
-        UserProfile user = getUserBySession(sessionID);
+        final UserProfile user = getUserBySession(sessionID);
         if (user != null) {
             sessions.remove(sessionID);
             logger.log("Сессия удалена: {" + String.valueOf(user.getUserID()) + ", " + String.valueOf(user.getLogin())
@@ -156,7 +159,7 @@ public class AccountServiceImpl implements AccountService{
 
     @Override
     public boolean checkAuth(@NotNull String userName, @NotNull String password){
-        UserProfile user = getUserByLogin(userName);
+        final UserProfile user = getUserByLogin(userName);
         if (user!= null) {
             return user.getPassword().equals(password);
         } else {

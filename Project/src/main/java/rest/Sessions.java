@@ -1,6 +1,8 @@
 package rest;
 
-import main.AccountService;
+import account.AccountService;
+import account.UserProfile;
+
 import javax.inject.Inject;
 import javax.inject.Singleton;
 import javax.servlet.http.HttpServletRequest;

@@ -1,7 +1,8 @@
 package rest;
 
-import main.AccountService;
-import main.AccountServiceImpl;
+import account.AccountService;
+import account.AccountServiceImpl;
+import account.UserProfile;
 import main.Context;
 import org.glassfish.hk2.utilities.binding.AbstractBinder;
 import org.glassfish.jersey.server.ResourceConfig;
@@ -98,7 +99,7 @@ public class UsersTest extends JerseyTest {
     public void testCreateUserWithSameLoginFail() {
         UserProfile user1 = new UserProfile("test", "testpass1","1@mail.com");
         UserProfile user2 = new UserProfile("test", "testpass2","2@mail.com");
-        final Response resp1 = target("user").request("application/json").put(Entity.json(user1));
+        target("user").request("application/json").put(Entity.json(user1));
         final Response resp2 = target("user").request("application/json").put(Entity.json(user2));
         assertEquals(resp2.getStatus(), FORBIDDEN);
     }
@@ -107,7 +108,7 @@ public class UsersTest extends JerseyTest {
     public void testCreateUserWithSameEmailFail() {
         UserProfile user1 = new UserProfile("test1", "testpass1","1@mail.com");
         UserProfile user2 = new UserProfile("test2", "testpass2","1@mail.com");
-        final Response resp1 = target("user").request("application/json").put(Entity.json(user1));
+        target("user").request("application/json").put(Entity.json(user1));
         final Response resp2 = target("user").request("application/json").put(Entity.json(user2));
         assertEquals(resp2.getStatus(), FORBIDDEN);
     }
