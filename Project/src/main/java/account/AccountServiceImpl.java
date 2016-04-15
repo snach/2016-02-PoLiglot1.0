@@ -1,5 +1,6 @@
 package account;
 
+import main.Config;
 import main.Logger;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -19,24 +20,13 @@ public class AccountServiceImpl implements AccountService {
 
     private final Map<String, UserProfile> sessions = new HashMap<>();
 
-    final  SessionFactory sessionFactory;
+    SessionFactory sessionFactory;
 
     @SuppressWarnings("ConstantNamingConvention")
     private static final Logger logger = new Logger(AccountServiceImpl.class);
 
-    public AccountServiceImpl() {
-        final Configuration configuration = new Configuration();
-        configuration.addAnnotatedClass(UserProfile.class);
-
-        configuration.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
-        configuration.setProperty("hibernate.connection.driver_class", "com.mysql.jdbc.Driver");
-        configuration.setProperty("hibernate.connection.url", "jdbc:mysql://localhost:3306/db_Poliglot");
-        configuration.setProperty("hibernate.connection.username", "poliglot_game");
-        configuration.setProperty("hibernate.connection.password", "poliglot");
-        configuration.setProperty("hibernate.show_sql", "true");
-        configuration.setProperty("hibernate.hbm2ddl.auto", "create");
-
-        sessionFactory = configuration.buildSessionFactory();
+    public AccountServiceImpl(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
     }
 
     @Override

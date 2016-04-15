@@ -2,6 +2,7 @@ package account;
 
 import account.AccountServiceImpl;
 import account.UserProfile;
+import main.Config;
 import org.junit.Before;
 import org.junit.Test;
 import java.util.List;
@@ -16,7 +17,7 @@ public class AccountServiceTest {
 
     @Before
     public void setupAccountService(){
-        accountService = new AccountServiceImpl();
+        accountService = new AccountServiceImpl(Config.connectToDB());
     }
 
     @Test

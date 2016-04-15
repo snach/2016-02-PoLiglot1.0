@@ -24,23 +24,17 @@ public class Main {
     public static void main(String[] args) throws Exception {
 
         final Logger logger = new Logger(AccountServiceImpl.class);
-        int port = -1;
-        if (args.length == 1) {
-            port = Integer.valueOf(args[0]);
-        } else {
-            logger.log("Specify port");
-            System.exit(1);
-        }
+        Config.loadConfig();
 
-        logger.log("Starting at port: " + String.valueOf(port) + '\n');
+        logger.log("Starting at port: " + String.valueOf(Config.getPort()) + '\n');
 
-        final Server server = new Server(port);
+        final Server server = new Server(Config.getPort());
         final ServletContextHandler contextHandler = new ServletContextHandler(server, "/api/", ServletContextHandler.SESSIONS);
 
         final Context context = new Context();
 
         try {
-            context.put(AccountService.class, new AccountServiceImpl());
+            context.put(AccountService.class, new AccountServiceImpl(Config.connectToDB()));
         } catch (HibernateException e) {
             logger.log("Fail to connect to db_Poliglot");
             System.exit(1);
