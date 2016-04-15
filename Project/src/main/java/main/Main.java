@@ -2,6 +2,8 @@ package main;
 
 import account.AccountService;
 import account.AccountServiceImpl;
+import cnf.Config;
+import level_1.ShuffleWordService;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.Handler;
 import org.eclipse.jetty.servlet.ServletContextHandler;
@@ -11,6 +13,8 @@ import org.glassfish.jersey.servlet.ServletContainer;
 import org.eclipse.jetty.server.handler.ResourceHandler;
 import org.glassfish.hk2.utilities.binding.AbstractBinder;
 import org.glassfish.jersey.server.ResourceConfig;
+import org.jetbrains.annotations.Nullable;
+import rest.FirstLevel;
 import rest.Sessions;
 import rest.Users;
 import org.hibernate.HibernateException;
@@ -40,27 +44,29 @@ public class Main {
             System.exit(1);
         }
 
-            final ResourceConfig config = new ResourceConfig(Users.class, Sessions.class);
-            config.register(new AbstractBinder() {
-                @Override
-                protected void configure() {
-                    bind(context);
-                }
-            });
+        context.put(ShuffleWordService.class, new ShuffleWordService(Config.readXML(),Config.getMaxWordid()));
 
-            final ServletHolder servletHolder = new ServletHolder(new ServletContainer(config));
+        final ResourceConfig config = new ResourceConfig(Users.class, Sessions.class, FirstLevel.class);
+        config.register(new AbstractBinder() {
+            @Override
+            protected void configure() {
+                bind(context);
+            }
+        });
 
-            ResourceHandler resourceHandler = new ResourceHandler();
-            resourceHandler.setDirectoriesListed(true);
-            resourceHandler.setResourceBase("public_html");
+        final ServletHolder servletHolder = new ServletHolder(new ServletContainer(config));
 
-            HandlerList handlers = new HandlerList();
-            handlers.setHandlers(new Handler[]{resourceHandler, contextHandler});
-            server.setHandler(handlers);
+        ResourceHandler resourceHandler = new ResourceHandler();
+        resourceHandler.setDirectoriesListed(true);
+        resourceHandler.setResourceBase("public_html");
 
-            contextHandler.addServlet(servletHolder, "/*");
+        HandlerList handlers = new HandlerList();
+        handlers.setHandlers(new Handler[]{resourceHandler, contextHandler});
+        server.setHandler(handlers);
 
-            server.start();
-            server.join();
+        contextHandler.addServlet(servletHolder, "/*");
+
+        server.start();
+        server.join();
     }
 }

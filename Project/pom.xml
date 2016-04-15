@@ -32,7 +32,7 @@
                 <artifactId>frontend-maven-plugin</artifactId>
                 <!-- Use the latest released version:
                 https://repo1.maven.org/maven2/com/github/eirslett/frontend-maven-plugin/ -->
-                <version>0.0.27</version>
+                <version>0.0.29</version>
                 <executions>
 
                     <execution>
@@ -99,6 +99,16 @@
             <version>4.12</version>
         </dependency>
         <dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+            <version>2.3.20</version>
+        </dependency>
+        <dependency>
+            <groupId>com.intellij</groupId>
+            <artifactId>annotations</artifactId>
+            <version>9.0.4</version>
+        </dependency>
+        <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.37</version>
@@ -143,7 +153,9 @@
         <dependency>
             <groupId>org.glassfish.jersey.test-framework.providers</groupId>
             <artifactId>jersey-test-framework-provider-bundle</artifactId>
-            <version>2.22.2</version>
+            <version>${org.glassfish.jersey.version}</version>
+            <type>pom</type>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.mockito</groupId>

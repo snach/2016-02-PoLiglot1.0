@@ -3,7 +3,7 @@ package rest;
 import account.AccountService;
 import account.AccountServiceImpl;
 import account.UserProfile;
-import main.Config;
+import cnf.Config;
 import main.Context;
 import org.glassfish.hk2.utilities.binding.AbstractBinder;
 import org.glassfish.jersey.server.ResourceConfig;

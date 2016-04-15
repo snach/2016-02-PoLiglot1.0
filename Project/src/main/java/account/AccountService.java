@@ -33,4 +33,6 @@ public interface AccountService {
     void deleteUser(long userID);
 
     boolean checkAuth(@NotNull String userName, @NotNull String password);
+
+    void editScore(String login, int newScore);
 }

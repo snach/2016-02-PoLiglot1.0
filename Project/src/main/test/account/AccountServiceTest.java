@@ -1,8 +1,6 @@
 package account;
 
-import account.AccountServiceImpl;
-import account.UserProfile;
-import main.Config;
+import cnf.Config;
 import org.junit.Before;
 import org.junit.Test;
 import java.util.List;

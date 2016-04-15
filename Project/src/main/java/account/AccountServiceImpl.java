@@ -1,11 +1,9 @@
 package account;
 
-import main.Config;
 import main.Logger;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.hibernate.cfg.Configuration;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -156,6 +154,14 @@ public class AccountServiceImpl implements AccountService {
             logger.log("Юзер " + userName + " не найден");
             return false;
         }
+    }
+
+    @Override
+    public void editScore(String login, int newScore) {
+        final Session session = sessionFactory.openSession();
+        final UserProfileDAO dao = new UserProfileDAO(session);
+        dao.editUserScore(login,newScore);
+        session.close();
     }
 }
 

@@ -65,5 +65,13 @@ public class UserProfileDAO {
         Criteria criteria = session.createCriteria(UserProfile.class);
         return (List<UserProfile>) criteria.list();
     }
+    public void editUserScore(@NotNull String login,@NotNull Integer newScore) {
+
+        UserProfile user = this.readUserByLogin(login);
+        if (user != null) {
+            user.setScore(newScore);
+            session.flush();
+        }
+    }
 
 }
