@@ -8,10 +8,12 @@ import java.io.Serializable;
 /**
  * created by snach
  */
+
+
 @Entity
 @Table(name = "users")
 public class UserProfile implements Serializable { // Serializable Important to Hibernate!
-    private static final long serialVersionUID = -8706689714326132798L;
+
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -46,6 +48,14 @@ public class UserProfile implements Serializable { // Serializable Important to 
         this.password = password;
         this.email = email;
         this.score = 0;
+    }
+    @SuppressWarnings("unused")
+    public UserProfile(long id, @NotNull String login, @NotNull String password, @NotNull String email, int score) {
+        this.id = id;
+        this.login = login;
+        this.password = password;
+        this.email = email;
+        this.score = score;
     }
 
     public long getUserID() {

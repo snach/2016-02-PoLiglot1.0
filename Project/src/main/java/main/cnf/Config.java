@@ -1,17 +1,19 @@
-package cnf;
+package main.cnf;
 
 import account.UserProfile;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.jetbrains.annotations.Nullable;
 import org.xml.sax.SAXException;
-import org.xml.sax.helpers.DefaultHandler;
-
+import java.io.IOException;
+import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.IOException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 
 import java.util.*;
 
@@ -23,8 +25,10 @@ public class Config {
     private static final String DB_CONFIG_FILE = "configuration/cfg/db.properties";
     private static final String WORDS_XML_FILE = "configuration/data/words.xml";
 
+    private static final Logger LOGGER = LogManager.getLogger(Config.class);
+
     private static int port;
-    private static String host;
+    //private static String host;
     private static long maxWordId;
 
     public static void loadConfig() {
@@ -34,9 +38,9 @@ public class Config {
             properties.load(fileInputStream);
             fileInputStream.close();
             port = Integer.valueOf(properties.getProperty("port"));
-            host = properties.getProperty("host");
+            /* host = properties.getProperty("host"); */
         } catch (FileNotFoundException e) {
-            System.out.println("File not found: " + SERVER_CONFIG_FILE);
+            LOGGER.error("File not found: " + SERVER_CONFIG_FILE);
             System.exit(1);
         } catch (IOException e) {
             e.printStackTrace();
@@ -64,7 +68,7 @@ public class Config {
             configuration.setProperty("hibernate.hbm2ddl.auto", properties.getProperty("hbm2ddl.auto"));
 
         } catch (FileNotFoundException e) {
-            System.out.println("File not found: " + DB_CONFIG_FILE);
+            LOGGER.error("File not found: " + DB_CONFIG_FILE);
             System.exit(1);
         } catch (IOException e) {
             e.printStackTrace();
@@ -79,20 +83,16 @@ public class Config {
             SAXParser saxParser = factory.newSAXParser();
 
             SAXHendler handler = new SAXHendler();
-            //SaxHandler handler = new SaxHandler();
             saxParser.parse(WORDS_XML_FILE, handler);
             maxWordId = handler.getPos();
             return handler.getWords();
 
-        } catch (Exception e) {
+        } catch (ParserConfigurationException | SAXException | IOException e) {
             e.printStackTrace();
         }
 
         return null;
     }
-
-
-
 
     public static int getPort() {
         return port;

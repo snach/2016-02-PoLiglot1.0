@@ -1,12 +1,13 @@
 package account;
 
-import main.Logger;
+import base.AccountService;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import java.util.List;
 import java.util.HashMap;
 import java.util.Map;
@@ -18,10 +19,9 @@ public class AccountServiceImpl implements AccountService {
 
     private final Map<String, UserProfile> sessions = new HashMap<>();
 
-    SessionFactory sessionFactory;
+    final SessionFactory sessionFactory;
 
-    @SuppressWarnings("ConstantNamingConvention")
-    private static final Logger logger = new Logger(AccountServiceImpl.class);
+    private static final Logger LOGGER = LogManager.getLogger(AccountServiceImpl.class);
 
     public AccountServiceImpl(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
@@ -37,6 +37,15 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
+    public List<UserProfile> getTopUsers() {
+        final Session session = sessionFactory.openSession();
+        final UserProfileDAO dao = new UserProfileDAO(session);
+        final List<UserProfile> users = dao.readTop();
+        session.close();
+        return users;
+    }
+
+    @Override
     public boolean addUser(UserProfile user) {
         final boolean status;
         try (Session session = sessionFactory.openSession()) {
@@ -44,12 +53,12 @@ public class AccountServiceImpl implements AccountService {
             final UserProfileDAO dao = new UserProfileDAO(session);
             if (dao.addUser(user)) {
                 status = true;
-                logger.log("Пользователь добавлен: {" + String.valueOf(user.getUserID()) + ", " + String.valueOf(user.getLogin())
-                        + ", " + String.valueOf(String.valueOf(user.getPassword())) + ", " + String.valueOf(user.getEmail()) + "}\n");
+                LOGGER.info("Пользователь добавлен: {" + String.valueOf(user.getUserID()) + ", " + String.valueOf(user.getLogin())
+                        + ", " + String.valueOf(String.valueOf(user.getPassword())) + ", " + String.valueOf(user.getEmail()) + '}');
             }
             else {
                 status = false;
-                logger.log("Пользователь НЕ добавлен");
+                LOGGER.info("Пользователь НЕ добавлен");
             }
             transaction.commit();
 
@@ -65,7 +74,7 @@ public class AccountServiceImpl implements AccountService {
             final UserProfileDAO dao = new UserProfileDAO(session);
             dao.editUser(oldUser,newUser);
             transaction.commit();
-            logger.log("Пользователь изменен: {" + String.valueOf(oldUser.getUserID()) + '}');
+            LOGGER.info("Пользователь изменен: {" + String.valueOf(oldUser.getUserID()) + '}');
         }
     }
 
@@ -76,7 +85,7 @@ public class AccountServiceImpl implements AccountService {
             final UserProfileDAO dao = new UserProfileDAO(session);
             dao.deleteUser(userID);
             transaction.commit();
-            logger.log("Пользователь удален: {" + String.valueOf(userID)  + '}');
+            LOGGER.info("Пользователь удален: {" + String.valueOf(userID)  + '}');
         }
     }
 
@@ -129,7 +138,7 @@ public class AccountServiceImpl implements AccountService {
     @Override
     public void addSession(String sessionID, UserProfile user) {
         sessions.put(sessionID, user);
-        logger.log("Сессия добавлена: {" + String.valueOf(user.getUserID()) + ", " + String.valueOf(user.getLogin())
+        LOGGER.info("Сессия добавлена: {" + String.valueOf(user.getUserID()) + ", " + String.valueOf(user.getLogin())
                 + ", " + String.valueOf(String.valueOf(user.getPassword())) + ", " + String.valueOf(user.getEmail()) + '}');
     }
 
@@ -138,10 +147,10 @@ public class AccountServiceImpl implements AccountService {
         final UserProfile user = getUserBySession(sessionID);
         if (user != null) {
             sessions.remove(sessionID);
-            logger.log("Сессия удалена: {" + String.valueOf(user.getUserID()) + ", " + String.valueOf(user.getLogin())
+            LOGGER.info("Сессия удалена: {" + String.valueOf(user.getUserID()) + ", " + String.valueOf(user.getLogin())
                     + ", " + String.valueOf(String.valueOf(user.getPassword())) + ", " + String.valueOf(user.getEmail()) + '}');
         } else {
-            logger.log("Сессия не может быть удалена, тк не добавлена");
+            LOGGER.info("Сессия не может быть удалена, тк не добавлена");
         }
     }
 
@@ -151,7 +160,7 @@ public class AccountServiceImpl implements AccountService {
         if (user!= null) {
             return user.getPassword().equals(password);
         } else {
-            logger.log("Юзер " + userName + " не найден");
+            LOGGER.info("Юзер " + userName + " не найден");
             return false;
         }
     }

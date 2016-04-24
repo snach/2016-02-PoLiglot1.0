@@ -2,6 +2,7 @@ package account;
 
 import org.hibernate.Criteria;
 import org.hibernate.Session;
+import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -14,6 +15,7 @@ import java.util.List;
  */
 public class UserProfileDAO {
     final Session session;
+    private static final int TOP_MAN = 10;
 
     public UserProfileDAO(Session session) {
         this.session = session;
@@ -56,15 +58,18 @@ public class UserProfileDAO {
             session.flush();
         }
     }
+
     public void deleteUser(long userID) {
         UserProfile user = readUserByID(userID);
         session.delete(user);
     }
+
     @SuppressWarnings("unchecked")
     public List<UserProfile> readAll() {
         Criteria criteria = session.createCriteria(UserProfile.class);
         return (List<UserProfile>) criteria.list();
     }
+
     public void editUserScore(@NotNull String login,@NotNull Integer newScore) {
 
         UserProfile user = this.readUserByLogin(login);
@@ -72,6 +77,14 @@ public class UserProfileDAO {
             user.setScore(newScore);
             session.flush();
         }
+    }
+
+    @SuppressWarnings("unchecked")
+    public List<UserProfile> readTop() {
+        Criteria criteria = session.createCriteria(UserProfile.class);
+        criteria.addOrder(Order.desc("score"));
+        criteria.setMaxResults(TOP_MAN);
+        return (List<UserProfile>) criteria.list();
     }
 
 }

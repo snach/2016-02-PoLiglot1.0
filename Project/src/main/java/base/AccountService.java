@@ -1,16 +1,19 @@
-package account;
+package base;
 
+import account.UserProfile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.Collection;
+import java.util.List;
 
 /**
  * Created by Snach on 26.03.16.
  */
 public interface AccountService {
 
-    Collection<UserProfile> getAllUsers();
+    List<UserProfile> getAllUsers();
+
+    List<UserProfile> getTopUsers();
 
     boolean addUser(UserProfile user);
 

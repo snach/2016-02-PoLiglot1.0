@@ -1,37 +1,24 @@
-package level_1;
+package game.firstlvl;
 
-import main.Logger;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
-import account.AccountServiceImpl;
+
 import org.jetbrains.annotations.Nullable;
 /**
  * Created by Snach on 02.04.16.
  */
 public class ShuffleWordService {
 
-    private static final int POINT = 10;
-
-
-    @SuppressWarnings("ConstantNamingConvention")
-    private static final Logger logger = new Logger(AccountServiceImpl.class);
-
-    private final Map<String, Integer> currentScore = new HashMap<>();
     private  Map<Long, String> words = new HashMap<>();
-    private long maxWordId;
+    private final long maxWordId;
 
 
 
     public ShuffleWordService(@Nullable Map<Long, String> map, long maxId){
         this.words = map;
         this.maxWordId = maxId;
-        for (Map.Entry<Long, String> entry : words.entrySet()) {
-            logger.log("id: " + entry.getKey() + " word: " + entry.getValue());
-        }
-
-
     }
 
     public ShuffleWord getShuffleWord(){
@@ -55,30 +42,11 @@ public class ShuffleWordService {
             wordInChar[index] = wordInChar[i];
             wordInChar[i] = a;
         }
-        String shuffleWord = new String(wordInChar);
-        logger.log(word + " -> " + shuffleWord);
-        return shuffleWord;
-    }
 
+        return new String(wordInChar);
+    }
 
     public ShuffleWord getWordById(long id) {
         return new ShuffleWord(id,words.get(id));
-    }
-
-    public void addPointUser(String login) {
-        if (!currentScore.containsKey(login)) {
-            currentScore.put(login,POINT);
-        } else {
-            int prevscore = currentScore.get(login);
-            currentScore.put(login,prevscore + POINT);
-        }
-    }
-
-    public Integer getUserScoreFromMap(String login) {
-        if (!currentScore.containsKey(login))
-            return 0;
-        int score = currentScore.get(login);
-        currentScore.remove(login);
-        return score;
     }
 }

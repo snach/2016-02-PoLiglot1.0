@@ -1,4 +1,4 @@
-package cnf;
+package main.cnf;
 
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
@@ -26,7 +26,7 @@ public class SAXHendler extends DefaultHandler{
     }
 
     @Override
-    public void characters(char ch[], int start, int length) throws SAXException {
+    public void characters(char[] ch, int start, int length) throws SAXException {
         if (inElement){
             words.put(++pos, new String(ch, start, length));
         }

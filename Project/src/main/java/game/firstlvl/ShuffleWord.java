@@ -1,4 +1,4 @@
-package level_1;
+package game.firstlvl;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -11,12 +11,8 @@ public class ShuffleWord {
     @NotNull
     private String word;
 
-    public ShuffleWord() {
-    }
-
     public ShuffleWord(long id,  @NotNull String word) {
         this.id = id;
-
         this.word = word;
     }
 

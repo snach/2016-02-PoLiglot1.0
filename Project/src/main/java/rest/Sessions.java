@@ -1,6 +1,6 @@
 package rest;
 
-import account.AccountService;
+import base.AccountService;
 import account.UserProfile;
 
 import javax.inject.Inject;

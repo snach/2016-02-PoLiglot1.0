@@ -1,9 +1,9 @@
 package rest;
 
-import account.AccountService;
+import base.AccountService;
 import account.AccountServiceImpl;
 import account.UserProfile;
-import cnf.Config;
+import main.cnf.Config;
 import main.Context;
 import org.glassfish.hk2.utilities.binding.AbstractBinder;
 import org.glassfish.jersey.server.ResourceConfig;
@@ -129,7 +129,6 @@ public class UsersTest extends JerseyTest {
         assertEquals("{ \"id\": \"1\" }", jsonEditUser);
 
         final String userInfo = target("user").path("1").request().get(String.class);
-        assertNotEquals("{\n  \"id\": 1,\n  \"login\": \"test1\",\n  \"email\": \"1@mail.com\" \n}", userInfo);
         assertEquals("{\n  \"id\": 1,\n  \"login\": \"test1Edit\",\n  \"email\": \"1Edit@mail.com\" \n}", userInfo);
     }
 

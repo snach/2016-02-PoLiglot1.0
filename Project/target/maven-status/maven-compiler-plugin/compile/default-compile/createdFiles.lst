@@ -1,6 +1,8 @@
 main/Main$1.class
 main/Context.class
+rest/Scoreboard.class
 main/Main.class
 rest/Users.class
+account/UsersForScoreboard.class
 rest/Sessions.class
 main/Logger.class
