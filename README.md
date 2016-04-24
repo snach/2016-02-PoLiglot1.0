@@ -12,7 +12,9 @@ ws = new WebSocket("ws://localhost:8080/api/gameplay");
 {
   "action":"startGame",
   "user":"kiska123",
-  "enemy":"hot_girl"
+  "userRecord":100,      //рекорд игрока за все время
+  "enemy":"hot_girl",
+  "enemyRecord":40
 }
 ```
 ### Проверка ответа на правильность###
@@ -29,7 +31,8 @@ ws.send("
 {
   "action":"getWord",
   "id":1,
-  "shuffleWord":"tac"
+  "shuffleWord":"tac",
+  "right":"cat"
 }
 ```
 клиент:

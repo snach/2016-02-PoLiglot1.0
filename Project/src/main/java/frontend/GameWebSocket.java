@@ -59,7 +59,9 @@ public class GameWebSocket {
             final JsonObject json = new JsonObject();
             json.addProperty("action", "startGame");
             json.addProperty("user", user.getMyName());
+            json.addProperty("userRecord", accountService.getUserByLogin(user.getMyName()).getScore());
             json.addProperty("enemy", user.getEnemyName());
+            json.addProperty("enemyRecord", accountService.getUserByLogin(user.getEnemyName()).getScore());
 
             sendJson(json);
     }
@@ -111,10 +113,12 @@ public class GameWebSocket {
             switch (action){
                 case "getWord":
                     ShuffleWord word = shuffleWordService.getShuffleWord();
+                    ShuffleWord correctWord = shuffleWordService.getWordById(word.getId());
                     final JsonObject jsonWord = new JsonObject();
                     jsonWord.addProperty("action", "getWord");
                     jsonWord.addProperty("id", word.getId());
                     jsonWord.addProperty("shuffleWord", word.getWord());
+                    jsonWord.addProperty("right", correctWord.getWord());
                     sendJson(jsonWord);
                     break;
 
