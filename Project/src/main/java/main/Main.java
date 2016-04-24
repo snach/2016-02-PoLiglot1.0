@@ -9,6 +9,7 @@ import frontend.WebSocketServiceImpl;
 import game.GameMechanicsImpl;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.Handler;
+import org.eclipse.jetty.server.handler.ResourceHandler;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
 import org.eclipse.jetty.server.handler.HandlerList;
@@ -43,7 +44,7 @@ public class Main {
         final ServletContextHandler contextHandler = new ServletContextHandler(server, "/api/", ServletContextHandler.SESSIONS);
 
         try {
-            context.put(AccountService.class, new AccountServiceImpl(Config.connectToDB()));
+            context.put(AccountService.class, new AccountServiceImpl(Config.connectToDB(false)));
         } catch (HibernateException e) {
             LOGGER.error("Fail to connect to db_Poliglot");
             System.exit(1);
@@ -64,7 +65,12 @@ public class Main {
         final ServletHolder servletHolder = new ServletHolder(new ServletContainer(config));
 
         HandlerList handlers = new HandlerList();
-        handlers.setHandlers(new Handler[]{contextHandler});
+
+        final ResourceHandler resourceHandler = new ResourceHandler();
+        resourceHandler.setDirectoriesListed(true);
+        resourceHandler.setResourceBase("public_html");
+
+        handlers.setHandlers(new Handler[]{resourceHandler,contextHandler});
         server.setHandler(handlers);
 
         contextHandler.addServlet(servletHolder, "/*");

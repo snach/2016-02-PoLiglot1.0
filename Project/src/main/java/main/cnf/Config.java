@@ -48,7 +48,7 @@ public class Config {
         }
     }
 
-    public static SessionFactory connectToDB(){
+    public static SessionFactory connectToDB(boolean test){
 
         final Configuration configuration = new Configuration();
         configuration.addAnnotatedClass(UserProfile.class);
@@ -65,8 +65,11 @@ public class Config {
             configuration.setProperty("hibernate.connection.username", properties.getProperty("connection.username"));
             configuration.setProperty("hibernate.connection.password", properties.getProperty("connection.password"));
             configuration.setProperty("hibernate.show_sql", properties.getProperty("show_sql"));
-            configuration.setProperty("hibernate.hbm2ddl.auto", properties.getProperty("hbm2ddl.auto"));
-
+            if (test){
+                configuration.setProperty("hibernate.hbm2ddl.auto", properties.getProperty("hbm2ddl.auto.test"));
+            } else {
+                configuration.setProperty("hibernate.hbm2ddl.auto", properties.getProperty("hbm2ddl.auto"));
+            }
         } catch (FileNotFoundException e) {
             LOGGER.error("File not found: " + DB_CONFIG_FILE);
             System.exit(1);

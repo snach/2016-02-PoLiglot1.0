@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="6" failures="0" name="rest.SessionsTest" time="6.477" errors="6" skipped="0">
+<testsuite tests="6" failures="0" name="rest.SessionsTest" time="0.007" errors="6" skipped="0">
   <properties>
     <property name="idea.version" value="15.0.3"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -65,31 +65,20 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="rest.SessionsTest" name="testSignInWithWrongPassword" time="5.597">
-    <error message="HTTP 403 Forbidden" type="javax.ws.rs.ForbiddenException">javax.ws.rs.ForbiddenException: HTTP 403 Forbidden
-	at org.glassfish.jersey.client.JerseyInvocation.convertToException(JerseyInvocation.java:1005)
-	at org.glassfish.jersey.client.JerseyInvocation.translate(JerseyInvocation.java:816)
-	at org.glassfish.jersey.client.JerseyInvocation.access$700(JerseyInvocation.java:92)
-	at org.glassfish.jersey.client.JerseyInvocation$2.call(JerseyInvocation.java:700)
-	at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
-	at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
-	at org.glassfish.jersey.internal.Errors.process(Errors.java:228)
-	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:444)
-	at org.glassfish.jersey.client.JerseyInvocation.invoke(JerseyInvocation.java:696)
-	at org.glassfish.jersey.client.JerseyInvocation$Builder.method(JerseyInvocation.java:448)
-	at org.glassfish.jersey.client.JerseyInvocation$Builder.put(JerseyInvocation.java:332)
-	at rest.SessionsTest.testSignInWithWrongPassword(SessionsTest.java:75)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+  <testcase classname="rest.SessionsTest" name="testSignInWithWrongPassword" time="0.002">
+    <error message="main.cnf.Config.connectToDB()Lorg/hibernate/SessionFactory;" type="java.lang.NoSuchMethodError">java.lang.NoSuchMethodError: main.cnf.Config.connectToDB()Lorg/hibernate/SessionFactory;
+	at rest.SessionsTest.configure(SessionsTest.java:28)
+	at org.glassfish.jersey.test.JerseyTest.configureDeployment(JerseyTest.java:441)
+	at org.glassfish.jersey.test.JerseyTest.&lt;init&gt;(JerseyTest.java:206)
+	at rest.SessionsTest.&lt;init&gt;(SessionsTest.java:24)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at org.junit.runners.BlockJUnit4ClassRunner.createTest(BlockJUnit4ClassRunner.java:217)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.runReflectiveCall(BlockJUnit4ClassRunner.java:266)
 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.methodBlock(BlockJUnit4ClassRunner.java:263)
 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
 	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
@@ -111,58 +100,21 @@
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 </error>
-    <system-out>Hibernate: select this_.id as id1_0_0_, this_.email as email2_0_0_, this_.login as login3_0_0_, this_.password as password4_0_0_, this_.score as score5_0_0_ from users this_ where this_.login=?
-account.AccountServiceImpl: addUser: Пользователь НЕ добавлен
-</system-out>
-    <system-err>апр 15, 2016 10:05:23 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
-WARN: HHH000402: Using Hibernate built-in connection pool (not for production use!)
-апр 15, 2016 10:05:23 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
-INFO: HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/db_Poliglot]
-апр 15, 2016 10:05:23 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
-INFO: HHH000046: Connection properties: {user=poliglot_game, password=****}
-апр 15, 2016 10:05:23 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
-INFO: HHH000006: Autocommit mode: false
-апр 15, 2016 10:05:23 PM org.hibernate.engine.jdbc.connections.internal.PooledConnections &lt;init&gt;
-INFO: HHH000115: Hibernate connection pool size: 20 (min=1)
-апр 15, 2016 10:05:23 PM org.hibernate.dialect.Dialect &lt;init&gt;
-INFO: HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
-апр 15, 2016 10:05:23 PM org.hibernate.tool.hbm2ddl.SchemaUpdate execute
-INFO: HHH000228: Running hbm2ddl schema update
-апр 15, 2016 10:05:24 PM org.glassfish.jersey.test.grizzly.GrizzlyTestContainerFactory$GrizzlyTestContainer &lt;init&gt;
-INFO: Creating GrizzlyTestContainer configured at the base URI http://localhost:9998/
-апр 15, 2016 10:05:26 PM org.glassfish.grizzly.http.server.NetworkListener start
-INFO: Started listener bound to [localhost:9998]
-апр 15, 2016 10:05:26 PM org.glassfish.grizzly.http.server.HttpServer start
-INFO: [HttpServer] Started.
-апр 15, 2016 10:05:29 PM org.glassfish.grizzly.http.server.NetworkListener shutdownNow
-INFO: Stopped listener bound to [localhost:9998]
-</system-err>
   </testcase>
-  <testcase classname="rest.SessionsTest" name="testCheckSignInUser" time="0.21">
-    <error message="HTTP 403 Forbidden" type="javax.ws.rs.ForbiddenException">javax.ws.rs.ForbiddenException: HTTP 403 Forbidden
-	at org.glassfish.jersey.client.JerseyInvocation.convertToException(JerseyInvocation.java:1005)
-	at org.glassfish.jersey.client.JerseyInvocation.translate(JerseyInvocation.java:816)
-	at org.glassfish.jersey.client.JerseyInvocation.access$700(JerseyInvocation.java:92)
-	at org.glassfish.jersey.client.JerseyInvocation$2.call(JerseyInvocation.java:700)
-	at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
-	at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
-	at org.glassfish.jersey.internal.Errors.process(Errors.java:228)
-	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:444)
-	at org.glassfish.jersey.client.JerseyInvocation.invoke(JerseyInvocation.java:696)
-	at org.glassfish.jersey.client.JerseyInvocation$Builder.method(JerseyInvocation.java:448)
-	at org.glassfish.jersey.client.JerseyInvocation$Builder.put(JerseyInvocation.java:332)
-	at rest.SessionsTest.testCheckSignInUser(SessionsTest.java:83)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+  <testcase classname="rest.SessionsTest" name="testCheckSignInUser" time="0.002">
+    <error message="main.cnf.Config.connectToDB()Lorg/hibernate/SessionFactory;" type="java.lang.NoSuchMethodError">java.lang.NoSuchMethodError: main.cnf.Config.connectToDB()Lorg/hibernate/SessionFactory;
+	at rest.SessionsTest.configure(SessionsTest.java:28)
+	at org.glassfish.jersey.test.JerseyTest.configureDeployment(JerseyTest.java:441)
+	at org.glassfish.jersey.test.JerseyTest.&lt;init&gt;(JerseyTest.java:206)
+	at rest.SessionsTest.&lt;init&gt;(SessionsTest.java:24)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at org.junit.runners.BlockJUnit4ClassRunner.createTest(BlockJUnit4ClassRunner.java:217)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.runReflectiveCall(BlockJUnit4ClassRunner.java:266)
 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.methodBlock(BlockJUnit4ClassRunner.java:263)
 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
 	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
@@ -184,58 +136,21 @@ INFO: Stopped listener bound to [localhost:9998]
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 </error>
-    <system-out>Hibernate: select this_.id as id1_0_0_, this_.email as email2_0_0_, this_.login as login3_0_0_, this_.password as password4_0_0_, this_.score as score5_0_0_ from users this_ where this_.login=?
-account.AccountServiceImpl: addUser: Пользователь НЕ добавлен
-</system-out>
-    <system-err>апр 15, 2016 10:05:29 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
-WARN: HHH000402: Using Hibernate built-in connection pool (not for production use!)
-апр 15, 2016 10:05:29 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
-INFO: HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/db_Poliglot]
-апр 15, 2016 10:05:29 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
-INFO: HHH000046: Connection properties: {user=poliglot_game, password=****}
-апр 15, 2016 10:05:29 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
-INFO: HHH000006: Autocommit mode: false
-апр 15, 2016 10:05:29 PM org.hibernate.engine.jdbc.connections.internal.PooledConnections &lt;init&gt;
-INFO: HHH000115: Hibernate connection pool size: 20 (min=1)
-апр 15, 2016 10:05:29 PM org.hibernate.dialect.Dialect &lt;init&gt;
-INFO: HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
-апр 15, 2016 10:05:29 PM org.hibernate.tool.hbm2ddl.SchemaUpdate execute
-INFO: HHH000228: Running hbm2ddl schema update
-апр 15, 2016 10:05:29 PM org.glassfish.jersey.test.grizzly.GrizzlyTestContainerFactory$GrizzlyTestContainer &lt;init&gt;
-INFO: Creating GrizzlyTestContainer configured at the base URI http://localhost:9998/
-апр 15, 2016 10:05:29 PM org.glassfish.grizzly.http.server.NetworkListener start
-INFO: Started listener bound to [localhost:9998]
-апр 15, 2016 10:05:29 PM org.glassfish.grizzly.http.server.HttpServer start
-INFO: [HttpServer-1] Started.
-апр 15, 2016 10:05:30 PM org.glassfish.grizzly.http.server.NetworkListener shutdownNow
-INFO: Stopped listener bound to [localhost:9998]
-</system-err>
   </testcase>
-  <testcase classname="rest.SessionsTest" name="testCheckSignInUserFail" time="0.19">
-    <error message="HTTP 403 Forbidden" type="javax.ws.rs.ForbiddenException">javax.ws.rs.ForbiddenException: HTTP 403 Forbidden
-	at org.glassfish.jersey.client.JerseyInvocation.convertToException(JerseyInvocation.java:1005)
-	at org.glassfish.jersey.client.JerseyInvocation.translate(JerseyInvocation.java:816)
-	at org.glassfish.jersey.client.JerseyInvocation.access$700(JerseyInvocation.java:92)
-	at org.glassfish.jersey.client.JerseyInvocation$2.call(JerseyInvocation.java:700)
-	at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
-	at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
-	at org.glassfish.jersey.internal.Errors.process(Errors.java:228)
-	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:444)
-	at org.glassfish.jersey.client.JerseyInvocation.invoke(JerseyInvocation.java:696)
-	at org.glassfish.jersey.client.JerseyInvocation$Builder.method(JerseyInvocation.java:448)
-	at org.glassfish.jersey.client.JerseyInvocation$Builder.put(JerseyInvocation.java:332)
-	at rest.SessionsTest.testCheckSignInUserFail(SessionsTest.java:92)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+  <testcase classname="rest.SessionsTest" name="testCheckSignInUserFail" time="0">
+    <error message="main.cnf.Config.connectToDB()Lorg/hibernate/SessionFactory;" type="java.lang.NoSuchMethodError">java.lang.NoSuchMethodError: main.cnf.Config.connectToDB()Lorg/hibernate/SessionFactory;
+	at rest.SessionsTest.configure(SessionsTest.java:28)
+	at org.glassfish.jersey.test.JerseyTest.configureDeployment(JerseyTest.java:441)
+	at org.glassfish.jersey.test.JerseyTest.&lt;init&gt;(JerseyTest.java:206)
+	at rest.SessionsTest.&lt;init&gt;(SessionsTest.java:24)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at org.junit.runners.BlockJUnit4ClassRunner.createTest(BlockJUnit4ClassRunner.java:217)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.runReflectiveCall(BlockJUnit4ClassRunner.java:266)
 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.methodBlock(BlockJUnit4ClassRunner.java:263)
 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
 	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
@@ -257,58 +172,21 @@ INFO: Stopped listener bound to [localhost:9998]
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 </error>
-    <system-out>Hibernate: select this_.id as id1_0_0_, this_.email as email2_0_0_, this_.login as login3_0_0_, this_.password as password4_0_0_, this_.score as score5_0_0_ from users this_ where this_.login=?
-account.AccountServiceImpl: addUser: Пользователь НЕ добавлен
-</system-out>
-    <system-err>апр 15, 2016 10:05:30 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
-WARN: HHH000402: Using Hibernate built-in connection pool (not for production use!)
-апр 15, 2016 10:05:30 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
-INFO: HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/db_Poliglot]
-апр 15, 2016 10:05:30 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
-INFO: HHH000046: Connection properties: {user=poliglot_game, password=****}
-апр 15, 2016 10:05:30 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
-INFO: HHH000006: Autocommit mode: false
-апр 15, 2016 10:05:30 PM org.hibernate.engine.jdbc.connections.internal.PooledConnections &lt;init&gt;
-INFO: HHH000115: Hibernate connection pool size: 20 (min=1)
-апр 15, 2016 10:05:30 PM org.hibernate.dialect.Dialect &lt;init&gt;
-INFO: HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
-апр 15, 2016 10:05:30 PM org.hibernate.tool.hbm2ddl.SchemaUpdate execute
-INFO: HHH000228: Running hbm2ddl schema update
-апр 15, 2016 10:05:30 PM org.glassfish.jersey.test.grizzly.GrizzlyTestContainerFactory$GrizzlyTestContainer &lt;init&gt;
-INFO: Creating GrizzlyTestContainer configured at the base URI http://localhost:9998/
-апр 15, 2016 10:05:30 PM org.glassfish.grizzly.http.server.NetworkListener start
-INFO: Started listener bound to [localhost:9998]
-апр 15, 2016 10:05:30 PM org.glassfish.grizzly.http.server.HttpServer start
-INFO: [HttpServer-2] Started.
-апр 15, 2016 10:05:30 PM org.glassfish.grizzly.http.server.NetworkListener shutdownNow
-INFO: Stopped listener bound to [localhost:9998]
-</system-err>
   </testcase>
-  <testcase classname="rest.SessionsTest" name="testLogOut" time="0.128">
-    <error message="HTTP 403 Forbidden" type="javax.ws.rs.ForbiddenException">javax.ws.rs.ForbiddenException: HTTP 403 Forbidden
-	at org.glassfish.jersey.client.JerseyInvocation.convertToException(JerseyInvocation.java:1005)
-	at org.glassfish.jersey.client.JerseyInvocation.translate(JerseyInvocation.java:816)
-	at org.glassfish.jersey.client.JerseyInvocation.access$700(JerseyInvocation.java:92)
-	at org.glassfish.jersey.client.JerseyInvocation$2.call(JerseyInvocation.java:700)
-	at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
-	at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
-	at org.glassfish.jersey.internal.Errors.process(Errors.java:228)
-	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:444)
-	at org.glassfish.jersey.client.JerseyInvocation.invoke(JerseyInvocation.java:696)
-	at org.glassfish.jersey.client.JerseyInvocation$Builder.method(JerseyInvocation.java:448)
-	at org.glassfish.jersey.client.JerseyInvocation$Builder.put(JerseyInvocation.java:332)
-	at rest.SessionsTest.testLogOut(SessionsTest.java:100)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+  <testcase classname="rest.SessionsTest" name="testLogOut" time="0.003">
+    <error message="main.cnf.Config.connectToDB()Lorg/hibernate/SessionFactory;" type="java.lang.NoSuchMethodError">java.lang.NoSuchMethodError: main.cnf.Config.connectToDB()Lorg/hibernate/SessionFactory;
+	at rest.SessionsTest.configure(SessionsTest.java:28)
+	at org.glassfish.jersey.test.JerseyTest.configureDeployment(JerseyTest.java:441)
+	at org.glassfish.jersey.test.JerseyTest.&lt;init&gt;(JerseyTest.java:206)
+	at rest.SessionsTest.&lt;init&gt;(SessionsTest.java:24)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at org.junit.runners.BlockJUnit4ClassRunner.createTest(BlockJUnit4ClassRunner.java:217)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.runReflectiveCall(BlockJUnit4ClassRunner.java:266)
 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.methodBlock(BlockJUnit4ClassRunner.java:263)
 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
 	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
@@ -330,58 +208,21 @@ INFO: Stopped listener bound to [localhost:9998]
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 </error>
-    <system-out>Hibernate: select this_.id as id1_0_0_, this_.email as email2_0_0_, this_.login as login3_0_0_, this_.password as password4_0_0_, this_.score as score5_0_0_ from users this_ where this_.login=?
-account.AccountServiceImpl: addUser: Пользователь НЕ добавлен
-</system-out>
-    <system-err>апр 15, 2016 10:05:30 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
-WARN: HHH000402: Using Hibernate built-in connection pool (not for production use!)
-апр 15, 2016 10:05:30 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
-INFO: HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/db_Poliglot]
-апр 15, 2016 10:05:30 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
-INFO: HHH000046: Connection properties: {user=poliglot_game, password=****}
-апр 15, 2016 10:05:30 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
-INFO: HHH000006: Autocommit mode: false
-апр 15, 2016 10:05:30 PM org.hibernate.engine.jdbc.connections.internal.PooledConnections &lt;init&gt;
-INFO: HHH000115: Hibernate connection pool size: 20 (min=1)
-апр 15, 2016 10:05:30 PM org.hibernate.dialect.Dialect &lt;init&gt;
-INFO: HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
-апр 15, 2016 10:05:30 PM org.hibernate.tool.hbm2ddl.SchemaUpdate execute
-INFO: HHH000228: Running hbm2ddl schema update
-апр 15, 2016 10:05:30 PM org.glassfish.jersey.test.grizzly.GrizzlyTestContainerFactory$GrizzlyTestContainer &lt;init&gt;
-INFO: Creating GrizzlyTestContainer configured at the base URI http://localhost:9998/
-апр 15, 2016 10:05:30 PM org.glassfish.grizzly.http.server.NetworkListener start
-INFO: Started listener bound to [localhost:9998]
-апр 15, 2016 10:05:30 PM org.glassfish.grizzly.http.server.HttpServer start
-INFO: [HttpServer-3] Started.
-апр 15, 2016 10:05:30 PM org.glassfish.grizzly.http.server.NetworkListener shutdownNow
-INFO: Stopped listener bound to [localhost:9998]
-</system-err>
   </testcase>
-  <testcase classname="rest.SessionsTest" name="testSignInUserFail" time="0.203">
-    <error message="HTTP 403 Forbidden" type="javax.ws.rs.ForbiddenException">javax.ws.rs.ForbiddenException: HTTP 403 Forbidden
-	at org.glassfish.jersey.client.JerseyInvocation.convertToException(JerseyInvocation.java:1005)
-	at org.glassfish.jersey.client.JerseyInvocation.translate(JerseyInvocation.java:816)
-	at org.glassfish.jersey.client.JerseyInvocation.access$700(JerseyInvocation.java:92)
-	at org.glassfish.jersey.client.JerseyInvocation$2.call(JerseyInvocation.java:700)
-	at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
-	at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
-	at org.glassfish.jersey.internal.Errors.process(Errors.java:228)
-	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:444)
-	at org.glassfish.jersey.client.JerseyInvocation.invoke(JerseyInvocation.java:696)
-	at org.glassfish.jersey.client.JerseyInvocation$Builder.method(JerseyInvocation.java:448)
-	at org.glassfish.jersey.client.JerseyInvocation$Builder.put(JerseyInvocation.java:332)
-	at rest.SessionsTest.testSignInUserFail(SessionsTest.java:66)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+  <testcase classname="rest.SessionsTest" name="testSignInUserFail" time="0">
+    <error message="main.cnf.Config.connectToDB()Lorg/hibernate/SessionFactory;" type="java.lang.NoSuchMethodError">java.lang.NoSuchMethodError: main.cnf.Config.connectToDB()Lorg/hibernate/SessionFactory;
+	at rest.SessionsTest.configure(SessionsTest.java:28)
+	at org.glassfish.jersey.test.JerseyTest.configureDeployment(JerseyTest.java:441)
+	at org.glassfish.jersey.test.JerseyTest.&lt;init&gt;(JerseyTest.java:206)
+	at rest.SessionsTest.&lt;init&gt;(SessionsTest.java:24)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at org.junit.runners.BlockJUnit4ClassRunner.createTest(BlockJUnit4ClassRunner.java:217)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.runReflectiveCall(BlockJUnit4ClassRunner.java:266)
 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.methodBlock(BlockJUnit4ClassRunner.java:263)
 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
 	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
@@ -403,58 +244,21 @@ INFO: Stopped listener bound to [localhost:9998]
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 </error>
-    <system-out>Hibernate: select this_.id as id1_0_0_, this_.email as email2_0_0_, this_.login as login3_0_0_, this_.password as password4_0_0_, this_.score as score5_0_0_ from users this_ where this_.login=?
-account.AccountServiceImpl: addUser: Пользователь НЕ добавлен
-</system-out>
-    <system-err>апр 15, 2016 10:05:30 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
-WARN: HHH000402: Using Hibernate built-in connection pool (not for production use!)
-апр 15, 2016 10:05:30 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
-INFO: HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/db_Poliglot]
-апр 15, 2016 10:05:30 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
-INFO: HHH000046: Connection properties: {user=poliglot_game, password=****}
-апр 15, 2016 10:05:30 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
-INFO: HHH000006: Autocommit mode: false
-апр 15, 2016 10:05:30 PM org.hibernate.engine.jdbc.connections.internal.PooledConnections &lt;init&gt;
-INFO: HHH000115: Hibernate connection pool size: 20 (min=1)
-апр 15, 2016 10:05:30 PM org.hibernate.dialect.Dialect &lt;init&gt;
-INFO: HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
-апр 15, 2016 10:05:30 PM org.hibernate.tool.hbm2ddl.SchemaUpdate execute
-INFO: HHH000228: Running hbm2ddl schema update
-апр 15, 2016 10:05:30 PM org.glassfish.jersey.test.grizzly.GrizzlyTestContainerFactory$GrizzlyTestContainer &lt;init&gt;
-INFO: Creating GrizzlyTestContainer configured at the base URI http://localhost:9998/
-апр 15, 2016 10:05:30 PM org.glassfish.grizzly.http.server.NetworkListener start
-INFO: Started listener bound to [localhost:9998]
-апр 15, 2016 10:05:30 PM org.glassfish.grizzly.http.server.HttpServer start
-INFO: [HttpServer-4] Started.
-апр 15, 2016 10:05:30 PM org.glassfish.grizzly.http.server.NetworkListener shutdownNow
-INFO: Stopped listener bound to [localhost:9998]
-</system-err>
   </testcase>
-  <testcase classname="rest.SessionsTest" name="testSignInUser" time="0.149">
-    <error message="HTTP 403 Forbidden" type="javax.ws.rs.ForbiddenException">javax.ws.rs.ForbiddenException: HTTP 403 Forbidden
-	at org.glassfish.jersey.client.JerseyInvocation.convertToException(JerseyInvocation.java:1005)
-	at org.glassfish.jersey.client.JerseyInvocation.translate(JerseyInvocation.java:816)
-	at org.glassfish.jersey.client.JerseyInvocation.access$700(JerseyInvocation.java:92)
-	at org.glassfish.jersey.client.JerseyInvocation$2.call(JerseyInvocation.java:700)
-	at org.glassfish.jersey.internal.Errors.process(Errors.java:315)
-	at org.glassfish.jersey.internal.Errors.process(Errors.java:297)
-	at org.glassfish.jersey.internal.Errors.process(Errors.java:228)
-	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:444)
-	at org.glassfish.jersey.client.JerseyInvocation.invoke(JerseyInvocation.java:696)
-	at org.glassfish.jersey.client.JerseyInvocation$Builder.method(JerseyInvocation.java:448)
-	at org.glassfish.jersey.client.JerseyInvocation$Builder.put(JerseyInvocation.java:332)
-	at rest.SessionsTest.testSignInUser(SessionsTest.java:57)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:497)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+  <testcase classname="rest.SessionsTest" name="testSignInUser" time="0">
+    <error message="main.cnf.Config.connectToDB()Lorg/hibernate/SessionFactory;" type="java.lang.NoSuchMethodError">java.lang.NoSuchMethodError: main.cnf.Config.connectToDB()Lorg/hibernate/SessionFactory;
+	at rest.SessionsTest.configure(SessionsTest.java:28)
+	at org.glassfish.jersey.test.JerseyTest.configureDeployment(JerseyTest.java:441)
+	at org.glassfish.jersey.test.JerseyTest.&lt;init&gt;(JerseyTest.java:206)
+	at rest.SessionsTest.&lt;init&gt;(SessionsTest.java:24)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at org.junit.runners.BlockJUnit4ClassRunner.createTest(BlockJUnit4ClassRunner.java:217)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.runReflectiveCall(BlockJUnit4ClassRunner.java:266)
 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
-	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.methodBlock(BlockJUnit4ClassRunner.java:263)
 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
 	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
@@ -476,31 +280,5 @@ INFO: Stopped listener bound to [localhost:9998]
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
 </error>
-    <system-out>Hibernate: select this_.id as id1_0_0_, this_.email as email2_0_0_, this_.login as login3_0_0_, this_.password as password4_0_0_, this_.score as score5_0_0_ from users this_ where this_.login=?
-account.AccountServiceImpl: addUser: Пользователь НЕ добавлен
-</system-out>
-    <system-err>апр 15, 2016 10:05:30 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
-WARN: HHH000402: Using Hibernate built-in connection pool (not for production use!)
-апр 15, 2016 10:05:30 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
-INFO: HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/db_Poliglot]
-апр 15, 2016 10:05:30 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
-INFO: HHH000046: Connection properties: {user=poliglot_game, password=****}
-апр 15, 2016 10:05:30 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
-INFO: HHH000006: Autocommit mode: false
-апр 15, 2016 10:05:30 PM org.hibernate.engine.jdbc.connections.internal.PooledConnections &lt;init&gt;
-INFO: HHH000115: Hibernate connection pool size: 20 (min=1)
-апр 15, 2016 10:05:30 PM org.hibernate.dialect.Dialect &lt;init&gt;
-INFO: HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
-апр 15, 2016 10:05:30 PM org.hibernate.tool.hbm2ddl.SchemaUpdate execute
-INFO: HHH000228: Running hbm2ddl schema update
-апр 15, 2016 10:05:30 PM org.glassfish.jersey.test.grizzly.GrizzlyTestContainerFactory$GrizzlyTestContainer &lt;init&gt;
-INFO: Creating GrizzlyTestContainer configured at the base URI http://localhost:9998/
-апр 15, 2016 10:05:30 PM org.glassfish.grizzly.http.server.NetworkListener start
-INFO: Started listener bound to [localhost:9998]
-апр 15, 2016 10:05:30 PM org.glassfish.grizzly.http.server.HttpServer start
-INFO: [HttpServer-5] Started.
-апр 15, 2016 10:05:30 PM org.glassfish.grizzly.http.server.NetworkListener shutdownNow
-INFO: Stopped listener bound to [localhost:9998]
-</system-err>
   </testcase>
 </testsuite>

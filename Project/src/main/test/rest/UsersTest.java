@@ -28,7 +28,7 @@ public class UsersTest extends JerseyTest {
     @Override
     protected Application configure() {
         final Context context = new Context();
-        context.put(AccountService.class, new AccountServiceImpl(Config.connectToDB()));
+        context.put(AccountService.class, new AccountServiceImpl(Config.connectToDB(true)));
 
         final ResourceConfig config = new ResourceConfig(Users.class, Sessions.class);
         final HttpServletRequest request = mock(HttpServletRequest.class);
@@ -57,7 +57,7 @@ public class UsersTest extends JerseyTest {
 
     @Before
     public void setupAccountService(){
-        accountService = new AccountServiceImpl(Config.connectToDB());
+        accountService = new AccountServiceImpl(Config.connectToDB(true));
     }
 
     @Test

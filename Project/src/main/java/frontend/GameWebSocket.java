@@ -2,7 +2,7 @@ package frontend;
 
 import base.AccountService;
 import com.google.gson.*;
-import com.sun.istack.internal.Nullable;
+
 import game.firstlvl.ShuffleWord;
 import game.firstlvl.ShuffleWordService;
 import game.GameMechanicsImpl;
@@ -17,6 +17,7 @@ import org.eclipse.jetty.websocket.api.annotations.OnWebSocketConnect;
 import org.eclipse.jetty.websocket.api.annotations.OnWebSocketMessage;
 import org.eclipse.jetty.websocket.api.annotations.WebSocket;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.io.IOException;
 
 /**
@@ -56,7 +57,7 @@ public class GameWebSocket {
     public void startGame(@NotNull GameUser user) {
 
             final JsonObject json = new JsonObject();
-            json.addProperty("action", "start");
+            json.addProperty("action", "startGame");
             json.addProperty("user", user.getMyName());
             json.addProperty("enemy", user.getEnemyName());
 
@@ -66,7 +67,7 @@ public class GameWebSocket {
     public void gameOver(boolean equality, boolean win) {
 
         final JsonObject jsonEndGame = new JsonObject();
-        jsonEndGame.addProperty("status", "finishGame");
+        jsonEndGame.addProperty("action", "finishGame");
         if (equality){
             jsonEndGame.addProperty("equality", true);
         } else {
@@ -113,7 +114,7 @@ public class GameWebSocket {
                     final JsonObject jsonWord = new JsonObject();
                     jsonWord.addProperty("action", "getWord");
                     jsonWord.addProperty("id", word.getId());
-                    jsonWord.addProperty("word", word.getWord());
+                    jsonWord.addProperty("shuffleWord", word.getWord());
                     sendJson(jsonWord);
                     break;
 
@@ -133,8 +134,8 @@ public class GameWebSocket {
                     jsonCheck.addProperty("action", "checkWord");
                     jsonCheck.addProperty("answer", check);
                     jsonCheck.addProperty("right", rightWord.getWord());
-                    jsonCheck.addProperty("mySore", gameMechanics.getMyScore(myName));
-                    jsonCheck.addProperty("enemySore", gameMechanics.getEnemyScore(myName));
+                    jsonCheck.addProperty("myScore", gameMechanics.getMyScore(myName));
+                    jsonCheck.addProperty("enemyScore", gameMechanics.getEnemyScore(myName));
 
                     sendJson(jsonCheck);
                     break;

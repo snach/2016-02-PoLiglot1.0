@@ -1,0 +1,12 @@
+[04-24 17:22:55,194, 2452] main.Main Starting at port: 8080
+[04-24 17:22:56,136, 3394] org.hibernate.Version HHH000412: Hibernate Core {5.0.3.Final}
+[04-24 17:22:56,141, 3399] org.hibernate.cfg.Environment HHH000206: hibernate.properties not found
+[04-24 17:22:56,148, 3406] org.hibernate.cfg.Environment HHH000021: Bytecode provider name : javassist
+[04-24 17:22:56,363, 3621] org.hibernate.annotations.common.Version HCANN000001: Hibernate Commons Annotations {5.0.0.Final}
+[04-24 17:22:56,724, 3982] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000402: Using Hibernate built-in connection pool (not for production use!)
+[04-24 17:22:56,755, 4013] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/db_Poliglot]
+[04-24 17:22:56,756, 4014] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000046: Connection properties: {user=poliglot_game, password=****}
+[04-24 17:22:56,756, 4014] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000006: Autocommit mode: false
+[04-24 17:22:56,764, 4022] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000115: Hibernate connection pool size: 20 (min=1)
+[04-24 17:22:57,521, 4779] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[04-24 17:22:59,284, 6542] org.hibernate.tool.hbm2ddl.SchemaUpdate HHH000228: Running hbm2ddl schema update
