@@ -76,8 +76,10 @@ public class GameWebSocket {
             jsonEndGame.addProperty("win", win);
         }
         int currentScore = gameMechanics.getMyScore(myName);
-        jsonEndGame.addProperty("mySore", currentScore);
-        jsonEndGame.addProperty("enemySore", gameMechanics.getEnemyScore(myName));
+        jsonEndGame.addProperty("myName", myName);
+        jsonEndGame.addProperty("myScore", currentScore);
+        jsonEndGame.addProperty("enemyName", gameMechanics.getEnemyName(myName));
+        jsonEndGame.addProperty("enemyScore", gameMechanics.getEnemyScore(myName));
 
         int prevScore = accountService.getUserByLogin(myName).getScore();
         boolean isBestScore;
@@ -93,12 +95,18 @@ public class GameWebSocket {
 
         sendJson(jsonEndGame);
 
+        //webSocketService.removeUser(this);
+        gameMechanics.removeGameSession(myName);
+
     }
 
     public void finishGameEnemyleft() {
         final JsonObject json = new JsonObject();
         json.add("action", new JsonPrimitive("enemyLeft"));
         sendJson(json);
+
+        webSocketService.removeUser(this);
+        gameMechanics.removeGameSession(myName);
     }
 
     @SuppressWarnings("unused")
@@ -165,15 +173,12 @@ public class GameWebSocket {
 
     }
 
-    public void setSession(Session session) {
-        this.session = session;
-    }
-
     @OnWebSocketClose
     public void onClose(int statusCode, String reason) {
         webSocketService.removeUser(this);
         gameMechanics.removeUser(myName);
-        LOGGER.info("Closing socket status: {} reason: {}", statusCode, reason);
+        gameMechanics.removeGameSession(myName);
+        LOGGER.info("Closing socket for: {}  status: {} reason: {}", myName, statusCode, reason);
     }
 
     public void sendJson(JsonObject json){

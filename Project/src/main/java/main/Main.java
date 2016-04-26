@@ -50,7 +50,7 @@ public class Main {
             System.exit(1);
         }
 
-        context.put(ShuffleWordService.class, new ShuffleWordService(Config.readXML(),Config.getMaxWordid()));
+        context.put(ShuffleWordService.class, new ShuffleWordService(Config.readXML(),Config.getMaxWordId()));
         context.put(WebSocketServiceImpl.class, new WebSocketServiceImpl());
         context.put(GameMechanicsImpl.class,new GameMechanicsImpl(context.get(WebSocketServiceImpl.class)));
 

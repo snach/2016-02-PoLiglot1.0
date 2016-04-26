@@ -6,10 +6,12 @@ import org.jetbrains.annotations.NotNull;
  * Created by Snach on 07.04.16.
  */
 public class ShuffleWord {
-    private long id;
+
+    @SuppressWarnings("InstanceVariableNamingConvention")
+    private final long id;
 
     @NotNull
-    private String word;
+    private final String word;
 
     public ShuffleWord(long id,  @NotNull String word) {
         this.id = id;
@@ -20,16 +22,9 @@ public class ShuffleWord {
         return id;
     }
 
-    public void setId(long id) {
-        this.id = id;
-    }
-
     @NotNull
     public String getWord() {
         return word;
     }
 
-    public void setWord(@NotNull String word) {
-        this.word = word;
-    }
 }

@@ -61,7 +61,9 @@ ws.send("
 {
   "action":"finishGame",
   "win":false,
+  "myName":"kiska123",
   "myScore":10,
+  "enemyName":"hot_girl",
   "enemyScore":20,
   "best":true            //наилучшей ли это результат игрока
 }
@@ -71,9 +73,18 @@ ws.send("
 {
   "action":"finishGame",
   "equality":true,
+  "myName":"kiska123",
   "myScore":10,
+  "enemyName":"hot_girl",
   "enemyScore":10,
   "best":true
+}
+```
+### Противник вышел до конца игры ###
+сервер: 
+```
+{
+  "action":"enemyLeft"
 }
 ```
 

@@ -14,10 +14,10 @@ import java.io.Serializable;
 @Table(name = "users")
 public class UserProfile implements Serializable { // Serializable Important to Hibernate!
 
+    @SuppressWarnings("InstanceVariableNamingConvention")
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     private long id;
 
     @NotNull

@@ -15,7 +15,10 @@ import java.util.*;
 public class GameMechanicsImpl implements GameMechanics {
 
     private static final int STEP_TIME = 100;
-    private static final int GAME_TIME = 3 * 60 * 1000;
+
+    @SuppressWarnings("PointlessArithmeticExpression")
+    private static final int GAME_TIME = 1 * 60 * 1000;
+
     private static final Logger LOGGER = LogManager.getLogger(GameMechanicsImpl.class);
 
     @NotNull
@@ -45,6 +48,10 @@ public class GameMechanicsImpl implements GameMechanics {
         return nameToGame.get(user).getEnemyScore(user);
     }
 
+    public String getEnemyName(String user){
+        return nameToGame.get(user).getEnemy(user).getMyName();
+    }
+
     @Override
     public void addUser(@NotNull String user) {
         if (waiter != null) {
@@ -54,6 +61,11 @@ public class GameMechanicsImpl implements GameMechanics {
         } else {
             waiter = user;
         }
+    }
+
+    public void removeGameSession(@NotNull String user){
+        allSessions.remove(nameToGame.get(user));
+        nameToGame.remove(user);
     }
 
     @Override

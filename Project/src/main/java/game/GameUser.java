@@ -33,6 +33,7 @@ public class GameUser {
         return myScore;
     }
 
+    @SuppressWarnings("unused")
     public int getEnemyScore() {
         return enemyScore;
     }
@@ -45,6 +46,7 @@ public class GameUser {
         enemyScore += POINT;
     }
 
+    @SuppressWarnings("unused")
     public void setEnemyName(@NotNull String enemyName) {
         this.enemyName = enemyName;
     }

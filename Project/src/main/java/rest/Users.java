@@ -19,6 +19,8 @@ import java.util.Collection;
 @Singleton
 @Path("/user")
 public class Users {
+
+    @SuppressWarnings("unused")
     @Inject
     private main.Context context;
 

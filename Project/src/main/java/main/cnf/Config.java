@@ -101,7 +101,7 @@ public class Config {
         return port;
     }
 
-    public static long getMaxWordid() {
+    public static long getMaxWordId() {
         return maxWordId;
     }
 }

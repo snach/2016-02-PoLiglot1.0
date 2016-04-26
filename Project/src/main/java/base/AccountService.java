@@ -9,6 +9,7 @@ import java.util.List;
 /**
  * Created by Snach on 26.03.16.
  */
+
 public interface AccountService {
 
     List<UserProfile> getAllUsers();
@@ -21,6 +22,7 @@ public interface AccountService {
 
     UserProfile getUserByLogin(String login);
 
+    @SuppressWarnings("unused")
     UserProfile getUserByEmail(String email);
 
     UserProfile getUserBySession(@Nullable String sessionID);

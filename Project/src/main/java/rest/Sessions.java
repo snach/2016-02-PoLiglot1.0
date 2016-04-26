@@ -19,6 +19,7 @@ import javax.ws.rs.core.Response;
 @Path("/session")
 public class Sessions {
 
+    @SuppressWarnings("unused")
     @Inject
     private main.Context context;
 
