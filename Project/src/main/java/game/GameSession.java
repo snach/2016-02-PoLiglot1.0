@@ -1,5 +1,6 @@
 package game;
 
+import game.firstlvl.ShuffleWord;
 import org.jetbrains.annotations.NotNull;
 import java.time.Clock;
 import java.util.HashMap;
@@ -71,4 +72,12 @@ public class GameSession {
     }
 
     public  boolean isEquality() { return first.getMyScore() == second.getMyScore(); }
+
+    public boolean getIsUsedWord(String user, Long idWord){
+        return users.get(user).isWordUsed(idWord);
+    }
+
+    public void addUsedWordInGameUser(String user, ShuffleWord word){
+        users.get(user).addUsedWord(word);
+    }
 }

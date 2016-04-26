@@ -2,6 +2,7 @@ package game;
 
 import base.GameMechanics;
 import frontend.WebSocketServiceImpl;
+import game.firstlvl.ShuffleWord;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import utils.TimeHelper;
@@ -127,5 +128,13 @@ public class GameMechanicsImpl implements GameMechanics {
 
         webSocketService.notifyStartGame(gameSession.getSelf(first));
         webSocketService.notifyStartGame(gameSession.getSelf(second));
+    }
+
+    public boolean getIsUsedWordFromGameSession(String user, Long idWord){
+        return nameToGame.get(user).getIsUsedWord(user,idWord);
+    }
+
+    public void addUsedWordInGameSession(String user, ShuffleWord word){
+        nameToGame.get(user).addUsedWordInGameUser(user, word);
     }
 }

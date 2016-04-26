@@ -1,0 +1,460 @@
+[04-27 00:04:00,566, 3494] org.hibernate.Version HHH000412: Hibernate Core {5.0.3.Final}
+[04-27 00:04:00,579, 3507] org.hibernate.cfg.Environment HHH000206: hibernate.properties not found
+[04-27 00:04:00,583, 3511] org.hibernate.cfg.Environment HHH000021: Bytecode provider name : javassist
+[04-27 00:04:00,783, 3711] org.hibernate.annotations.common.Version HCANN000001: Hibernate Commons Annotations {5.0.0.Final}
+[04-27 00:04:01,163, 4091] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000402: Using Hibernate built-in connection pool (not for production use!)
+[04-27 00:04:01,194, 4122] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/db_Poliglot]
+[04-27 00:04:01,195, 4123] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000046: Connection properties: {user=poliglot_game, password=****}
+[04-27 00:04:01,195, 4123] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000006: Autocommit mode: false
+[04-27 00:04:01,197, 4125] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000115: Hibernate connection pool size: 20 (min=1)
+[04-27 00:04:02,001, 4929] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[04-27 00:04:03,784, 6712] org.hibernate.tool.hbm2ddl.SchemaExport HHH000227: Running hbm2ddl schema export
+[04-27 00:04:03,934, 6862] org.hibernate.tool.hbm2ddl.SchemaExport HHH000230: Schema export complete
+[04-27 00:04:04,275, 7203] account.AccountServiceImpl Пользователь добавлен: {1, test1, testpass1, 1@mail.com}
+[04-27 00:04:04,324, 7252] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000402: Using Hibernate built-in connection pool (not for production use!)
+[04-27 00:04:04,325, 7253] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/db_Poliglot]
+[04-27 00:04:04,325, 7253] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000046: Connection properties: {user=poliglot_game, password=****}
+[04-27 00:04:04,325, 7253] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000006: Autocommit mode: false
+[04-27 00:04:04,326, 7254] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000115: Hibernate connection pool size: 20 (min=1)
+[04-27 00:04:04,334, 7262] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[04-27 00:04:04,395, 7323] org.hibernate.tool.hbm2ddl.SchemaExport HHH000227: Running hbm2ddl schema export
+[04-27 00:04:04,431, 7359] org.hibernate.tool.hbm2ddl.SchemaExport HHH000230: Schema export complete
+[04-27 00:04:04,445, 7373] account.AccountServiceImpl Пользователь добавлен: {1, test1, testpass1, 1@mail.com}
+[04-27 00:04:04,461, 7389] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000402: Using Hibernate built-in connection pool (not for production use!)
+[04-27 00:04:04,462, 7390] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/db_Poliglot]
+[04-27 00:04:04,462, 7390] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000046: Connection properties: {user=poliglot_game, password=****}
+[04-27 00:04:04,462, 7390] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000006: Autocommit mode: false
+[04-27 00:04:04,462, 7390] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000115: Hibernate connection pool size: 20 (min=1)
+[04-27 00:04:04,475, 7403] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[04-27 00:04:04,502, 7430] org.hibernate.tool.hbm2ddl.SchemaExport HHH000227: Running hbm2ddl schema export
+[04-27 00:04:04,554, 7482] org.hibernate.tool.hbm2ddl.SchemaExport HHH000230: Schema export complete
+[04-27 00:04:04,568, 7496] account.AccountServiceImpl Пользователь добавлен: {1, test, testpass, test@mail.com}
+[04-27 00:04:04,583, 7511] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000402: Using Hibernate built-in connection pool (not for production use!)
+[04-27 00:04:04,583, 7511] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/db_Poliglot]
+[04-27 00:04:04,583, 7511] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000046: Connection properties: {user=poliglot_game, password=****}
+[04-27 00:04:04,584, 7512] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000006: Autocommit mode: false
+[04-27 00:04:04,584, 7512] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000115: Hibernate connection pool size: 20 (min=1)
+[04-27 00:04:04,594, 7522] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[04-27 00:04:04,615, 7543] org.hibernate.tool.hbm2ddl.SchemaExport HHH000227: Running hbm2ddl schema export
+[04-27 00:04:04,652, 7580] org.hibernate.tool.hbm2ddl.SchemaExport HHH000230: Schema export complete
+[04-27 00:04:04,661, 7589] account.AccountServiceImpl Пользователь добавлен: {1, test, testpass1, 1@mail.com}
+[04-27 00:04:04,667, 7595] account.AccountServiceImpl Юзер differUser не найден
+[04-27 00:04:04,674, 7602] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000402: Using Hibernate built-in connection pool (not for production use!)
+[04-27 00:04:04,675, 7603] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/db_Poliglot]
+[04-27 00:04:04,675, 7603] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000046: Connection properties: {user=poliglot_game, password=****}
+[04-27 00:04:04,675, 7603] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000006: Autocommit mode: false
+[04-27 00:04:04,675, 7603] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000115: Hibernate connection pool size: 20 (min=1)
+[04-27 00:04:04,681, 7609] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[04-27 00:04:04,706, 7634] org.hibernate.tool.hbm2ddl.SchemaExport HHH000227: Running hbm2ddl schema export
+[04-27 00:04:04,759, 7687] org.hibernate.tool.hbm2ddl.SchemaExport HHH000230: Schema export complete
+[04-27 00:04:04,771, 7699] account.AccountServiceImpl Пользователь добавлен: {1, test, testpass1, 1@mail.com}
+[04-27 00:04:04,828, 7756] account.AccountServiceImpl Пользователь изменен: {1}
+[04-27 00:04:04,837, 7765] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000402: Using Hibernate built-in connection pool (not for production use!)
+[04-27 00:04:04,838, 7766] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/db_Poliglot]
+[04-27 00:04:04,838, 7766] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000046: Connection properties: {user=poliglot_game, password=****}
+[04-27 00:04:04,838, 7766] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000006: Autocommit mode: false
+[04-27 00:04:04,838, 7766] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000115: Hibernate connection pool size: 20 (min=1)
+[04-27 00:04:04,844, 7772] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[04-27 00:04:04,861, 7789] org.hibernate.tool.hbm2ddl.SchemaExport HHH000227: Running hbm2ddl schema export
+[04-27 00:04:04,897, 7825] org.hibernate.tool.hbm2ddl.SchemaExport HHH000230: Schema export complete
+[04-27 00:04:04,915, 7843] account.AccountServiceImpl Пользователь добавлен: {1, test, testpass1, 1@mail.com}
+[04-27 00:04:04,919, 7847] account.AccountServiceImpl Сессия добавлена: {1, test, testpass1, 1@mail.com}
+[04-27 00:04:04,925, 7853] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000402: Using Hibernate built-in connection pool (not for production use!)
+[04-27 00:04:04,929, 7857] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/db_Poliglot]
+[04-27 00:04:04,930, 7858] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000046: Connection properties: {user=poliglot_game, password=****}
+[04-27 00:04:04,931, 7859] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000006: Autocommit mode: false
+[04-27 00:04:04,931, 7859] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000115: Hibernate connection pool size: 20 (min=1)
+[04-27 00:04:04,941, 7869] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[04-27 00:04:04,966, 7894] org.hibernate.tool.hbm2ddl.SchemaExport HHH000227: Running hbm2ddl schema export
+[04-27 00:04:05,009, 7937] org.hibernate.tool.hbm2ddl.SchemaExport HHH000230: Schema export complete
+[04-27 00:04:05,017, 7945] account.AccountServiceImpl Пользователь добавлен: {1, test, testpass1, 1@mail.com}
+[04-27 00:04:05,025, 7953] account.AccountServiceImpl Пользователь добавлен: {2, test2, testpass2, 2@mail.com}
+[04-27 00:04:05,031, 7959] account.AccountServiceImpl Пользователь добавлен: {3, test3, testpass3, 3@mail.com}
+[04-27 00:04:05,044, 7972] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000402: Using Hibernate built-in connection pool (not for production use!)
+[04-27 00:04:05,044, 7972] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/db_Poliglot]
+[04-27 00:04:05,044, 7972] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000046: Connection properties: {user=poliglot_game, password=****}
+[04-27 00:04:05,045, 7973] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000006: Autocommit mode: false
+[04-27 00:04:05,045, 7973] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000115: Hibernate connection pool size: 20 (min=1)
+[04-27 00:04:05,050, 7978] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[04-27 00:04:05,066, 7994] org.hibernate.tool.hbm2ddl.SchemaExport HHH000227: Running hbm2ddl schema export
+[04-27 00:04:05,102, 8030] org.hibernate.tool.hbm2ddl.SchemaExport HHH000230: Schema export complete
+[04-27 00:04:05,111, 8039] account.AccountServiceImpl Пользователь добавлен: {1, test, testpass1, 1@mail.com}
+[04-27 00:04:05,115, 8043] account.AccountServiceImpl Сессия добавлена: {1, test, testpass1, 1@mail.com}
+[04-27 00:04:05,116, 8044] account.AccountServiceImpl Сессия удалена: {1, test, testpass1, 1@mail.com}
+[04-27 00:04:05,138, 8066] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000402: Using Hibernate built-in connection pool (not for production use!)
+[04-27 00:04:05,140, 8068] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/db_Poliglot]
+[04-27 00:04:05,141, 8069] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000046: Connection properties: {user=poliglot_game, password=****}
+[04-27 00:04:05,141, 8069] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000006: Autocommit mode: false
+[04-27 00:04:05,142, 8070] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000115: Hibernate connection pool size: 20 (min=1)
+[04-27 00:04:05,158, 8086] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[04-27 00:04:05,184, 8112] org.hibernate.tool.hbm2ddl.SchemaExport HHH000227: Running hbm2ddl schema export
+[04-27 00:04:05,234, 8162] org.hibernate.tool.hbm2ddl.SchemaExport HHH000230: Schema export complete
+[04-27 00:04:05,240, 8168] account.AccountServiceImpl Пользователь добавлен: {1, test, testpass1, 1@mail.com}
+[04-27 00:04:05,251, 8179] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000402: Using Hibernate built-in connection pool (not for production use!)
+[04-27 00:04:05,251, 8179] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/db_Poliglot]
+[04-27 00:04:05,251, 8179] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000046: Connection properties: {user=poliglot_game, password=****}
+[04-27 00:04:05,252, 8180] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000006: Autocommit mode: false
+[04-27 00:04:05,252, 8180] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000115: Hibernate connection pool size: 20 (min=1)
+[04-27 00:04:05,257, 8185] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[04-27 00:04:05,270, 8198] org.hibernate.tool.hbm2ddl.SchemaExport HHH000227: Running hbm2ddl schema export
+[04-27 00:04:05,302, 8230] org.hibernate.tool.hbm2ddl.SchemaExport HHH000230: Schema export complete
+[04-27 00:04:05,309, 8237] account.AccountServiceImpl Пользователь добавлен: {1, test, testpass1, 1@mail.com}
+[04-27 00:04:05,317, 8245] account.AccountServiceImpl Сессия добавлена: {1, test, testpass1, 1@mail.com}
+[04-27 00:04:05,317, 8245] account.AccountServiceImpl Сессия не может быть удалена, тк не добавлена
+[04-27 00:04:05,329, 8257] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000402: Using Hibernate built-in connection pool (not for production use!)
+[04-27 00:04:05,329, 8257] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/db_Poliglot]
+[04-27 00:04:05,330, 8258] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000046: Connection properties: {user=poliglot_game, password=****}
+[04-27 00:04:05,330, 8258] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000006: Autocommit mode: false
+[04-27 00:04:05,331, 8259] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000115: Hibernate connection pool size: 20 (min=1)
+[04-27 00:04:05,344, 8272] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[04-27 00:04:05,376, 8304] org.hibernate.tool.hbm2ddl.SchemaExport HHH000227: Running hbm2ddl schema export
+[04-27 00:04:05,420, 8348] org.hibernate.tool.hbm2ddl.SchemaExport HHH000230: Schema export complete
+[04-27 00:04:05,434, 8362] account.AccountServiceImpl Пользователь добавлен: {1, test, testpass1, 1@mail.com}
+[04-27 00:04:05,448, 8376] account.AccountServiceImpl Пользователь удален: {1}
+[04-27 00:04:05,457, 8385] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000402: Using Hibernate built-in connection pool (not for production use!)
+[04-27 00:04:05,457, 8385] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/db_Poliglot]
+[04-27 00:04:05,457, 8385] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000046: Connection properties: {user=poliglot_game, password=****}
+[04-27 00:04:05,458, 8386] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000006: Autocommit mode: false
+[04-27 00:04:05,458, 8386] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000115: Hibernate connection pool size: 20 (min=1)
+[04-27 00:04:05,463, 8391] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[04-27 00:04:05,480, 8408] org.hibernate.tool.hbm2ddl.SchemaExport HHH000227: Running hbm2ddl schema export
+[04-27 00:04:05,518, 8446] org.hibernate.tool.hbm2ddl.SchemaExport HHH000230: Schema export complete
+[04-27 00:04:05,525, 8453] account.AccountServiceImpl Пользователь добавлен: {1, test, testpass1, 1@mail.com}
+[04-27 00:04:05,542, 8470] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000402: Using Hibernate built-in connection pool (not for production use!)
+[04-27 00:04:05,546, 8474] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/db_Poliglot]
+[04-27 00:04:05,547, 8475] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000046: Connection properties: {user=poliglot_game, password=****}
+[04-27 00:04:05,547, 8475] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000006: Autocommit mode: false
+[04-27 00:04:05,548, 8476] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000115: Hibernate connection pool size: 20 (min=1)
+[04-27 00:04:05,557, 8485] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[04-27 00:04:05,588, 8516] org.hibernate.tool.hbm2ddl.SchemaExport HHH000227: Running hbm2ddl schema export
+[04-27 00:04:05,632, 8560] org.hibernate.tool.hbm2ddl.SchemaExport HHH000230: Schema export complete
+[04-27 00:04:05,645, 8573] account.AccountServiceImpl Пользователь добавлен: {1, test1, testpass1, 1@mail.com}
+[04-27 00:04:05,656, 8584] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000402: Using Hibernate built-in connection pool (not for production use!)
+[04-27 00:04:05,657, 8585] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/db_Poliglot]
+[04-27 00:04:05,657, 8585] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000046: Connection properties: {user=poliglot_game, password=****}
+[04-27 00:04:05,657, 8585] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000006: Autocommit mode: false
+[04-27 00:04:05,657, 8585] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000115: Hibernate connection pool size: 20 (min=1)
+[04-27 00:04:05,662, 8590] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[04-27 00:04:05,678, 8606] org.hibernate.tool.hbm2ddl.SchemaExport HHH000227: Running hbm2ddl schema export
+[04-27 00:04:05,725, 8653] org.hibernate.tool.hbm2ddl.SchemaExport HHH000230: Schema export complete
+[04-27 00:04:05,732, 8660] account.AccountServiceImpl Пользователь добавлен: {1, test, testpass1, 1@mail.com}
+[04-27 00:04:05,749, 8677] account.AccountServiceImpl Пользователь изменен: {1}
+[04-27 00:04:05,760, 8688] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000402: Using Hibernate built-in connection pool (not for production use!)
+[04-27 00:04:05,761, 8689] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/db_Poliglot]
+[04-27 00:04:05,761, 8689] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000046: Connection properties: {user=poliglot_game, password=****}
+[04-27 00:04:05,762, 8690] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000006: Autocommit mode: false
+[04-27 00:04:05,762, 8690] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000115: Hibernate connection pool size: 20 (min=1)
+[04-27 00:04:05,768, 8696] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[04-27 00:04:05,785, 8713] org.hibernate.tool.hbm2ddl.SchemaExport HHH000227: Running hbm2ddl schema export
+[04-27 00:04:05,828, 8756] org.hibernate.tool.hbm2ddl.SchemaExport HHH000230: Schema export complete
+[04-27 00:04:05,838, 8766] account.AccountServiceImpl Пользователь добавлен: {1, test1, testpass1, 1@mail.com}
+[04-27 00:04:05,847, 8775] account.AccountServiceImpl Пользователь НЕ добавлен
+[04-27 00:04:05,857, 8785] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000402: Using Hibernate built-in connection pool (not for production use!)
+[04-27 00:04:05,858, 8786] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/db_Poliglot]
+[04-27 00:04:05,858, 8786] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000046: Connection properties: {user=poliglot_game, password=****}
+[04-27 00:04:05,858, 8786] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000006: Autocommit mode: false
+[04-27 00:04:05,858, 8786] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000115: Hibernate connection pool size: 20 (min=1)
+[04-27 00:04:05,866, 8794] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[04-27 00:04:05,883, 8811] org.hibernate.tool.hbm2ddl.SchemaExport HHH000227: Running hbm2ddl schema export
+[04-27 00:04:05,912, 8840] org.hibernate.tool.hbm2ddl.SchemaExport HHH000230: Schema export complete
+[04-27 00:04:05,919, 8847] account.AccountServiceImpl Пользователь добавлен: {1, test, testpass1, 1@mail.com}
+[04-27 00:04:05,932, 8860] account.AccountServiceImpl Пользователь изменен: {1}
+[04-27 00:04:05,942, 8870] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000402: Using Hibernate built-in connection pool (not for production use!)
+[04-27 00:04:05,944, 8872] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/db_Poliglot]
+[04-27 00:04:05,945, 8873] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000046: Connection properties: {user=poliglot_game, password=****}
+[04-27 00:04:05,945, 8873] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000006: Autocommit mode: false
+[04-27 00:04:05,946, 8874] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000115: Hibernate connection pool size: 20 (min=1)
+[04-27 00:04:05,952, 8880] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[04-27 00:04:05,969, 8897] org.hibernate.tool.hbm2ddl.SchemaExport HHH000227: Running hbm2ddl schema export
+[04-27 00:04:06,025, 8953] org.hibernate.tool.hbm2ddl.SchemaExport HHH000230: Schema export complete
+[04-27 00:04:06,035, 8963] account.AccountServiceImpl Пользователь добавлен: {1, test, testpass1, 1@mail.com}
+[04-27 00:04:06,043, 8971] account.AccountServiceImpl Пользователь НЕ добавлен
+[04-27 00:04:06,138, 9066] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000402: Using Hibernate built-in connection pool (not for production use!)
+[04-27 00:04:06,138, 9066] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/db_Poliglot]
+[04-27 00:04:06,139, 9067] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000046: Connection properties: {user=poliglot_game, password=****}
+[04-27 00:04:06,139, 9067] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000006: Autocommit mode: false
+[04-27 00:04:06,139, 9067] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000115: Hibernate connection pool size: 20 (min=1)
+[04-27 00:04:06,145, 9073] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[04-27 00:04:06,164, 9092] org.hibernate.tool.hbm2ddl.SchemaExport HHH000227: Running hbm2ddl schema export
+[04-27 00:04:06,207, 9135] org.hibernate.tool.hbm2ddl.SchemaExport HHH000230: Schema export complete
+[04-27 00:04:12,224, 15152] account.AccountServiceImpl Пользователь добавлен: {1, test1, testpass1, 1@mail.com}
+[04-27 00:04:12,331, 15259] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000402: Using Hibernate built-in connection pool (not for production use!)
+[04-27 00:04:12,331, 15259] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/db_Poliglot]
+[04-27 00:04:12,332, 15260] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000046: Connection properties: {user=poliglot_game, password=****}
+[04-27 00:04:12,332, 15260] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000006: Autocommit mode: false
+[04-27 00:04:12,332, 15260] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000115: Hibernate connection pool size: 20 (min=1)
+[04-27 00:04:12,337, 15265] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[04-27 00:04:12,347, 15275] org.hibernate.tool.hbm2ddl.SchemaExport HHH000227: Running hbm2ddl schema export
+[04-27 00:04:12,373, 15301] org.hibernate.tool.hbm2ddl.SchemaExport HHH000230: Schema export complete
+[04-27 00:04:12,594, 15522] account.AccountServiceImpl Пользователь добавлен: {1, test1, testpass1, 1@mail.com}
+[04-27 00:04:12,609, 15537] account.AccountServiceImpl Сессия добавлена: {1, test1, testpass1, 1@mail.com}
+[04-27 00:04:12,627, 15555] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000402: Using Hibernate built-in connection pool (not for production use!)
+[04-27 00:04:12,627, 15555] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/db_Poliglot]
+[04-27 00:04:12,627, 15555] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000046: Connection properties: {user=poliglot_game, password=****}
+[04-27 00:04:12,627, 15555] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000006: Autocommit mode: false
+[04-27 00:04:12,627, 15555] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000115: Hibernate connection pool size: 20 (min=1)
+[04-27 00:04:12,631, 15559] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[04-27 00:04:12,646, 15574] org.hibernate.tool.hbm2ddl.SchemaExport HHH000227: Running hbm2ddl schema export
+[04-27 00:04:12,674, 15602] org.hibernate.tool.hbm2ddl.SchemaExport HHH000230: Schema export complete
+[04-27 00:04:12,853, 15781] account.AccountServiceImpl Пользователь добавлен: {1, test1, testpass1, 1@mail.com}
+[04-27 00:04:12,897, 15825] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000402: Using Hibernate built-in connection pool (not for production use!)
+[04-27 00:04:12,897, 15825] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/db_Poliglot]
+[04-27 00:04:12,898, 15826] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000046: Connection properties: {user=poliglot_game, password=****}
+[04-27 00:04:12,898, 15826] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000006: Autocommit mode: false
+[04-27 00:04:12,898, 15826] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000115: Hibernate connection pool size: 20 (min=1)
+[04-27 00:04:12,902, 15830] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[04-27 00:04:12,916, 15844] org.hibernate.tool.hbm2ddl.SchemaExport HHH000227: Running hbm2ddl schema export
+[04-27 00:04:12,946, 15874] org.hibernate.tool.hbm2ddl.SchemaExport HHH000230: Schema export complete
+[04-27 00:04:13,113, 16041] account.AccountServiceImpl Пользователь добавлен: {1, test1, testpass1, 1@mail.com}
+[04-27 00:04:13,126, 16054] account.AccountServiceImpl Сессия добавлена: {1, test1, testpass1, 1@mail.com}
+[04-27 00:04:13,155, 16083] account.AccountServiceImpl Сессия удалена: {1, test1, testpass1, 1@mail.com}
+[04-27 00:04:13,166, 16094] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000402: Using Hibernate built-in connection pool (not for production use!)
+[04-27 00:04:13,166, 16094] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/db_Poliglot]
+[04-27 00:04:13,167, 16095] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000046: Connection properties: {user=poliglot_game, password=****}
+[04-27 00:04:13,167, 16095] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000006: Autocommit mode: false
+[04-27 00:04:13,167, 16095] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000115: Hibernate connection pool size: 20 (min=1)
+[04-27 00:04:13,171, 16099] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[04-27 00:04:13,181, 16109] org.hibernate.tool.hbm2ddl.SchemaExport HHH000227: Running hbm2ddl schema export
+[04-27 00:04:13,216, 16144] org.hibernate.tool.hbm2ddl.SchemaExport HHH000230: Schema export complete
+[04-27 00:04:13,370, 16298] account.AccountServiceImpl Пользователь добавлен: {1, test1, testpass1, 1@mail.com}
+[04-27 00:04:13,390, 16318] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000402: Using Hibernate built-in connection pool (not for production use!)
+[04-27 00:04:13,390, 16318] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/db_Poliglot]
+[04-27 00:04:13,390, 16318] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000046: Connection properties: {user=poliglot_game, password=****}
+[04-27 00:04:13,390, 16318] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000006: Autocommit mode: false
+[04-27 00:04:13,390, 16318] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000115: Hibernate connection pool size: 20 (min=1)
+[04-27 00:04:13,394, 16322] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[04-27 00:04:13,403, 16331] org.hibernate.tool.hbm2ddl.SchemaExport HHH000227: Running hbm2ddl schema export
+[04-27 00:04:13,434, 16362] org.hibernate.tool.hbm2ddl.SchemaExport HHH000230: Schema export complete
+[04-27 00:04:13,544, 16472] account.AccountServiceImpl Пользователь добавлен: {1, test1, testpass1, 1@mail.com}
+[04-27 00:04:13,566, 16494] account.AccountServiceImpl Сессия добавлена: {1, test1, testpass1, 1@mail.com}
+[04-27 00:04:13,586, 16514] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000402: Using Hibernate built-in connection pool (not for production use!)
+[04-27 00:04:13,589, 16517] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/db_Poliglot]
+[04-27 00:04:13,590, 16518] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000046: Connection properties: {user=poliglot_game, password=****}
+[04-27 00:04:13,592, 16520] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000006: Autocommit mode: false
+[04-27 00:04:13,592, 16520] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000115: Hibernate connection pool size: 20 (min=1)
+[04-27 00:04:13,601, 16529] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[04-27 00:04:13,616, 16544] org.hibernate.tool.hbm2ddl.SchemaExport HHH000227: Running hbm2ddl schema export
+[04-27 00:04:13,653, 16581] org.hibernate.tool.hbm2ddl.SchemaExport HHH000230: Schema export complete
+[04-27 00:04:13,722, 16650] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000402: Using Hibernate built-in connection pool (not for production use!)
+[04-27 00:04:13,722, 16650] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/db_Poliglot]
+[04-27 00:04:13,722, 16650] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000046: Connection properties: {user=poliglot_game, password=****}
+[04-27 00:04:13,722, 16650] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000006: Autocommit mode: false
+[04-27 00:04:13,722, 16650] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000115: Hibernate connection pool size: 20 (min=1)
+[04-27 00:04:13,726, 16654] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[04-27 00:04:13,734, 16662] org.hibernate.tool.hbm2ddl.SchemaExport HHH000227: Running hbm2ddl schema export
+[04-27 00:04:13,766, 16694] org.hibernate.tool.hbm2ddl.SchemaExport HHH000230: Schema export complete
+[04-27 00:04:13,823, 16751] account.AccountServiceImpl Пользователь добавлен: {1, test1, testpass1, 1@mail.com}
+[04-27 00:04:13,844, 16772] account.AccountServiceImpl Сессия добавлена: {1, test1, testpass1, 1@mail.com}
+[04-27 00:04:13,876, 16804] account.AccountServiceImpl Пользователь изменен: {1}
+[04-27 00:04:13,888, 16816] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000402: Using Hibernate built-in connection pool (not for production use!)
+[04-27 00:04:13,888, 16816] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/db_Poliglot]
+[04-27 00:04:13,889, 16817] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000046: Connection properties: {user=poliglot_game, password=****}
+[04-27 00:04:13,889, 16817] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000006: Autocommit mode: false
+[04-27 00:04:13,889, 16817] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000115: Hibernate connection pool size: 20 (min=1)
+[04-27 00:04:13,893, 16821] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[04-27 00:04:13,902, 16830] org.hibernate.tool.hbm2ddl.SchemaExport HHH000227: Running hbm2ddl schema export
+[04-27 00:04:13,934, 16862] org.hibernate.tool.hbm2ddl.SchemaExport HHH000230: Schema export complete
+[04-27 00:04:14,002, 16930] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000402: Using Hibernate built-in connection pool (not for production use!)
+[04-27 00:04:14,002, 16930] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/db_Poliglot]
+[04-27 00:04:14,002, 16930] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000046: Connection properties: {user=poliglot_game, password=****}
+[04-27 00:04:14,003, 16931] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000006: Autocommit mode: false
+[04-27 00:04:14,003, 16931] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000115: Hibernate connection pool size: 20 (min=1)
+[04-27 00:04:14,010, 16938] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[04-27 00:04:14,022, 16950] org.hibernate.tool.hbm2ddl.SchemaExport HHH000227: Running hbm2ddl schema export
+[04-27 00:04:14,053, 16981] org.hibernate.tool.hbm2ddl.SchemaExport HHH000230: Schema export complete
+[04-27 00:04:14,110, 17038] account.AccountServiceImpl Пользователь добавлен: {1, test1, testpass1, 1@mail.com}
+[04-27 00:04:14,125, 17053] account.AccountServiceImpl Сессия добавлена: {1, test1, testpass1, 1@mail.com}
+[04-27 00:04:14,143, 17071] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000402: Using Hibernate built-in connection pool (not for production use!)
+[04-27 00:04:14,143, 17071] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/db_Poliglot]
+[04-27 00:04:14,144, 17072] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000046: Connection properties: {user=poliglot_game, password=****}
+[04-27 00:04:14,144, 17072] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000006: Autocommit mode: false
+[04-27 00:04:14,144, 17072] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000115: Hibernate connection pool size: 20 (min=1)
+[04-27 00:04:14,147, 17075] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[04-27 00:04:14,155, 17083] org.hibernate.tool.hbm2ddl.SchemaExport HHH000227: Running hbm2ddl schema export
+[04-27 00:04:14,187, 17115] org.hibernate.tool.hbm2ddl.SchemaExport HHH000230: Schema export complete
+[04-27 00:04:14,289, 17217] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000402: Using Hibernate built-in connection pool (not for production use!)
+[04-27 00:04:14,292, 17220] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/db_Poliglot]
+[04-27 00:04:14,293, 17221] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000046: Connection properties: {user=poliglot_game, password=****}
+[04-27 00:04:14,293, 17221] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000006: Autocommit mode: false
+[04-27 00:04:14,294, 17222] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000115: Hibernate connection pool size: 20 (min=1)
+[04-27 00:04:14,300, 17228] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[04-27 00:04:14,315, 17243] org.hibernate.tool.hbm2ddl.SchemaExport HHH000227: Running hbm2ddl schema export
+[04-27 00:04:14,370, 17298] org.hibernate.tool.hbm2ddl.SchemaExport HHH000230: Schema export complete
+[04-27 00:04:14,413, 17341] account.AccountServiceImpl Пользователь добавлен: {1, test1, testpass1, 1@mail.com}
+[04-27 00:04:14,426, 17354] account.AccountServiceImpl Пользователь НЕ добавлен
+[04-27 00:04:14,434, 17362] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000402: Using Hibernate built-in connection pool (not for production use!)
+[04-27 00:04:14,434, 17362] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/db_Poliglot]
+[04-27 00:04:14,435, 17363] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000046: Connection properties: {user=poliglot_game, password=****}
+[04-27 00:04:14,435, 17363] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000006: Autocommit mode: false
+[04-27 00:04:14,435, 17363] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000115: Hibernate connection pool size: 20 (min=1)
+[04-27 00:04:14,438, 17366] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[04-27 00:04:14,449, 17377] org.hibernate.tool.hbm2ddl.SchemaExport HHH000227: Running hbm2ddl schema export
+[04-27 00:04:14,484, 17412] org.hibernate.tool.hbm2ddl.SchemaExport HHH000230: Schema export complete
+[04-27 00:04:14,577, 17505] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000402: Using Hibernate built-in connection pool (not for production use!)
+[04-27 00:04:14,577, 17505] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/db_Poliglot]
+[04-27 00:04:14,577, 17505] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000046: Connection properties: {user=poliglot_game, password=****}
+[04-27 00:04:14,578, 17506] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000006: Autocommit mode: false
+[04-27 00:04:14,578, 17506] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000115: Hibernate connection pool size: 20 (min=1)
+[04-27 00:04:14,584, 17512] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[04-27 00:04:14,600, 17528] org.hibernate.tool.hbm2ddl.SchemaExport HHH000227: Running hbm2ddl schema export
+[04-27 00:04:14,651, 17579] org.hibernate.tool.hbm2ddl.SchemaExport HHH000230: Schema export complete
+[04-27 00:04:14,692, 17620] account.AccountServiceImpl Пользователь добавлен: {1, test, testpass1, 1@mail.com}
+[04-27 00:04:14,703, 17631] account.AccountServiceImpl Пользователь НЕ добавлен
+[04-27 00:04:14,713, 17641] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000402: Using Hibernate built-in connection pool (not for production use!)
+[04-27 00:04:14,713, 17641] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/db_Poliglot]
+[04-27 00:04:14,713, 17641] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000046: Connection properties: {user=poliglot_game, password=****}
+[04-27 00:04:14,713, 17641] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000006: Autocommit mode: false
+[04-27 00:04:14,713, 17641] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000115: Hibernate connection pool size: 20 (min=1)
+[04-27 00:04:14,717, 17645] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[04-27 00:04:14,725, 17653] org.hibernate.tool.hbm2ddl.SchemaExport HHH000227: Running hbm2ddl schema export
+[04-27 00:04:14,750, 17678] org.hibernate.tool.hbm2ddl.SchemaExport HHH000230: Schema export complete
+[04-27 00:04:14,831, 17759] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000402: Using Hibernate built-in connection pool (not for production use!)
+[04-27 00:04:14,832, 17760] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/db_Poliglot]
+[04-27 00:04:14,832, 17760] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000046: Connection properties: {user=poliglot_game, password=****}
+[04-27 00:04:14,832, 17760] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000006: Autocommit mode: false
+[04-27 00:04:14,833, 17761] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000115: Hibernate connection pool size: 20 (min=1)
+[04-27 00:04:14,841, 17769] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[04-27 00:04:14,856, 17784] org.hibernate.tool.hbm2ddl.SchemaExport HHH000227: Running hbm2ddl schema export
+[04-27 00:04:14,894, 17822] org.hibernate.tool.hbm2ddl.SchemaExport HHH000230: Schema export complete
+[04-27 00:04:14,940, 17868] account.AccountServiceImpl Пользователь добавлен: {1, test1, testpass1, 1@mail.com}
+[04-27 00:04:14,970, 17898] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000402: Using Hibernate built-in connection pool (not for production use!)
+[04-27 00:04:14,971, 17899] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/db_Poliglot]
+[04-27 00:04:14,971, 17899] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000046: Connection properties: {user=poliglot_game, password=****}
+[04-27 00:04:14,971, 17899] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000006: Autocommit mode: false
+[04-27 00:04:14,971, 17899] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000115: Hibernate connection pool size: 20 (min=1)
+[04-27 00:04:14,975, 17903] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[04-27 00:04:14,985, 17913] org.hibernate.tool.hbm2ddl.SchemaExport HHH000227: Running hbm2ddl schema export
+[04-27 00:04:15,015, 17943] org.hibernate.tool.hbm2ddl.SchemaExport HHH000230: Schema export complete
+[04-27 00:04:15,150, 18078] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000402: Using Hibernate built-in connection pool (not for production use!)
+[04-27 00:04:15,150, 18078] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/db_Poliglot]
+[04-27 00:04:15,151, 18079] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000046: Connection properties: {user=poliglot_game, password=****}
+[04-27 00:04:15,151, 18079] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000006: Autocommit mode: false
+[04-27 00:04:15,151, 18079] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000115: Hibernate connection pool size: 20 (min=1)
+[04-27 00:04:15,158, 18086] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[04-27 00:04:15,168, 18096] org.hibernate.tool.hbm2ddl.SchemaExport HHH000227: Running hbm2ddl schema export
+[04-27 00:04:15,202, 18130] org.hibernate.tool.hbm2ddl.SchemaExport HHH000230: Schema export complete
+[04-27 00:04:15,239, 18167] account.AccountServiceImpl Пользователь добавлен: {1, test1, testpass1, 1@mail.com}
+[04-27 00:04:15,250, 18178] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000402: Using Hibernate built-in connection pool (not for production use!)
+[04-27 00:04:15,250, 18178] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/db_Poliglot]
+[04-27 00:04:15,250, 18178] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000046: Connection properties: {user=poliglot_game, password=****}
+[04-27 00:04:15,250, 18178] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000006: Autocommit mode: false
+[04-27 00:04:15,250, 18178] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000115: Hibernate connection pool size: 20 (min=1)
+[04-27 00:04:15,256, 18184] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[04-27 00:04:15,267, 18195] org.hibernate.tool.hbm2ddl.SchemaExport HHH000227: Running hbm2ddl schema export
+[04-27 00:04:15,300, 18228] org.hibernate.tool.hbm2ddl.SchemaExport HHH000230: Schema export complete
+[04-27 00:04:15,368, 18296] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000402: Using Hibernate built-in connection pool (not for production use!)
+[04-27 00:04:15,368, 18296] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/db_Poliglot]
+[04-27 00:04:15,369, 18297] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000046: Connection properties: {user=poliglot_game, password=****}
+[04-27 00:04:15,369, 18297] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000006: Autocommit mode: false
+[04-27 00:04:15,369, 18297] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000115: Hibernate connection pool size: 20 (min=1)
+[04-27 00:04:15,374, 18302] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[04-27 00:04:15,400, 18328] org.hibernate.tool.hbm2ddl.SchemaExport HHH000227: Running hbm2ddl schema export
+[04-27 00:04:15,446, 18374] org.hibernate.tool.hbm2ddl.SchemaExport HHH000230: Schema export complete
+[04-27 00:04:15,492, 18420] account.AccountServiceImpl Пользователь добавлен: {1, test1, testpass1, 1@mail.com}
+[04-27 00:04:15,507, 18435] account.AccountServiceImpl Сессия добавлена: {1, test1, testpass1, 1@mail.com}
+[04-27 00:04:15,516, 18444] account.AccountServiceImpl Сессия удалена: {1, test1, testpass1, 1@mail.com}
+[04-27 00:04:15,521, 18449] account.AccountServiceImpl Пользователь удален: {1}
+[04-27 00:04:15,535, 18463] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000402: Using Hibernate built-in connection pool (not for production use!)
+[04-27 00:04:15,535, 18463] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/db_Poliglot]
+[04-27 00:04:15,535, 18463] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000046: Connection properties: {user=poliglot_game, password=****}
+[04-27 00:04:15,535, 18463] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000006: Autocommit mode: false
+[04-27 00:04:15,535, 18463] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000115: Hibernate connection pool size: 20 (min=1)
+[04-27 00:04:15,539, 18467] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[04-27 00:04:15,548, 18476] org.hibernate.tool.hbm2ddl.SchemaExport HHH000227: Running hbm2ddl schema export
+[04-27 00:04:15,588, 18516] org.hibernate.tool.hbm2ddl.SchemaExport HHH000230: Schema export complete
+[04-27 00:04:15,671, 18599] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000402: Using Hibernate built-in connection pool (not for production use!)
+[04-27 00:04:15,671, 18599] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/db_Poliglot]
+[04-27 00:04:15,672, 18600] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000046: Connection properties: {user=poliglot_game, password=****}
+[04-27 00:04:15,672, 18600] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000006: Autocommit mode: false
+[04-27 00:04:15,672, 18600] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000115: Hibernate connection pool size: 20 (min=1)
+[04-27 00:04:15,678, 18606] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[04-27 00:04:15,689, 18617] org.hibernate.tool.hbm2ddl.SchemaExport HHH000227: Running hbm2ddl schema export
+[04-27 00:04:15,731, 18659] org.hibernate.tool.hbm2ddl.SchemaExport HHH000230: Schema export complete
+[04-27 00:04:15,737, 18665] account.AccountServiceImpl Пользователь добавлен: {1, test1, testpass1, 1@mail.com}
+[04-27 00:04:15,773, 18701] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000402: Using Hibernate built-in connection pool (not for production use!)
+[04-27 00:04:15,773, 18701] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/db_Poliglot]
+[04-27 00:04:15,773, 18701] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000046: Connection properties: {user=poliglot_game, password=****}
+[04-27 00:04:15,773, 18701] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000006: Autocommit mode: false
+[04-27 00:04:15,773, 18701] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000115: Hibernate connection pool size: 20 (min=1)
+[04-27 00:04:15,777, 18705] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[04-27 00:04:15,787, 18715] org.hibernate.tool.hbm2ddl.SchemaExport HHH000227: Running hbm2ddl schema export
+[04-27 00:04:15,831, 18759] org.hibernate.tool.hbm2ddl.SchemaExport HHH000230: Schema export complete
+[04-27 00:04:15,913, 18841] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000402: Using Hibernate built-in connection pool (not for production use!)
+[04-27 00:04:15,913, 18841] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/db_Poliglot]
+[04-27 00:04:15,914, 18842] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000046: Connection properties: {user=poliglot_game, password=****}
+[04-27 00:04:15,914, 18842] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000006: Autocommit mode: false
+[04-27 00:04:15,914, 18842] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000115: Hibernate connection pool size: 20 (min=1)
+[04-27 00:04:15,918, 18846] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[04-27 00:04:15,925, 18853] org.hibernate.tool.hbm2ddl.SchemaExport HHH000227: Running hbm2ddl schema export
+[04-27 00:04:15,955, 18883] org.hibernate.tool.hbm2ddl.SchemaExport HHH000230: Schema export complete
+[04-27 00:04:15,990, 18918] account.AccountServiceImpl Пользователь добавлен: {1, test1, testpass1, 1@mail.com}
+[04-27 00:04:16,005, 18933] account.AccountServiceImpl Сессия добавлена: {1, test1, testpass1, 1@mail.com}
+[04-27 00:04:16,033, 18961] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000402: Using Hibernate built-in connection pool (not for production use!)
+[04-27 00:04:16,033, 18961] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/db_Poliglot]
+[04-27 00:04:16,034, 18962] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000046: Connection properties: {user=poliglot_game, password=****}
+[04-27 00:04:16,034, 18962] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000006: Autocommit mode: false
+[04-27 00:04:16,034, 18962] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000115: Hibernate connection pool size: 20 (min=1)
+[04-27 00:04:16,038, 18966] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[04-27 00:04:16,050, 18978] org.hibernate.tool.hbm2ddl.SchemaExport HHH000227: Running hbm2ddl schema export
+[04-27 00:04:16,093, 19021] org.hibernate.tool.hbm2ddl.SchemaExport HHH000230: Schema export complete
+[04-27 00:04:16,173, 19101] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000402: Using Hibernate built-in connection pool (not for production use!)
+[04-27 00:04:16,174, 19102] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/db_Poliglot]
+[04-27 00:04:16,174, 19102] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000046: Connection properties: {user=poliglot_game, password=****}
+[04-27 00:04:16,174, 19102] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000006: Autocommit mode: false
+[04-27 00:04:16,174, 19102] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000115: Hibernate connection pool size: 20 (min=1)
+[04-27 00:04:16,178, 19106] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[04-27 00:04:16,186, 19114] org.hibernate.tool.hbm2ddl.SchemaExport HHH000227: Running hbm2ddl schema export
+[04-27 00:04:16,216, 19144] org.hibernate.tool.hbm2ddl.SchemaExport HHH000230: Schema export complete
+[04-27 00:04:16,263, 19191] account.AccountServiceImpl Пользователь добавлен: {1, test1, testpass1, 1@mail.com}
+[04-27 00:04:16,293, 19221] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000402: Using Hibernate built-in connection pool (not for production use!)
+[04-27 00:04:16,293, 19221] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/db_Poliglot]
+[04-27 00:04:16,294, 19222] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000046: Connection properties: {user=poliglot_game, password=****}
+[04-27 00:04:16,294, 19222] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000006: Autocommit mode: false
+[04-27 00:04:16,294, 19222] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000115: Hibernate connection pool size: 20 (min=1)
+[04-27 00:04:16,300, 19228] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[04-27 00:04:16,313, 19241] org.hibernate.tool.hbm2ddl.SchemaExport HHH000227: Running hbm2ddl schema export
+[04-27 00:04:16,351, 19279] org.hibernate.tool.hbm2ddl.SchemaExport HHH000230: Schema export complete
+[04-27 00:04:16,411, 19339] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000402: Using Hibernate built-in connection pool (not for production use!)
+[04-27 00:04:16,411, 19339] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/db_Poliglot]
+[04-27 00:04:16,411, 19339] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000046: Connection properties: {user=poliglot_game, password=****}
+[04-27 00:04:16,411, 19339] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000006: Autocommit mode: false
+[04-27 00:04:16,411, 19339] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000115: Hibernate connection pool size: 20 (min=1)
+[04-27 00:04:16,415, 19343] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[04-27 00:04:16,425, 19353] org.hibernate.tool.hbm2ddl.SchemaExport HHH000227: Running hbm2ddl schema export
+[04-27 00:04:16,475, 19403] org.hibernate.tool.hbm2ddl.SchemaExport HHH000230: Schema export complete
+[04-27 00:04:16,486, 19414] account.AccountServiceImpl Пользователь добавлен: {1, test1, testpass1, 1@mail.com}
+[04-27 00:04:16,543, 19471] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000402: Using Hibernate built-in connection pool (not for production use!)
+[04-27 00:04:16,544, 19472] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/db_Poliglot]
+[04-27 00:04:16,544, 19472] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000046: Connection properties: {user=poliglot_game, password=****}
+[04-27 00:04:16,544, 19472] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000006: Autocommit mode: false
+[04-27 00:04:16,544, 19472] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000115: Hibernate connection pool size: 20 (min=1)
+[04-27 00:04:16,548, 19476] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[04-27 00:04:16,557, 19485] org.hibernate.tool.hbm2ddl.SchemaExport HHH000227: Running hbm2ddl schema export
+[04-27 00:04:16,588, 19516] org.hibernate.tool.hbm2ddl.SchemaExport HHH000230: Schema export complete
+[04-27 00:04:16,651, 19579] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000402: Using Hibernate built-in connection pool (not for production use!)
+[04-27 00:04:16,651, 19579] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/db_Poliglot]
+[04-27 00:04:16,652, 19580] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000046: Connection properties: {user=poliglot_game, password=****}
+[04-27 00:04:16,652, 19580] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000006: Autocommit mode: false
+[04-27 00:04:16,652, 19580] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000115: Hibernate connection pool size: 20 (min=1)
+[04-27 00:04:16,656, 19584] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[04-27 00:04:16,668, 19596] org.hibernate.tool.hbm2ddl.SchemaExport HHH000227: Running hbm2ddl schema export
+[04-27 00:04:16,721, 19649] org.hibernate.tool.hbm2ddl.SchemaExport HHH000230: Schema export complete
+[04-27 00:04:16,731, 19659] account.AccountServiceImpl Пользователь добавлен: {1, test1, testpass1, 1@mail.com}
+[04-27 00:04:16,744, 19672] account.AccountServiceImpl Пользователь добавлен: {2, test2, testpass2, 2@mail.com}
+[04-27 00:04:16,794, 19722] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000402: Using Hibernate built-in connection pool (not for production use!)
+[04-27 00:04:16,794, 19722] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/db_Poliglot]
+[04-27 00:04:16,794, 19722] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000046: Connection properties: {user=poliglot_game, password=****}
+[04-27 00:04:16,794, 19722] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000006: Autocommit mode: false
+[04-27 00:04:16,794, 19722] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000115: Hibernate connection pool size: 20 (min=1)
+[04-27 00:04:16,798, 19726] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[04-27 00:04:16,808, 19736] org.hibernate.tool.hbm2ddl.SchemaExport HHH000227: Running hbm2ddl schema export
+[04-27 00:04:16,842, 19770] org.hibernate.tool.hbm2ddl.SchemaExport HHH000230: Schema export complete
+[04-27 00:04:16,904, 19832] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000402: Using Hibernate built-in connection pool (not for production use!)
+[04-27 00:04:16,905, 19833] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/db_Poliglot]
+[04-27 00:04:16,905, 19833] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000046: Connection properties: {user=poliglot_game, password=****}
+[04-27 00:04:16,905, 19833] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000006: Autocommit mode: false
+[04-27 00:04:16,905, 19833] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000115: Hibernate connection pool size: 20 (min=1)
+[04-27 00:04:16,912, 19840] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[04-27 00:04:16,927, 19855] org.hibernate.tool.hbm2ddl.SchemaExport HHH000227: Running hbm2ddl schema export
+[04-27 00:04:16,969, 19897] org.hibernate.tool.hbm2ddl.SchemaExport HHH000230: Schema export complete
+[04-27 00:04:17,026, 19954] account.AccountServiceImpl Пользователь НЕ добавлен

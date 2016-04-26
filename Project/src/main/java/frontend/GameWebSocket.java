@@ -120,7 +120,14 @@ public class GameWebSocket {
             }
             switch (action){
                 case "getWord":
-                    ShuffleWord word = shuffleWordService.getShuffleWord();
+                    ShuffleWord word;
+
+                    do {
+                        word = shuffleWordService.getShuffleWord();
+                    } while (gameMechanics.getIsUsedWordFromGameSession(myName,word.getId()));
+
+                    gameMechanics.addUsedWordInGameSession(myName,word);
+
                     ShuffleWord correctWord = shuffleWordService.getWordById(word.getId());
                     final JsonObject jsonWord = new JsonObject();
                     jsonWord.addProperty("action", "getWord");

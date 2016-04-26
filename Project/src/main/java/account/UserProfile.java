@@ -49,7 +49,7 @@ public class UserProfile implements Serializable { // Serializable Important to 
         this.email = email;
         this.score = 0;
     }
-    @SuppressWarnings("unused")
+
     public UserProfile(long id, @NotNull String login, @NotNull String password, @NotNull String email, int score) {
         this.id = id;
         this.login = login;

@@ -1,6 +1,10 @@
 package game;
 
+import game.firstlvl.ShuffleWord;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by Snach on 19.04.16.
@@ -13,6 +17,7 @@ public class GameUser {
     private String enemyName;
     private int myScore = 0;
     private int enemyScore = 0;
+    private final Map<Long,String> usedWords= new HashMap<>();
 
     public GameUser(@NotNull String myName, @NotNull String enemyName) {
 
@@ -49,5 +54,13 @@ public class GameUser {
     @SuppressWarnings("unused")
     public void setEnemyName(@NotNull String enemyName) {
         this.enemyName = enemyName;
+    }
+
+    public boolean isWordUsed(Long wordId){
+        return usedWords.containsKey(wordId);
+    }
+
+    public void addUsedWord(ShuffleWord word){
+        usedWords.put(word.getId(),word.getWord());
     }
 }
