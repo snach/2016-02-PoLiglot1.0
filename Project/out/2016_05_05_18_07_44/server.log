@@ -1,0 +1,19 @@
+[05-05 18:07:45,098, 2755] main.Main Starting at port: 8080
+[05-05 18:07:46,112, 3769] org.hibernate.Version HHH000412: Hibernate Core {5.0.3.Final}
+[05-05 18:07:46,117, 3774] org.hibernate.cfg.Environment HHH000206: hibernate.properties not found
+[05-05 18:07:46,122, 3779] org.hibernate.cfg.Environment HHH000021: Bytecode provider name : javassist
+[05-05 18:07:46,319, 3976] org.hibernate.annotations.common.Version HCANN000001: Hibernate Commons Annotations {5.0.0.Final}
+[05-05 18:07:46,716, 4373] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000402: Using Hibernate built-in connection pool (not for production use!)
+[05-05 18:07:46,742, 4399] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/db_Poliglot]
+[05-05 18:07:46,743, 4400] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000046: Connection properties: {user=poliglot_game, password=****}
+[05-05 18:07:46,743, 4400] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000006: Autocommit mode: false
+[05-05 18:07:46,748, 4405] org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl HHH000115: Hibernate connection pool size: 20 (min=1)
+[05-05 18:07:47,592, 5249] org.hibernate.dialect.Dialect HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[05-05 18:07:49,401, 7058] org.hibernate.tool.hbm2ddl.SchemaUpdate HHH000228: Running hbm2ddl schema update
+[05-05 18:11:16,595, 214252] account.AccountServiceImpl Сессия добавлена: {2, snach, pass1, snach123}
+[05-05 18:14:10,968, 388625] account.AccountServiceImpl Сессия добавлена: {1, test1, testpass1, filloh}
+[05-05 18:15:00,038, 437695] frontend.GameWebSocket Socket created for snach
+[05-05 18:15:10,510, 448167] frontend.GameWebSocket Socket created for test1
+[05-05 18:16:10,651, 508308] game.GameMechanicsImpl игра завершена для : test1 и snach
+[05-05 18:16:45,210, 542867] frontend.GameWebSocket Closing socket for: test1  status: 1001 reason: null
+[05-05 18:22:10,852, 868509] frontend.GameWebSocket Closing socket for: snach  status: 1001 reason: Idle Timeout

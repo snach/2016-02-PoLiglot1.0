@@ -15,7 +15,8 @@ public class AccountServiceTest {
 
     @Before
     public void setupAccountService(){
-        accountService = new AccountServiceImpl(Config.connectToDB(true));
+        Config.connectToDB(true);
+        accountService = new AccountServiceImpl(Config.getConfiguration());
     }
 
     @Test
@@ -40,27 +41,27 @@ public class AccountServiceTest {
 
     @Test
     public void testGetUserByID(){
-        UserProfile user = new UserProfile("test1", "testpass1","1@mail.com");
+        final UserProfile user = new UserProfile("test1", "testpass1","1@mail.com");
         accountService.addUser(user);
-        UserProfile findUser = accountService.getUserByID(user.getUserID());
+        final UserProfile findUser = accountService.getUserByID(user.getUserID());
         assertFalse(findUser == null);
         assertEquals("test1", findUser.getLogin());
     }
 
     @Test
     public void testGetUserByLogin(){
-        UserProfile user = new UserProfile("test1", "testpass1","1@mail.com");
+        final UserProfile user = new UserProfile("test1", "testpass1","1@mail.com");
         accountService.addUser(user);
-        UserProfile compareUser = accountService.getUserByLogin("test1");
+        final UserProfile compareUser = accountService.getUserByLogin("test1");
         assertFalse(compareUser == null);
         assertEquals(compareUser.getLogin(),"test1");
     }
 
     @Test
     public void testGetUserByEmail(){
-        UserProfile user = new UserProfile("test1", "testpass1","1@mail.com");
+        final UserProfile user = new UserProfile("test1", "testpass1","1@mail.com");
         accountService.addUser(user);
-        UserProfile findUser = accountService.getUserByEmail(user.getEmail());
+        final UserProfile findUser = accountService.getUserByEmail(user.getEmail());
 
         assertFalse(findUser == null);
         assertEquals(findUser.getLogin(),"test1");
@@ -68,9 +69,9 @@ public class AccountServiceTest {
 
     @Test
     public void testEditLoginUser(){
-        UserProfile oldUser = new UserProfile("test", "testpass1","1@mail.com");
+        final UserProfile oldUser = new UserProfile("test", "testpass1","1@mail.com");
         accountService.addUser(oldUser);
-        UserProfile newUser = new UserProfile("newTest","testpass1","1@mail.com");
+        final UserProfile newUser = new UserProfile("newTest","testpass1","1@mail.com");
         accountService.editUser(oldUser,newUser);
 
         assertTrue(accountService.getUserByLogin("newTest")!=null &&
@@ -79,11 +80,11 @@ public class AccountServiceTest {
 
     @Test
     public void testEditPasswordUser(){
-        UserProfile oldUser = new UserProfile("test","testpass1","1@mail.com");
+        final UserProfile oldUser = new UserProfile("test","testpass1","1@mail.com");
         accountService.addUser(oldUser);
-        UserProfile newUser = new UserProfile("test","testpass2","1@mail.com");
+        final UserProfile newUser = new UserProfile("test","testpass2","1@mail.com");
         accountService.editUser(oldUser,newUser);
-        UserProfile findNewUser = accountService.getUserByLogin("test");
+        final UserProfile findNewUser = accountService.getUserByLogin("test");
 
         assertFalse(findNewUser == null);
         assertEquals("testpass2", findNewUser.getPassword());
@@ -91,11 +92,11 @@ public class AccountServiceTest {
 
     @Test
     public void testEditEmailUser(){
-        UserProfile oldUser = new UserProfile("test","testpass1","1@mail.com");
+        final UserProfile oldUser = new UserProfile("test","testpass1","1@mail.com");
         accountService.addUser(oldUser);
-        UserProfile newUser = new UserProfile("test","testpass1","2@mail.com");
+        final UserProfile newUser = new UserProfile("test","testpass1","2@mail.com");
         accountService.editUser(oldUser,newUser);
-        UserProfile findNewUser = accountService.getUserByLogin("test");
+        final UserProfile findNewUser = accountService.getUserByLogin("test");
 
         assertFalse(findNewUser == null);
         assertEquals("2@mail.com", findNewUser.getEmail());
@@ -103,7 +104,7 @@ public class AccountServiceTest {
 
     @Test
     public void testDeleteUser(){
-        UserProfile user = new UserProfile("test","testpass1","1@mail.com");
+        final UserProfile user = new UserProfile("test","testpass1","1@mail.com");
         accountService.addUser(user);
         accountService.deleteUser(user.getUserID());
         assertTrue(accountService.getUserByLogin("test") == null);
@@ -111,7 +112,7 @@ public class AccountServiceTest {
 
     @Test
     public void testAddSession(){
-        UserProfile user = new UserProfile("test","testpass1","1@mail.com");
+        final UserProfile user = new UserProfile("test","testpass1","1@mail.com");
         accountService.addUser(user);
         accountService.addSession("testSessionID",user);
         assertTrue(accountService.isLoggedIn("testSessionID"));
@@ -119,7 +120,7 @@ public class AccountServiceTest {
 
     @Test
     public void testDeleteSession(){
-        UserProfile user = new UserProfile("test","testpass1","1@mail.com");
+        final UserProfile user = new UserProfile("test","testpass1","1@mail.com");
         accountService.addUser(user);
         accountService.addSession("testSessionID",user);
         accountService.deleteSession("testSessionID");
@@ -128,7 +129,7 @@ public class AccountServiceTest {
 
     @Test
     public void testDeleteSessionUncorrectArg(){
-        UserProfile user = new UserProfile("test","testpass1","1@mail.com");
+        final UserProfile user = new UserProfile("test","testpass1","1@mail.com");
         accountService.addUser(user);
         accountService.addSession("testSessionID",user);
         accountService.deleteSession("differSessionID");
@@ -137,34 +138,34 @@ public class AccountServiceTest {
 
     @Test
     public void testCheckAuth(){
-        UserProfile user = new UserProfile("test","testpass1","1@mail.com");
+        final UserProfile user = new UserProfile("test","testpass1","1@mail.com");
         accountService.addUser(user);
         assertTrue(accountService.checkAuth("test","testpass1"));
     }
 
     @Test
     public void testCheckAuthFailLogin(){
-        UserProfile user = new UserProfile("test","testpass1","1@mail.com");
+        final UserProfile user = new UserProfile("test","testpass1","1@mail.com");
         accountService.addUser(user);
         assertFalse(accountService.checkAuth("differUser","testpass1"));
     }
 
     @Test
     public void testCheckAuthFailPassword(){
-        UserProfile user = new UserProfile("test","testpass1","1@mail.com");
+        final UserProfile user = new UserProfile("test","testpass1","1@mail.com");
         accountService.addUser(user);
         assertFalse(accountService.checkAuth("test","differPass"));
     }
 
     @Test
     public void testGetAllUsers() {
-        UserProfile user1 = new UserProfile("test", "testpass1", "1@mail.com");
+        final UserProfile user1 = new UserProfile("test", "testpass1", "1@mail.com");
         accountService.addUser(user1);
-        UserProfile user2 = new UserProfile("test2", "testpass2", "2@mail.com");
+        final UserProfile user2 = new UserProfile("test2", "testpass2", "2@mail.com");
         accountService.addUser(user2);
-        UserProfile user3 = new UserProfile("test3", "testpass3", "3@mail.com");
+        final UserProfile user3 = new UserProfile("test3", "testpass3", "3@mail.com");
         accountService.addUser(user3);
-        List<UserProfile> users = accountService.getAllUsers();
+        final List<UserProfile> users = accountService.getAllUsers();
         assertTrue(users.get(0).getLogin().equals("test")
                 && users.get(1).getLogin().equals("test2")
                 && users.get(2).getLogin().equals("test3"));

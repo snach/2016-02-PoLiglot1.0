@@ -75,14 +75,14 @@ public class GameWebSocket {
         } else {
             jsonEndGame.addProperty("win", win);
         }
-        int currentScore = gameMechanics.getMyScore(myName);
+        final int currentScore = gameMechanics.getMyScore(myName);
         jsonEndGame.addProperty("myName", myName);
         jsonEndGame.addProperty("myScore", currentScore);
         jsonEndGame.addProperty("enemyName", gameMechanics.getEnemyName(myName));
         jsonEndGame.addProperty("enemyScore", gameMechanics.getEnemyScore(myName));
 
-        int prevScore = accountService.getUserByLogin(myName).getScore();
-        boolean isBestScore;
+        final int prevScore = accountService.getUserByLogin(myName).getScore();
+        final boolean isBestScore;
 
         if (currentScore > prevScore){
             accountService.editScore(myName,currentScore);
@@ -128,7 +128,7 @@ public class GameWebSocket {
 
                     gameMechanics.addUsedWordInGameSession(myName,word);
 
-                    ShuffleWord correctWord = shuffleWordService.getWordById(word.getId());
+                    final ShuffleWord correctWord = shuffleWordService.getWordById(word.getId());
                     final JsonObject jsonWord = new JsonObject();
                     jsonWord.addProperty("action", "getWord");
                     jsonWord.addProperty("id", word.getId());
@@ -141,8 +141,8 @@ public class GameWebSocket {
 
                     final long idWord = jsonElement.getAsJsonObject().getAsJsonPrimitive("id").getAsLong();
                     final String userWord = jsonElement.getAsJsonObject().getAsJsonPrimitive("word").getAsString();
-                    ShuffleWord rightWord = shuffleWordService.getWordById(idWord);
-                    boolean check;
+                    final ShuffleWord rightWord = shuffleWordService.getWordById(idWord);
+                    final boolean check;
                     if (rightWord.getWord().equals(userWord)) {
                         check = true;
                         gameMechanics.incrementScore(myName);

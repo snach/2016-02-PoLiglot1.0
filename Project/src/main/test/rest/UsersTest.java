@@ -28,7 +28,8 @@ public class UsersTest extends JerseyTest {
     @Override
     protected Application configure() {
         final Context context = new Context();
-        context.put(AccountService.class, new AccountServiceImpl(Config.connectToDB(true)));
+        Config.connectToDB(true);
+        context.put(AccountService.class, new AccountServiceImpl(Config.getConfiguration()));
 
         final ResourceConfig config = new ResourceConfig(Users.class, Sessions.class);
         final HttpServletRequest request = mock(HttpServletRequest.class);
@@ -57,7 +58,8 @@ public class UsersTest extends JerseyTest {
 
     @Before
     public void setupAccountService(){
-        accountService = new AccountServiceImpl(Config.connectToDB(true));
+        Config.connectToDB(true);
+        accountService = new AccountServiceImpl(Config.getConfiguration());
     }
 
     @Test
@@ -83,14 +85,14 @@ public class UsersTest extends JerseyTest {
 
     @Test
     public void testCreateUser() {
-        UserProfile user = new UserProfile("test1", "testpass1","1@mail.com");
+        final UserProfile user = new UserProfile("test1", "testpass1","1@mail.com");
         final String json = target("user").request("application/json").put(Entity.json(user), String.class);
         assertEquals("{ \"id\": \"1\" }", json);
     }
 
     @Test
     public void testCreateNullUser() {
-        UserProfile user = new UserProfile();
+        final UserProfile user = new UserProfile();
         final Response resp = target("user").request("application/json").put(Entity.json(user));
         assertEquals(resp.getStatus(), FORBIDDEN);
     }
@@ -98,8 +100,8 @@ public class UsersTest extends JerseyTest {
 
     @Test
     public void testCreateUserWithSameLoginFail() {
-        UserProfile user1 = new UserProfile("test", "testpass1","1@mail.com");
-        UserProfile user2 = new UserProfile("test", "testpass2","2@mail.com");
+        final UserProfile user1 = new UserProfile("test", "testpass1","1@mail.com");
+        final UserProfile user2 = new UserProfile("test", "testpass2","2@mail.com");
         target("user").request("application/json").put(Entity.json(user1));
         final Response resp2 = target("user").request("application/json").put(Entity.json(user2));
         assertEquals(resp2.getStatus(), FORBIDDEN);
@@ -107,8 +109,8 @@ public class UsersTest extends JerseyTest {
 
     @Test
     public void testCreateUserWithSameEmailFail() {
-        UserProfile user1 = new UserProfile("test1", "testpass1","1@mail.com");
-        UserProfile user2 = new UserProfile("test2", "testpass2","1@mail.com");
+        final UserProfile user1 = new UserProfile("test1", "testpass1","1@mail.com");
+        final UserProfile user2 = new UserProfile("test2", "testpass2","1@mail.com");
         target("user").request("application/json").put(Entity.json(user1));
         final Response resp2 = target("user").request("application/json").put(Entity.json(user2));
         assertEquals(resp2.getStatus(), FORBIDDEN);
@@ -116,7 +118,7 @@ public class UsersTest extends JerseyTest {
 
     @Test
     public void testEditUser() {
-        UserProfile user = new UserProfile("test1", "testpass1","1@mail.com");
+        final UserProfile user = new UserProfile("test1", "testpass1","1@mail.com");
         final String json = target("user").request("application/json").put(Entity.json(user), String.class);
         assertEquals("{ \"id\": \"1\" }", json);
 
@@ -124,7 +126,7 @@ public class UsersTest extends JerseyTest {
         final String jsonCheckSignIn = target("session").request().get(String.class);
         assertEquals("{ \"id\": \"1\" }", jsonCheckSignIn);
 
-        UserProfile userEdit = new UserProfile("test1Edit", "testpass1Edit","1Edit@mail.com");
+        final UserProfile userEdit = new UserProfile("test1Edit", "testpass1Edit","1Edit@mail.com");
         final String jsonEditUser = target("user").path("1").request().post(Entity.json(userEdit),String.class);
         assertEquals("{ \"id\": \"1\" }", jsonEditUser);
 
@@ -134,21 +136,21 @@ public class UsersTest extends JerseyTest {
 
     @Test
     public void testEditUserWithUnauthorizedUser() {
-        UserProfile user = new UserProfile("test1", "testpass1","1@mail.com");
+        final UserProfile user = new UserProfile("test1", "testpass1","1@mail.com");
         final String json = target("user").request("application/json").put(Entity.json(user), String.class);
         assertEquals("{ \"id\": \"1\" }", json);
 
         final Response checkSignIn = target("session").request().get();
         assertEquals(checkSignIn.getStatus(), UNAUTHORIZED);
 
-        UserProfile userEdit = new UserProfile("test1Edit", "testpass1Edit","1Edit@mail.com");
+        final UserProfile userEdit = new UserProfile("test1Edit", "testpass1Edit","1Edit@mail.com");
         final Response editUser = target("user").path("1").request().post(Entity.json(userEdit));
         assertEquals(editUser.getStatus(), FORBIDDEN);
     }
 
     @Test
     public void testEditOtherUser() {
-        UserProfile user = new UserProfile("test1", "testpass1","1@mail.com");
+        final UserProfile user = new UserProfile("test1", "testpass1","1@mail.com");
         final String json = target("user").request("application/json").put(Entity.json(user), String.class);
         assertEquals("{ \"id\": \"1\" }", json);
 
@@ -156,7 +158,7 @@ public class UsersTest extends JerseyTest {
         final String jsonCheckSignIn = target("session").request().get(String.class);
         assertEquals("{ \"id\": \"1\" }", jsonCheckSignIn);
 
-        UserProfile userEdit = new UserProfile("test1Edit", "testpass1Edit","1Edit@mail.com");
+        final UserProfile userEdit = new UserProfile("test1Edit", "testpass1Edit","1Edit@mail.com");
         final Response editUser = target("user").path("2").request().post(Entity.json(userEdit));
         assertEquals(editUser.getStatus(), FORBIDDEN);
 
@@ -166,7 +168,7 @@ public class UsersTest extends JerseyTest {
 
     @Test
     public void testDeleteUser() {
-        UserProfile user = new UserProfile("test1", "testpass1","1@mail.com");
+        final UserProfile user = new UserProfile("test1", "testpass1","1@mail.com");
         final String json = target("user").request("application/json").put(Entity.json(user), String.class);
         assertEquals("{ \"id\": \"1\" }", json);
 
@@ -183,7 +185,7 @@ public class UsersTest extends JerseyTest {
 
     @Test
     public void testDeleteOtherUser() {
-        UserProfile user = new UserProfile("test1", "testpass1","1@mail.com");
+        final UserProfile user = new UserProfile("test1", "testpass1","1@mail.com");
         final String json = target("user").request("application/json").put(Entity.json(user), String.class);
         assertEquals("{ \"id\": \"1\" }", json);
 
@@ -197,7 +199,7 @@ public class UsersTest extends JerseyTest {
 
     @Test
     public void testDeleteWithUnauthorizedUser() {
-        UserProfile user = new UserProfile("test1", "testpass1","1@mail.com");
+        final UserProfile user = new UserProfile("test1", "testpass1","1@mail.com");
         final String json = target("user").request("application/json").put(Entity.json(user), String.class);
         assertEquals("{ \"id\": \"1\" }", json);
 

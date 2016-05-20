@@ -1,9 +1,11 @@
 package account;
 
 import base.AccountService;
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.apache.logging.log4j.LogManager;
@@ -23,8 +25,8 @@ public class AccountServiceImpl implements AccountService {
 
     private static final Logger LOGGER = LogManager.getLogger(AccountServiceImpl.class);
 
-    public AccountServiceImpl(SessionFactory sessionFactory) {
-        this.sessionFactory = sessionFactory;
+    public AccountServiceImpl(Configuration configuration) {
+        this.sessionFactory = configuration.buildSessionFactory();
     }
 
     @Override
@@ -37,34 +39,39 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
+    @Nullable
     public List<UserProfile> getTopUsers() {
-        final Session session = sessionFactory.openSession();
-        final UserProfileDAO dao = new UserProfileDAO(session);
-        final List<UserProfile> users = dao.readTop();
-        session.close();
-        return users;
+        try{
+            final Session session = sessionFactory.openSession();
+            final UserProfileDAO dao = new UserProfileDAO(session);
+            return dao.readTop();
+        } catch (HibernateException e){
+            e.printStackTrace();
+            return null;
+        }
     }
 
     @Override
     public boolean addUser(UserProfile user) {
-        final boolean status;
+
         try (Session session = sessionFactory.openSession()) {
             final Transaction transaction = session.beginTransaction();
             final UserProfileDAO dao = new UserProfileDAO(session);
             if (dao.addUser(user)) {
-                status = true;
                 LOGGER.info("Пользователь добавлен: {" + String.valueOf(user.getUserID()) + ", " + String.valueOf(user.getLogin())
                         + ", " + String.valueOf(String.valueOf(user.getPassword())) + ", " + String.valueOf(user.getEmail()) + '}');
+                transaction.commit();
+                return true;
             }
             else {
-                status = false;
                 LOGGER.info("Пользователь НЕ добавлен");
+                return false;
             }
-            transaction.commit();
-
         }
-
-        return status;
+        catch (HibernateException e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 
     @Override
@@ -75,6 +82,8 @@ public class AccountServiceImpl implements AccountService {
             dao.editUser(oldUser,newUser);
             transaction.commit();
             LOGGER.info("Пользователь изменен: {" + String.valueOf(oldUser.getUserID()) + '}');
+        } catch (HibernateException e) {
+            e.printStackTrace();
         }
     }
 
@@ -86,38 +95,47 @@ public class AccountServiceImpl implements AccountService {
             dao.deleteUser(userID);
             transaction.commit();
             LOGGER.info("Пользователь удален: {" + String.valueOf(userID)  + '}');
+        } catch (HibernateException e) {
+            e.printStackTrace();
         }
     }
 
     @Override
     @Nullable
     public UserProfile getUserByID(long userID) {
-        final Session session = sessionFactory.openSession();
-        final UserProfileDAO dao = new UserProfileDAO(session);
-        final UserProfile user = dao.readUserByID(userID);
-        session.close();
-        return user;
+        try (Session session = sessionFactory.openSession()) {
+            final UserProfileDAO dao = new UserProfileDAO(session);
+            return dao.readUserByID(userID);
+        } catch (HibernateException e) {
+            e.printStackTrace();
+            return null;
+        }
+
 
     }
 
     @Override
     @Nullable
     public UserProfile getUserByLogin(String login) {
-        final Session session = sessionFactory.openSession();
-        final UserProfileDAO dao = new UserProfileDAO(session);
-        final UserProfile user = dao.readUserByLogin(login);
-        session.close();
-        return user;
+        try (Session session = sessionFactory.openSession()) {
+            final UserProfileDAO dao = new UserProfileDAO(session);
+            return dao.readUserByLogin(login);
+        } catch (HibernateException e){
+            e.printStackTrace();
+            return null;
+        }
     }
 
     @Override
     @Nullable
     public UserProfile getUserByEmail(String email) {
-        final Session session = sessionFactory.openSession();
-        final UserProfileDAO dao = new UserProfileDAO(session);
-        final UserProfile user = dao.readUserByEmail(email);
-        session.close();
-        return user;
+        try (Session session = sessionFactory.openSession()) {
+            final UserProfileDAO dao = new UserProfileDAO(session);
+            return dao.readUserByEmail(email);
+        } catch (HibernateException e){
+            e.printStackTrace();
+            return null;
+        }
     }
 
     @Override
@@ -156,7 +174,14 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     public boolean checkAuth(@NotNull String userName, @NotNull String password){
-        final UserProfile user = getUserByLogin(userName);
+
+        final UserProfile user;
+        try {
+            user = getUserByLogin(userName);
+        } catch (HibernateException e){
+            return false;
+        }
+
         if (user!= null) {
             return user.getPassword().equals(password);
         } else {
@@ -167,10 +192,12 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     public void editScore(String login, int newScore) {
-        final Session session = sessionFactory.openSession();
-        final UserProfileDAO dao = new UserProfileDAO(session);
-        dao.editUserScore(login,newScore);
-        session.close();
+        try (Session session = sessionFactory.openSession()) {
+            final UserProfileDAO dao = new UserProfileDAO(session);
+            dao.editUserScore(login, newScore);
+        } catch (HibernateException e){
+            e.printStackTrace();
+        }
     }
 }
 

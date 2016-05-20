@@ -22,17 +22,17 @@ public class UserProfileDAO {
     }
 
     public UserProfile readUserByID(long id) {
-        Criteria criteria = session.createCriteria(UserProfile.class);
+        final Criteria criteria = session.createCriteria(UserProfile.class);
         return (UserProfile) criteria.add(Restrictions.eq("id", id)).uniqueResult();
     }
     @Nullable
     public UserProfile readUserByLogin(String login) {
-        Criteria criteria = session.createCriteria(UserProfile.class);
+        final Criteria criteria = session.createCriteria(UserProfile.class);
         return (UserProfile) criteria.add(Restrictions.eq("login", login)).uniqueResult();
     }
 
     public UserProfile readUserByEmail(String email) {
-        Criteria criteria = session.createCriteria(UserProfile.class);
+        final Criteria criteria = session.createCriteria(UserProfile.class);
         return (UserProfile) criteria.add(Restrictions.eq("email", email)).uniqueResult();
     }
     public boolean addUser(UserProfile user) {
@@ -60,19 +60,19 @@ public class UserProfileDAO {
     }
 
     public void deleteUser(long userID) {
-        UserProfile user = readUserByID(userID);
+        final UserProfile user = readUserByID(userID);
         session.delete(user);
     }
 
     @SuppressWarnings("unchecked")
     public List<UserProfile> readAll() {
-        Criteria criteria = session.createCriteria(UserProfile.class);
+        final Criteria criteria = session.createCriteria(UserProfile.class);
         return (List<UserProfile>) criteria.list();
     }
 
     public void editUserScore(@NotNull String login,@NotNull Integer newScore) {
 
-        UserProfile user = this.readUserByLogin(login);
+        final UserProfile user = this.readUserByLogin(login);
         if (user != null) {
             user.setScore(newScore);
             session.flush();
@@ -81,9 +81,11 @@ public class UserProfileDAO {
 
     @SuppressWarnings("unchecked")
     public List<UserProfile> readTop() {
-        Criteria criteria = session.createCriteria(UserProfile.class);
+        final Criteria criteria = session.createCriteria(UserProfile.class);
         criteria.addOrder(Order.desc("score"));
         criteria.setMaxResults(TOP_MAN);
+        //criteria.setProjection(Projections.property("login"));
+        //criteria.setProjection(Projections.property("score"));
         return (List<UserProfile>) criteria.list();
     }
 

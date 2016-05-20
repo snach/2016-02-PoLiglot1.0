@@ -21,9 +21,9 @@ public class GameSession {
 
     public GameSession(@NotNull String user1, @NotNull String user2) {
         startTime = Clock.systemDefaultZone().millis();
-        GameUser gameUser1 = new GameUser(user1,user2);
+        final GameUser gameUser1 = new GameUser(user1,user2);
 
-        GameUser gameUser2 = new GameUser(user2,user1);
+        final GameUser gameUser2 = new GameUser(user2,user1);
 
         users.put(user1, gameUser1);
         users.put(user2, gameUser2);
@@ -34,7 +34,7 @@ public class GameSession {
 
     @NotNull
     public GameUser getEnemy(@NotNull String user) {
-        String enemyName = users.containsKey(user) ? users.get(user).getEnemyName() : null;
+        final String enemyName = users.containsKey(user) ? users.get(user).getEnemyName() : null;
         return users.get(enemyName);
     }
 
@@ -45,7 +45,7 @@ public class GameSession {
 
 
     public int getEnemyScore(@NotNull String user) {
-        String enemyName = users.containsKey(user) ? users.get(user).getEnemyName() : null;
+        final String enemyName = users.containsKey(user) ? users.get(user).getEnemyName() : null;
         return users.get(enemyName).getMyScore();
     }
 

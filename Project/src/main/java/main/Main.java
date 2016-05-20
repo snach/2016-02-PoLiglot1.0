@@ -7,6 +7,7 @@ import game.firstlvl.ShuffleWordService;
 import frontend.WebSocketGameServlet;
 import frontend.WebSocketServiceImpl;
 import game.GameMechanicsImpl;
+import main.cnf.ReaderXMLData;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.Handler;
 import org.eclipse.jetty.server.handler.ResourceHandler;
@@ -34,7 +35,7 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 
-        Config.loadConfig();
+        Config.loadConfig(false);
 
         LOGGER.info("Starting at port: " + String.valueOf(Config.getPort()));
 
@@ -44,13 +45,13 @@ public class Main {
         final ServletContextHandler contextHandler = new ServletContextHandler(server, "/api/", ServletContextHandler.SESSIONS);
 
         try {
-            context.put(AccountService.class, new AccountServiceImpl(Config.connectToDB(false)));
+            context.put(AccountService.class, new AccountServiceImpl(Config.getConfiguration()));
         } catch (HibernateException e) {
             LOGGER.error("Fail to connect to db_Poliglot");
             System.exit(1);
         }
 
-        context.put(ShuffleWordService.class, new ShuffleWordService(Config.readXML(),Config.getMaxWordId()));
+        context.put(ShuffleWordService.class, new ShuffleWordService(ReaderXMLData.readXML(),ReaderXMLData.getMaxWordId()));
         context.put(WebSocketServiceImpl.class, new WebSocketServiceImpl());
         context.put(GameMechanicsImpl.class,new GameMechanicsImpl(context.get(WebSocketServiceImpl.class)));
 
@@ -64,7 +65,7 @@ public class Main {
 
         final ServletHolder servletHolder = new ServletHolder(new ServletContainer(config));
 
-        HandlerList handlers = new HandlerList();
+        final HandlerList handlers = new HandlerList();
 
         final ResourceHandler resourceHandler = new ResourceHandler();
         resourceHandler.setDirectoriesListed(true);

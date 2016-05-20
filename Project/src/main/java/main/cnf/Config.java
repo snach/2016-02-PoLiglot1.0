@@ -1,14 +1,8 @@
 package main.cnf;
 
 import account.UserProfile;
-import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-import org.jetbrains.annotations.Nullable;
-import org.xml.sax.SAXException;
 import java.io.IOException;
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.parsers.SAXParser;
-import javax.xml.parsers.SAXParserFactory;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import org.apache.logging.log4j.LogManager;
@@ -23,16 +17,18 @@ import java.util.*;
 public class Config {
     private static final String SERVER_CONFIG_FILE = "configuration/cfg/server.properties";
     private static final String DB_CONFIG_FILE = "configuration/cfg/db.properties";
-    private static final String WORDS_XML_FILE = "configuration/data/words.xml";
+
 
     private static final Logger LOGGER = LogManager.getLogger(Config.class);
 
     private static int port;
     //private static String host;
-    private static long maxWordId;
 
-    public static void loadConfig() {
-        Properties properties = new Properties();
+    @SuppressWarnings("ConstantNamingConvention")
+    private static final Configuration configuration = new Configuration();
+
+    public static void loadServerParam() {
+        final Properties properties = new Properties();
 
         try (FileInputStream fileInputStream = new FileInputStream(SERVER_CONFIG_FILE)) {
             properties.load(fileInputStream);
@@ -48,12 +44,11 @@ public class Config {
         }
     }
 
-    public static SessionFactory connectToDB(boolean test){
+    public static void connectToDB(boolean test){
 
-        final Configuration configuration = new Configuration();
         configuration.addAnnotatedClass(UserProfile.class);
 
-        Properties properties = new Properties();
+        final Properties properties = new Properties();
 
         try (FileInputStream fileInputStream = new FileInputStream(DB_CONFIG_FILE)) {
             properties.load(fileInputStream);
@@ -61,13 +56,15 @@ public class Config {
 
             configuration.setProperty("hibernate.dialect", properties.getProperty("dialect"));
             configuration.setProperty("hibernate.connection.driver_class", properties.getProperty("connection.driver_class"));
-            configuration.setProperty("hibernate.connection.url", properties.getProperty("connection.url"));
             configuration.setProperty("hibernate.connection.username", properties.getProperty("connection.username"));
             configuration.setProperty("hibernate.connection.password", properties.getProperty("connection.password"));
             configuration.setProperty("hibernate.show_sql", properties.getProperty("show_sql"));
+
             if (test){
+                configuration.setProperty("hibernate.connection.url", properties.getProperty("connection.url.test"));
                 configuration.setProperty("hibernate.hbm2ddl.auto", properties.getProperty("hbm2ddl.auto.test"));
             } else {
+                configuration.setProperty("hibernate.connection.url", properties.getProperty("connection.url"));
                 configuration.setProperty("hibernate.hbm2ddl.auto", properties.getProperty("hbm2ddl.auto"));
             }
         } catch (FileNotFoundException e) {
@@ -77,31 +74,21 @@ public class Config {
             e.printStackTrace();
             System.exit(1);
         }
-        return configuration.buildSessionFactory();
+
     }
-    @Nullable
-    public static Map<Long, String> readXML() {
-        try {
-            SAXParserFactory factory = SAXParserFactory.newInstance();
-            SAXParser saxParser = factory.newSAXParser();
 
-            SAXHendler handler = new SAXHendler();
-            saxParser.parse(WORDS_XML_FILE, handler);
-            maxWordId = handler.getPos();
-            return handler.getWords();
+    public static void loadConfig(@SuppressWarnings("SameParameterValue") boolean test){
 
-        } catch (ParserConfigurationException | SAXException | IOException e) {
-            e.printStackTrace();
-        }
-
-        return null;
+        loadServerParam();
+        connectToDB(test);
     }
+
 
     public static int getPort() {
         return port;
     }
 
-    public static long getMaxWordId() {
-        return maxWordId;
-    }
+    public static Configuration getConfiguration() { return configuration; }
+
+
 }

@@ -25,16 +25,16 @@ public class GameWebSocketCreator implements WebSocketCreator {
     @Override
     @Nullable
     public GameWebSocket createWebSocket(ServletUpgradeRequest req, ServletUpgradeResponse resp) {
-        String sessionId = req.getHttpServletRequest().getSession().getId();
-        try {
-            String name = context.get(AccountService.class).getUserBySession(sessionId).getLogin();
-            return new GameWebSocket(name, context);
 
-        } catch (NullPointerException e) {
+        final String sessionId = req.getHttpServletRequest().getSession().getId();
+        final String name = context.get(AccountService.class).getUserBySession(sessionId).getLogin();
+
+        if (name.isEmpty()){
             LOGGER.error("Can't create websocket, user don't authenticate");
             return null;
+        } else {
+            return new GameWebSocket(name, context);
         }
-
     }
 
 }

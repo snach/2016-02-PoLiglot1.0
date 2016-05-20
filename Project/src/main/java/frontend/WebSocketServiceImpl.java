@@ -20,7 +20,7 @@ public class WebSocketServiceImpl implements WebSocketService {
 
     @Override
     public void notifyStartGame(GameUser user) {
-        GameWebSocket gameWebSocket = userSockets.get(user.getMyName());
+        final GameWebSocket gameWebSocket = userSockets.get(user.getMyName());
         gameWebSocket.startGame(user);
     }
 

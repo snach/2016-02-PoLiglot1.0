@@ -31,9 +31,8 @@ public class UserProfile implements Serializable { // Serializable Important to 
     @Column(name = "email")
     private String email;
 
-    @NotNull
     @Column(name = "score", columnDefinition = "int default 0")
-    private Integer score;
+    private int score;
 
     public UserProfile() {
         login = "";
@@ -62,6 +61,14 @@ public class UserProfile implements Serializable { // Serializable Important to 
         return id;
     }
 
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
     @NotNull
     public String getLogin() {
         return login;
@@ -88,8 +95,7 @@ public class UserProfile implements Serializable { // Serializable Important to 
         this.email = email;
     }
 
-    @NotNull
-    public Integer  getScore() {
+    public int  getScore() {
         return score;
     }
 

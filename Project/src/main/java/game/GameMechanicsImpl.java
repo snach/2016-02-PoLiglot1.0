@@ -83,10 +83,10 @@ public class GameMechanicsImpl implements GameMechanics {
 
     @Override
     public void incrementScore(String userName) {
-        GameSession myGameSession = nameToGame.get(userName);
-        GameUser myUser = myGameSession.getSelf(userName);
+        final GameSession myGameSession = nameToGame.get(userName);
+        final GameUser myUser = myGameSession.getSelf(userName);
         myUser.incrementMyScore();
-        GameUser enemyUser = myGameSession.getEnemy(userName);
+        final GameUser enemyUser = myGameSession.getEnemy(userName);
         enemyUser.incrementEnemyScore();
     }
 
@@ -96,32 +96,30 @@ public class GameMechanicsImpl implements GameMechanics {
         //noinspection InfiniteLoopStatement
         while (true) {
             gmStep();
-            TimeHelper.sleep(STEP_TIME);
+            TimeHelper.sleep();
         }
     }
 
     @Override
     public void gmStep() {
-        for (GameSession session : allSessions) {
-            if (session.getSessionTime() > GAME_TIME) {
-                LOGGER.info("игра завершена для : " + session.getFirst().getMyName() + " и " + session.getSecond().getMyName());
-                if (session.isEquality()) {
-                    webSocketService.notifyGameOver(session.getFirst(), true, false);
-                    webSocketService.notifyGameOver(session.getSecond(), true, false);
-                } else {
-                    boolean firstWin = session.isFirstWin();
-                    webSocketService.notifyGameOver(session.getFirst(), false, firstWin);
-                    webSocketService.notifyGameOver(session.getSecond(), false, !firstWin);
-                }
-                nameToGame.values().removeAll(Collections.singleton(session));
-                allSessions.remove(session);
+        allSessions.stream().filter(session -> session.getSessionTime() > GAME_TIME).forEach(session -> {
+            LOGGER.info("игра завершена для : " + session.getFirst().getMyName() + " и " + session.getSecond().getMyName());
+            if (session.isEquality()) {
+                webSocketService.notifyGameOver(session.getFirst(), true, false);
+                webSocketService.notifyGameOver(session.getSecond(), true, false);
+            } else {
+                final boolean firstWin = session.isFirstWin();
+                webSocketService.notifyGameOver(session.getFirst(), false, firstWin);
+                webSocketService.notifyGameOver(session.getSecond(), false, !firstWin);
             }
-        }
+            nameToGame.values().removeAll(Collections.singleton(session));
+            allSessions.remove(session);
+        });
     }
 
     @Override
     public void starGame(@NotNull String first, @NotNull String second) {
-        GameSession gameSession = new GameSession(first, second);
+        final GameSession gameSession = new GameSession(first, second);
         allSessions.add(gameSession);
         nameToGame.put(first, gameSession);
         nameToGame.put(second, gameSession);

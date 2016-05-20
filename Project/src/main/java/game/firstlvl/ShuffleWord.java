@@ -7,7 +7,6 @@ import org.jetbrains.annotations.NotNull;
  */
 public class ShuffleWord {
 
-    @SuppressWarnings("InstanceVariableNamingConvention")
     private final long id;
 
     @NotNull

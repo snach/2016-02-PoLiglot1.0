@@ -23,8 +23,8 @@ public class ShuffleWordService {
 
     public ShuffleWord getShuffleWord(){
 
-        long randId = 1 + (long)(Math.random() * ((maxWordId - 1) + 1));
-        String word = words.get(randId);
+        final long randId = 1 + (long)(Math.random() * ((maxWordId - 1) + 1));
+        final String word = words.get(randId);
         String shuffleWord;
         do {
             shuffleWord = shuffleString(word);
@@ -34,11 +34,11 @@ public class ShuffleWordService {
     }
 
     public String shuffleString(String word){
-        char [] wordInChar = word.toCharArray ();
-        Random rnd = ThreadLocalRandom.current();
+        final char [] wordInChar = word.toCharArray ();
+        final Random rnd = ThreadLocalRandom.current();
         for (int i = wordInChar.length - 1; i > 0; i--) {
-            int index = rnd.nextInt(i + 1);
-            char a = wordInChar[index];
+            final int index = rnd.nextInt(i + 1);
+            final char a = wordInChar[index];
             wordInChar[index] = wordInChar[i];
             wordInChar[i] = a;
         }
