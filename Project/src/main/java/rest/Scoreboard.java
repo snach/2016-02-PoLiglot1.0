@@ -4,6 +4,7 @@ package rest;
 import account.LoginAndScore;
 import base.AccountService;
 import main.Context;
+
 import javax.inject.Inject;
 import javax.inject.Singleton;
 import javax.ws.rs.Consumes;

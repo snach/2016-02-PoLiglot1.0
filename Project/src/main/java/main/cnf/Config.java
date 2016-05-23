@@ -2,9 +2,11 @@ package main.cnf;
 
 import account.UserProfile;
 import org.hibernate.cfg.Configuration;
+
 import java.io.IOException;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -16,7 +18,11 @@ import java.util.*;
  */
 public class Config {
     private static final String SERVER_CONFIG_FILE = "configuration/cfg/server.properties";
-    private static final String DB_CONFIG_FILE = "configuration/cfg/db.properties";
+
+    @SuppressWarnings({"InstanceVariableNamingConvention", "NonConstantFieldWithUpperCaseName"})
+    private final String DB_CONFIG_FILE;
+
+    final boolean test;
 
 
     private static final Logger LOGGER = LogManager.getLogger(Config.class);
@@ -27,7 +33,12 @@ public class Config {
     @SuppressWarnings("ConstantNamingConvention")
     private static final Configuration configuration = new Configuration();
 
-    public static void loadServerParam() {
+    public Config(boolean test) {
+        DB_CONFIG_FILE = "configuration/cfg/db.properties";
+        this.test = test;
+    }
+
+    public void loadServerParam() {
         final Properties properties = new Properties();
 
         try (FileInputStream fileInputStream = new FileInputStream(SERVER_CONFIG_FILE)) {
@@ -44,7 +55,7 @@ public class Config {
         }
     }
 
-    public static void connectToDB(boolean test){
+    public void connectToDB() {
 
         configuration.addAnnotatedClass(UserProfile.class);
 
@@ -60,7 +71,7 @@ public class Config {
             configuration.setProperty("hibernate.connection.password", properties.getProperty("connection.password"));
             configuration.setProperty("hibernate.show_sql", properties.getProperty("show_sql"));
 
-            if (test){
+            if (test) {
                 configuration.setProperty("hibernate.connection.url", properties.getProperty("connection.url.test"));
                 configuration.setProperty("hibernate.hbm2ddl.auto", properties.getProperty("hbm2ddl.auto.test"));
             } else {
@@ -77,10 +88,10 @@ public class Config {
 
     }
 
-    public static void loadConfig(@SuppressWarnings("SameParameterValue") boolean test){
+    public void loadConfig() {
 
         loadServerParam();
-        connectToDB(test);
+        connectToDB();
     }
 
 
@@ -88,7 +99,9 @@ public class Config {
         return port;
     }
 
-    public static Configuration getConfiguration() { return configuration; }
+    public static Configuration getConfiguration() {
+        return configuration;
+    }
 
 
 }

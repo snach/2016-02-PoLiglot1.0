@@ -15,16 +15,16 @@ public class ShuffleWordServiceTest {
     private ShuffleWordService shuffleWordService;
 
     @Before
-    public void setupShuffleWordService(){
+    public void setupShuffleWordService() {
 
-        shuffleWordService = new ShuffleWordService(ReaderXMLData.readXML(),ReaderXMLData.getMaxWordId());
+        shuffleWordService = new ShuffleWordService(ReaderXMLData.readXML(), ReaderXMLData.getMaxWordId());
     }
 
     @Test
-    public void testGetShuffleWord(){
-        for (int i = 0; i < 10; i++){
+    public void testGetShuffleWord() {
+        for (int i = 0; i < 10; i++) {
             final ShuffleWord word = shuffleWordService.getShuffleWord();
-            assertNotEquals(word.getWord(),shuffleWordService.getWordById(word.getId()));
+            assertNotEquals(word.getWord(), shuffleWordService.getWordById(word.getId()));
         }
     }
 }

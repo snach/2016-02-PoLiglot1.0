@@ -35,7 +35,8 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 
-        Config.loadConfig(false);
+        final Config serverConfig = new Config(false);
+        serverConfig.loadConfig();
 
         LOGGER.info("Starting at port: " + String.valueOf(Config.getPort()));
 
@@ -47,7 +48,8 @@ public class Main {
         try {
             context.put(AccountService.class, new AccountServiceImpl(Config.getConfiguration()));
         } catch (HibernateException e) {
-            LOGGER.error("Fail to connect to db_Poliglot");
+            LOGGER.error("Fail to connect " + Config.getConfiguration().getProperty("hibernate.connection.url"));
+            e.printStackTrace();
             System.exit(1);
         }
 

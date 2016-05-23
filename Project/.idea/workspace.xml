@@ -25,68 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="UserProfileDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/account/UserProfileDAO.java">
+      <file leaf-file-name="SessionsTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/test/rest/SessionsTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="86" column="60" selection-start-line="86" selection-start-column="60" selection-end-line="86" selection-end-column="60" />
-              <folding>
-                <element signature="e#458#459#0" expanded="false" />
-                <element signature="e#496#497#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginAndScore.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/account/LoginAndScore.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-              <folding>
-                <element signature="e#431#432#0" expanded="false" />
-                <element signature="e#465#466#0" expanded="false" />
-                <element signature="e#504#505#0" expanded="false" />
-                <element signature="e#538#539#0" expanded="false" />
-                <element signature="e#570#571#0" expanded="false" />
-                <element signature="e#598#599#0" expanded="false" />
-                <element signature="e#627#628#0" expanded="false" />
-                <element signature="e#655#656#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ShuffleWord.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/game/firstlvl/ShuffleWord.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-              <folding>
-                <element signature="e#345#346#0" expanded="false" />
-                <element signature="e#370#371#0" expanded="false" />
-                <element signature="e#414#415#0" expanded="false" />
-                <element signature="e#441#442#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TimeHelper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/utils/TimeHelper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GameMechanics.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/base/GameMechanics.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -96,25 +39,31 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/main/cnf/Config.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+              <caret line="32" column="4" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="4" />
               <folding>
-                <element signature="e#3292#3293#0" expanded="false" />
-                <element signature="e#3319#3320#0" expanded="false" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#761#806#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameWebSocket.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/frontend/GameWebSocket.java">
+      <file leaf-file-name="GameUser.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/game/GameUser.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="144" column="26" selection-start-line="144" selection-start-column="26" selection-end-line="144" selection-end-column="26" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#1766#1767#0" expanded="false" />
-                <element signature="e#1795#1796#0" expanded="false" />
-              </folding>
+              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UsersTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/test/rest/UsersTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="65" column="35" selection-start-line="65" selection-start-column="35" selection-end-line="65" selection-end-column="35" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -129,11 +78,34 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Scoreboard.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/rest/Scoreboard.java">
+      <file leaf-file-name="AccountService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/base/AccountService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AccountServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/account/AccountServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="47" column="44" selection-start-line="47" selection-start-column="44" selection-end-line="47" selection-end-column="44" />
+              <folding>
+                <element signature="e#5008#5009#0" expanded="true" />
+                <element signature="e#5062#5063#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/main/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -142,8 +114,18 @@
       <file leaf-file-name="GameMechanicsImpl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/game/GameMechanicsImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.27829313">
-              <caret line="98" column="40" selection-start-line="98" selection-start-column="40" selection-end-line="98" selection-end-column="40" />
+            <state vertical-scroll-proportion="0.5300353">
+              <caret line="105" column="105" selection-start-line="105" selection-start-column="105" selection-end-line="105" selection-end-column="105" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ReaderXMLData.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/main/cnf/ReaderXMLData.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -164,8 +146,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/main/Logger.java" />
         <option value="$PROJECT_DIR$/server.properties" />
         <option value="$PROJECT_DIR$/src/main/java/main/Config.java" />
         <option value="$PROJECT_DIR$/test.xml" />
@@ -185,36 +165,38 @@
         <option value="$PROJECT_DIR$/src/main/java/rest/FirstLevel.java" />
         <option value="$PROJECT_DIR$/src/main/java/firstLvl/ShuffleWord.java" />
         <option value="$PROJECT_DIR$/src/main/java/firstlvl/ShuffleWord.java" />
-        <option value="$PROJECT_DIR$/src/main/java/frontend/WebSocketGameServlet.java" />
         <option value="$PROJECT_DIR$/src/main/java/base/WebSocketService.java" />
         <option value="$PROJECT_DIR$/src/main/java/base/GameMechanics.java" />
-        <option value="$PROJECT_DIR$/src/main/java/base/AccountService.java" />
         <option value="$PROJECT_DIR$/src/main/java/game/GameUser.java" />
-        <option value="$PROJECT_DIR$/src/main/java/account/UserProfile.java" />
-        <option value="$PROJECT_DIR$/src/main/java/frontend/GameWebSocket.java" />
-        <option value="$PROJECT_DIR$/src/main/java/frontend/WebSocketServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/game/firstlvl/ShuffleWordService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/game/GameSession.java" />
         <option value="$PROJECT_DIR$/src/main/java/rest/Sessions.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/rest/Users.java" />
-        <option value="$PROJECT_DIR$/src/main/java/frontend/GameWebSocketCreator.java" />
-        <option value="$PROJECT_DIR$/src/main/test/account/AccountServiceTest.java" />
-        <option value="$PROJECT_DIR$/src/main/test/rest/SessionsTest.java" />
-        <option value="$PROJECT_DIR$/src/main/test/rest/UsersTest.java" />
         <option value="$PROJECT_DIR$/configuration/cfg/db.properties" />
         <option value="$PROJECT_DIR$/src/main/java/main/cnf/ReaderXMLData.java" />
-        <option value="$PROJECT_DIR$/src/main/java/main/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/test/game/firstlvl/ShuffleWordServiceTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/account/IdAndScore.java" />
+        <option value="$PROJECT_DIR$/src/main/test/account/AccountServiceTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/account/LoginAndScore.java" />
-        <option value="$PROJECT_DIR$/src/main/java/account/AccountServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/rest/Scoreboard.java" />
+        <option value="$PROJECT_DIR$/src/main/java/account/UserProfile.java" />
         <option value="$PROJECT_DIR$/src/main/java/account/UserProfileDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/frontend/GameWebSocket.java" />
+        <option value="$PROJECT_DIR$/src/main/java/frontend/WebSocketGameServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/frontend/WebSocketServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/game/firstlvl/ShuffleWord.java" />
-        <option value="$PROJECT_DIR$/src/main/java/main/cnf/Config.java" />
-        <option value="$PROJECT_DIR$/src/main/java/utils/TimeHelper.java" />
         <option value="$PROJECT_DIR$/src/main/java/game/GameMechanicsImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/game/GameSession.java" />
+        <option value="$PROJECT_DIR$/src/main/java/main/cnf/Config.java" />
+        <option value="$PROJECT_DIR$/src/main/java/main/cnf/SAXHendler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/main/Context.java" />
+        <option value="$PROJECT_DIR$/src/main/java/rest/Scoreboard.java" />
+        <option value="$PROJECT_DIR$/src/main/java/rest/Users.java" />
+        <option value="$PROJECT_DIR$/src/main/java/utils/TimeHelper.java" />
+        <option value="$PROJECT_DIR$/src/main/test/game/firstlvl/ShuffleWordServiceTest.java" />
+        <option value="$PROJECT_DIR$/src/main/test/rest/SessionsTest.java" />
+        <option value="$PROJECT_DIR$/src/main/test/rest/UsersTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/base/AccountService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/frontend/GameWebSocketCreator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/account/AccountServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/main/Main.java" />
       </list>
     </option>
   </component>
@@ -1015,12 +997,6 @@
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="TestHistory">
-    <history-entry file="AccountServiceTest_testAddUser - 2016.05.21 at 01h 00m 08s.xml">
-      <configuration name="AccountServiceTest.testAddUser" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AccountServiceTest_testGetAllUsers - 2016.05.21 at 01h 01m 30s.xml">
-      <configuration name="AccountServiceTest.testGetAllUsers" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="ShuffleWordServiceTest_testGetShuffleWord - 2016.05.21 at 01h 14m 53s.xml">
       <configuration name="ShuffleWordServiceTest.testGetShuffleWord" configurationId="JUnit" />
     </history-entry>
@@ -1034,6 +1010,12 @@
       <configuration name="ShuffleWordServiceTest.testGetShuffleWord" configurationId="JUnit" />
     </history-entry>
     <history-entry file="ShuffleWordServiceTest_testGetShuffleWord - 2016.05.21 at 01h 17m 48s.xml">
+      <configuration name="ShuffleWordServiceTest.testGetShuffleWord" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ShuffleWordServiceTest_testGetShuffleWord - 2016.05.23 at 21h 41m 06s.xml">
+      <configuration name="ShuffleWordServiceTest.testGetShuffleWord" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ShuffleWordServiceTest_testGetShuffleWord - 2016.05.23 at 21h 41m 29s.xml">
       <configuration name="ShuffleWordServiceTest.testGetShuffleWord" configurationId="JUnit" />
     </history-entry>
     <history-entry file="UsersTest_testCreateUserWithSameLoginFail - 2016.04.18 at 21h 32m 22s.xml">
@@ -1064,20 +1046,20 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26119402" sideWeight="0.50572246" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32904148" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39925373" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" x="21" y="289" width="1398" height="321" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26119402" sideWeight="0.49427754" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329602" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329602" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39925373" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39925373" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" x="21" y="289" width="1398" height="321" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329602" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -1250,14 +1232,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/base/WebSocketService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="40" selection-start-line="11" selection-start-column="3" selection-end-line="19" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_73.jdk/Contents/Home/src.zip!/java/io/Serializable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1265,26 +1239,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/base/AccountService.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/javax/ws/rs/javax.ws.rs-api/2.0.1/javax.ws.rs-api-2.0.1-sources.jar!/javax/ws/rs/core/Response.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+          <caret line="924" column="40" selection-start-line="924" selection-start-column="40" selection-end-line="924" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/frontend/WebSocketGameServlet.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <caret line="131" column="41" selection-start-line="131" selection-start-column="24" selection-end-line="131" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/frontend/WebSocketServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/configuration/cfg/db.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="14" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
+          <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/account/LoginAndScore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1297,17 +1278,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/javax/ws/rs/javax.ws.rs-api/2.0.1/javax.ws.rs-api-2.0.1-sources.jar!/javax/ws/rs/core/Response.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/account/UserProfileDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="924" column="40" selection-start-line="924" selection-start-column="40" selection-end-line="924" selection-end-column="40" />
+          <caret line="88" column="40" selection-start-line="88" selection-start-column="40" selection-end-line="88" selection-end-column="40" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/base/GameMechanics.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="131" column="41" selection-start-line="131" selection-start-column="24" selection-end-line="131" selection-end-column="41" />
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/base/WebSocketService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="40" selection-start-line="11" selection-start-column="3" selection-end-line="19" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/frontend/GameWebSocket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="99" column="0" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/frontend/WebSocketGameServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/frontend/WebSocketServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/game/firstlvl/ShuffleWord.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/game/firstlvl/ShuffleWordService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="35" column="44" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="44" />
           <folding />
         </state>
       </provider>
@@ -1315,15 +1345,18 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/game/GameSession.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="47" column="14" selection-start-line="47" selection-start-column="14" selection-end-line="47" selection-end-column="14" />
-          <folding />
+          <caret line="48" column="14" selection-start-line="48" selection-start-column="14" selection-end-line="48" selection-end-column="14" />
+          <folding>
+            <element signature="e#1845#1846#0" expanded="true" />
+            <element signature="e#1909#1910#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/GameUser.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/main/cnf/SAXHendler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1333,6 +1366,16 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/rest/Scoreboard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1352,30 +1395,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/test/rest/SessionsTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/utils/TimeHelper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="36" column="40" selection-start-line="36" selection-start-column="40" selection-end-line="36" selection-end-column="40" />
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/test/rest/UsersTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/test/account/AccountServiceTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="61" column="73" selection-start-line="61" selection-start-column="73" selection-end-line="61" selection-end-column="73" />
-          <folding />
+          <caret line="19" column="35" selection-start-line="18" selection-start-column="8" selection-end-line="19" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/configuration/cfg/db.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/main/cnf/SAXHendler.java">
+    <entry file="file://$PROJECT_DIR$/src/main/test/game/firstlvl/ShuffleWordServiceTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
@@ -1383,129 +1421,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/main/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/main/test/rest/SessionsTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="53" column="122" selection-start-line="53" selection-start-column="46" selection-end-line="53" selection-end-column="122" />
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/main/cnf/ReaderXMLData.java">
+    <entry file="file://$PROJECT_DIR$/src/main/test/rest/UsersTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/firstlvl/ShuffleWordService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="40" column="18" selection-start-line="40" selection-start-column="18" selection-end-line="40" selection-end-column="18" />
+          <caret line="65" column="35" selection-start-line="65" selection-start-column="35" selection-end-line="65" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/test/game/firstlvl/ShuffleWordServiceTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/base/AccountService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/test/account/AccountServiceTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="5" selection-start-line="15" selection-start-column="3" selection-end-line="19" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/account/AccountServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/rest/Scoreboard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/account/UserProfileDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="86" column="60" selection-start-line="86" selection-start-column="60" selection-end-line="86" selection-end-column="60" />
-          <folding>
-            <element signature="e#458#459#0" expanded="false" />
-            <element signature="e#496#497#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/account/LoginAndScore.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding>
-            <element signature="e#431#432#0" expanded="false" />
-            <element signature="e#465#466#0" expanded="false" />
-            <element signature="e#504#505#0" expanded="false" />
-            <element signature="e#538#539#0" expanded="false" />
-            <element signature="e#570#571#0" expanded="false" />
-            <element signature="e#598#599#0" expanded="false" />
-            <element signature="e#627#628#0" expanded="false" />
-            <element signature="e#655#656#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/firstlvl/ShuffleWord.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding>
-            <element signature="e#345#346#0" expanded="false" />
-            <element signature="e#370#371#0" expanded="false" />
-            <element signature="e#414#415#0" expanded="false" />
-            <element signature="e#441#442#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/main/cnf/Config.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding>
-            <element signature="e#3292#3293#0" expanded="false" />
-            <element signature="e#3319#3320#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/frontend/GameWebSocket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="144" column="26" selection-start-line="144" selection-start-column="26" selection-end-line="144" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1766#1767#0" expanded="false" />
-            <element signature="e#1795#1796#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1517,26 +1453,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/base/GameMechanics.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/account/AccountServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <caret line="47" column="44" selection-start-line="47" selection-start-column="44" selection-end-line="47" selection-end-column="44" />
+          <folding>
+            <element signature="e#5008#5009#0" expanded="true" />
+            <element signature="e#5062#5063#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/main/cnf/ReaderXMLData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/utils/TimeHelper.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/main/cnf/Config.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <caret line="32" column="4" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#761#806#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/game/GameUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/game/GameMechanicsImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27829313">
-          <caret line="98" column="40" selection-start-line="98" selection-start-column="40" selection-end-line="98" selection-end-column="40" />
+        <state vertical-scroll-proportion="0.5300353">
+          <caret line="105" column="105" selection-start-line="105" selection-start-column="105" selection-end-line="105" selection-end-column="105" />
           <folding />
         </state>
       </provider>

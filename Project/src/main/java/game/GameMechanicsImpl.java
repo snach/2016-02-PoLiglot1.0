@@ -8,6 +8,7 @@ import org.jetbrains.annotations.Nullable;
 import utils.TimeHelper;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
 import java.util.*;
 
 /**
@@ -40,16 +41,16 @@ public class GameMechanicsImpl implements GameMechanics {
     }
 
     @Override
-    public int getMyScore(String user){
+    public int getMyScore(String user) {
         return nameToGame.get(user).getMyScore(user);
     }
 
     @Override
-    public int getEnemyScore(String user){
+    public int getEnemyScore(String user) {
         return nameToGame.get(user).getEnemyScore(user);
     }
 
-    public String getEnemyName(String user){
+    public String getEnemyName(String user) {
         return nameToGame.get(user).getEnemy(user).getMyName();
     }
 
@@ -64,14 +65,14 @@ public class GameMechanicsImpl implements GameMechanics {
         }
     }
 
-    public void removeGameSession(@NotNull String user){
+    public void removeGameSession(@NotNull String user) {
         allSessions.remove(nameToGame.get(user));
         nameToGame.remove(user);
     }
 
     @Override
     public void removeUser(@NotNull String user) {
-        if (waiter != null && user.equals(waiter)){
+        if (waiter != null && user.equals(waiter)) {
             waiter = null;
         }
         final GameSession myGameSession = nameToGame.get(user);
@@ -128,11 +129,11 @@ public class GameMechanicsImpl implements GameMechanics {
         webSocketService.notifyStartGame(gameSession.getSelf(second));
     }
 
-    public boolean getIsUsedWordFromGameSession(String user, Long idWord){
-        return nameToGame.get(user).getIsUsedWord(user,idWord);
+    public boolean getIsUsedWordFromGameSession(String user, Long idWord) {
+        return nameToGame.get(user).getIsUsedWord(user, idWord);
     }
 
-    public void addUsedWordInGameSession(String user, ShuffleWord word){
+    public void addUsedWordInGameSession(String user, ShuffleWord word) {
         nameToGame.get(user).addUsedWordInGameUser(user, word);
     }
 }

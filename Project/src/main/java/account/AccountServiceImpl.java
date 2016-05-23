@@ -10,6 +10,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
 import java.util.List;
 import java.util.HashMap;
 import java.util.Map;
@@ -30,22 +31,26 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
+    @Nullable
     public List<UserProfile> getAllUsers() {
-        final Session session = sessionFactory.openSession();
-        final UserProfileDAO dao = new UserProfileDAO(session);
-        final List<UserProfile> users = dao.readAll();
-        session.close();
-        return users;
+        try {
+            final Session session = sessionFactory.openSession();
+            final UserProfileDAO dao = new UserProfileDAO(session);
+            return dao.readAll();
+        } catch (HibernateException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
     @Override
     @Nullable
     public List<UserProfile> getTopUsers() {
-        try{
+        try {
             final Session session = sessionFactory.openSession();
             final UserProfileDAO dao = new UserProfileDAO(session);
             return dao.readTop();
-        } catch (HibernateException e){
+        } catch (HibernateException e) {
             e.printStackTrace();
             return null;
         }
@@ -62,13 +67,11 @@ public class AccountServiceImpl implements AccountService {
                         + ", " + String.valueOf(String.valueOf(user.getPassword())) + ", " + String.valueOf(user.getEmail()) + '}');
                 transaction.commit();
                 return true;
-            }
-            else {
+            } else {
                 LOGGER.info("Пользователь НЕ добавлен");
                 return false;
             }
-        }
-        catch (HibernateException e) {
+        } catch (HibernateException e) {
             e.printStackTrace();
             return false;
         }
@@ -79,7 +82,7 @@ public class AccountServiceImpl implements AccountService {
         try (Session session = sessionFactory.openSession()) {
             final Transaction transaction = session.beginTransaction();
             final UserProfileDAO dao = new UserProfileDAO(session);
-            dao.editUser(oldUser,newUser);
+            dao.editUser(oldUser, newUser);
             transaction.commit();
             LOGGER.info("Пользователь изменен: {" + String.valueOf(oldUser.getUserID()) + '}');
         } catch (HibernateException e) {
@@ -94,7 +97,7 @@ public class AccountServiceImpl implements AccountService {
             final UserProfileDAO dao = new UserProfileDAO(session);
             dao.deleteUser(userID);
             transaction.commit();
-            LOGGER.info("Пользователь удален: {" + String.valueOf(userID)  + '}');
+            LOGGER.info("Пользователь удален: {" + String.valueOf(userID) + '}');
         } catch (HibernateException e) {
             e.printStackTrace();
         }
@@ -120,7 +123,7 @@ public class AccountServiceImpl implements AccountService {
         try (Session session = sessionFactory.openSession()) {
             final UserProfileDAO dao = new UserProfileDAO(session);
             return dao.readUserByLogin(login);
-        } catch (HibernateException e){
+        } catch (HibernateException e) {
             e.printStackTrace();
             return null;
         }
@@ -132,7 +135,7 @@ public class AccountServiceImpl implements AccountService {
         try (Session session = sessionFactory.openSession()) {
             final UserProfileDAO dao = new UserProfileDAO(session);
             return dao.readUserByEmail(email);
-        } catch (HibernateException e){
+        } catch (HibernateException e) {
             e.printStackTrace();
             return null;
         }
@@ -173,16 +176,16 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
-    public boolean checkAuth(@NotNull String userName, @NotNull String password){
+    public boolean checkAuth(@NotNull String userName, @NotNull String password) {
 
         final UserProfile user;
         try {
             user = getUserByLogin(userName);
-        } catch (HibernateException e){
+        } catch (HibernateException e) {
             return false;
         }
 
-        if (user!= null) {
+        if (user != null) {
             return user.getPassword().equals(password);
         } else {
             LOGGER.info("Юзер " + userName + " не найден");
@@ -195,7 +198,7 @@ public class AccountServiceImpl implements AccountService {
         try (Session session = sessionFactory.openSession()) {
             final UserProfileDAO dao = new UserProfileDAO(session);
             dao.editUserScore(login, newScore);
-        } catch (HibernateException e){
+        } catch (HibernateException e) {
             e.printStackTrace();
         }
     }

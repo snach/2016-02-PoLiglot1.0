@@ -12,7 +12,7 @@ public class ShuffleWord {
     @NotNull
     private final String word;
 
-    public ShuffleWord(long id,  @NotNull String word) {
+    public ShuffleWord(long id, @NotNull String word) {
         this.id = id;
         this.word = word;
     }

@@ -18,6 +18,7 @@ import org.eclipse.jetty.websocket.api.annotations.OnWebSocketMessage;
 import org.eclipse.jetty.websocket.api.annotations.WebSocket;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
 import java.io.IOException;
 
 /**
@@ -39,6 +40,7 @@ public class GameWebSocket {
 
     @NotNull
     private final String myName;
+
     public GameWebSocket(@NotNull String myName, Context context) {
         this.myName = myName;
         this.gameMechanics = context.get(GameMechanicsImpl.class);
@@ -49,6 +51,7 @@ public class GameWebSocket {
 
 
     }
+
     @NotNull
     public String getMyName() {
         return myName;
@@ -56,21 +59,21 @@ public class GameWebSocket {
 
     public void startGame(@NotNull GameUser user) {
 
-            final JsonObject json = new JsonObject();
-            json.addProperty("action", "startGame");
-            json.addProperty("user", user.getMyName());
-            json.addProperty("userRecord", accountService.getUserByLogin(user.getMyName()).getScore());
-            json.addProperty("enemy", user.getEnemyName());
-            json.addProperty("enemyRecord", accountService.getUserByLogin(user.getEnemyName()).getScore());
+        final JsonObject json = new JsonObject();
+        json.addProperty("action", "startGame");
+        json.addProperty("user", user.getMyName());
+        json.addProperty("userRecord", accountService.getUserByLogin(user.getMyName()).getScore());
+        json.addProperty("enemy", user.getEnemyName());
+        json.addProperty("enemyRecord", accountService.getUserByLogin(user.getEnemyName()).getScore());
 
-            sendJson(json);
+        sendJson(json);
     }
 
     public void gameOver(boolean equality, boolean win) {
 
         final JsonObject jsonEndGame = new JsonObject();
         jsonEndGame.addProperty("action", "finishGame");
-        if (equality){
+        if (equality) {
             jsonEndGame.addProperty("equality", true);
         } else {
             jsonEndGame.addProperty("win", win);
@@ -84,8 +87,8 @@ public class GameWebSocket {
         final int prevScore = accountService.getUserByLogin(myName).getScore();
         final boolean isBestScore;
 
-        if (currentScore > prevScore){
-            accountService.editScore(myName,currentScore);
+        if (currentScore > prevScore) {
+            accountService.editScore(myName, currentScore);
 
             isBestScore = true;
         } else {
@@ -95,7 +98,6 @@ public class GameWebSocket {
 
         sendJson(jsonEndGame);
 
-        //webSocketService.removeUser(this);
         gameMechanics.removeGameSession(myName);
 
     }
@@ -115,18 +117,18 @@ public class GameWebSocket {
         try {
             final JsonElement jsonElement = new JsonParser().parse(data);
             final String action = jsonElement.getAsJsonObject().getAsJsonPrimitive("action").getAsString();
-            if (action == null){
+            if (action == null) {
                 throw new JsonSyntaxException("Can't find out \"action\" in JSON");
             }
-            switch (action){
+            switch (action) {
                 case "getWord":
                     ShuffleWord word;
 
                     do {
                         word = shuffleWordService.getShuffleWord();
-                    } while (gameMechanics.getIsUsedWordFromGameSession(myName,word.getId()));
+                    } while (gameMechanics.getIsUsedWordFromGameSession(myName, word.getId()));
 
-                    gameMechanics.addUsedWordInGameSession(myName,word);
+                    gameMechanics.addUsedWordInGameSession(myName, word);
 
                     final ShuffleWord correctWord = shuffleWordService.getWordById(word.getId());
                     final JsonObject jsonWord = new JsonObject();
@@ -162,7 +164,7 @@ public class GameWebSocket {
                 default:
                     throw new JsonSyntaxException("Unknown \"action\"");
             }
-        } catch(JsonSyntaxException e){
+        } catch (JsonSyntaxException e) {
 
             LOGGER.error("Can't find out \"action\" in JSON");
             final JsonObject jsonError = new JsonObject();
@@ -188,11 +190,11 @@ public class GameWebSocket {
         LOGGER.info("Closing socket for: {}  status: {} reason: {}", myName, statusCode, reason);
     }
 
-    public void sendJson(JsonObject json){
+    public void sendJson(JsonObject json) {
         try {
             if (session != null && session.isOpen())
                 session.getRemote().sendString(json.toString());
-        } catch (IOException | WebSocketException e){
+        } catch (IOException | WebSocketException e) {
             LOGGER.error("Can't send web socket", e);
         }
     }

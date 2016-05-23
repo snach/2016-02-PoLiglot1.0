@@ -1,5 +1,6 @@
 package frontend;
 
+import account.UserProfile;
 import base.AccountService;
 import main.Context;
 import org.eclipse.jetty.websocket.servlet.ServletUpgradeRequest;
@@ -27,14 +28,13 @@ public class GameWebSocketCreator implements WebSocketCreator {
     public GameWebSocket createWebSocket(ServletUpgradeRequest req, ServletUpgradeResponse resp) {
 
         final String sessionId = req.getHttpServletRequest().getSession().getId();
-        final String name = context.get(AccountService.class).getUserBySession(sessionId).getLogin();
+        final UserProfile userBySession = context.get(AccountService.class).getUserBySession(sessionId);
 
-        if (name.isEmpty()){
+        if (userBySession == null) {
             LOGGER.error("Can't create websocket, user don't authenticate");
             return null;
         } else {
-            return new GameWebSocket(name, context);
+            return new GameWebSocket(userBySession.getLogin(), context);
         }
     }
-
 }

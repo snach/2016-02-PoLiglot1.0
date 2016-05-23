@@ -2,6 +2,7 @@ package game;
 
 import game.firstlvl.ShuffleWord;
 import org.jetbrains.annotations.NotNull;
+
 import java.time.Clock;
 import java.util.HashMap;
 import java.util.Map;
@@ -21,9 +22,9 @@ public class GameSession {
 
     public GameSession(@NotNull String user1, @NotNull String user2) {
         startTime = Clock.systemDefaultZone().millis();
-        final GameUser gameUser1 = new GameUser(user1,user2);
+        final GameUser gameUser1 = new GameUser(user1, user2);
 
-        final GameUser gameUser2 = new GameUser(user2,user1);
+        final GameUser gameUser2 = new GameUser(user2, user1);
 
         users.put(user1, gameUser1);
         users.put(user2, gameUser2);
@@ -53,7 +54,7 @@ public class GameSession {
         return users.get(user).getMyScore();
     }
 
-    public long getSessionTime(){
+    public long getSessionTime() {
         return Clock.systemDefaultZone().millis() - startTime;
     }
 
@@ -67,17 +68,19 @@ public class GameSession {
         return second;
     }
 
-    public  boolean isFirstWin(){
+    public boolean isFirstWin() {
         return first.getMyScore() > second.getMyScore();
     }
 
-    public  boolean isEquality() { return first.getMyScore() == second.getMyScore(); }
+    public boolean isEquality() {
+        return first.getMyScore() == second.getMyScore();
+    }
 
-    public boolean getIsUsedWord(String user, Long idWord){
+    public boolean getIsUsedWord(String user, Long idWord) {
         return users.get(user).isWordUsed(idWord);
     }
 
-    public void addUsedWordInGameUser(String user, ShuffleWord word){
+    public void addUsedWordInGameUser(String user, ShuffleWord word) {
         users.get(user).addUsedWord(word);
     }
 }

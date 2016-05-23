@@ -25,6 +25,7 @@ public class UserProfileDAO {
         final Criteria criteria = session.createCriteria(UserProfile.class);
         return (UserProfile) criteria.add(Restrictions.eq("id", id)).uniqueResult();
     }
+
     @Nullable
     public UserProfile readUserByLogin(String login) {
         final Criteria criteria = session.createCriteria(UserProfile.class);
@@ -35,6 +36,7 @@ public class UserProfileDAO {
         final Criteria criteria = session.createCriteria(UserProfile.class);
         return (UserProfile) criteria.add(Restrictions.eq("email", email)).uniqueResult();
     }
+
     public boolean addUser(UserProfile user) {
         if (this.readUserByLogin(user.getLogin()) != null || this.readUserByEmail(user.getEmail()) != null)
             return false;
@@ -44,6 +46,7 @@ public class UserProfileDAO {
         session.save(user);
         return true;
     }
+
     public void editUser(@NotNull UserProfile oldUser, UserProfile newUser) {
         if (!newUser.getLogin().isEmpty() && this.readUserByLogin(newUser.getLogin()) == null) {
             readUserByID(oldUser.getUserID()).setLogin(newUser.getLogin());
@@ -70,7 +73,7 @@ public class UserProfileDAO {
         return (List<UserProfile>) criteria.list();
     }
 
-    public void editUserScore(@NotNull String login,@NotNull Integer newScore) {
+    public void editUserScore(@NotNull String login, @NotNull Integer newScore) {
 
         final UserProfile user = this.readUserByLogin(login);
         if (user != null) {
@@ -84,8 +87,6 @@ public class UserProfileDAO {
         final Criteria criteria = session.createCriteria(UserProfile.class);
         criteria.addOrder(Order.desc("score"));
         criteria.setMaxResults(TOP_MAN);
-        //criteria.setProjection(Projections.property("login"));
-        //criteria.setProjection(Projections.property("score"));
         return (List<UserProfile>) criteria.list();
     }
 

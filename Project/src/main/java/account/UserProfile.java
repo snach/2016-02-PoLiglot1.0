@@ -95,11 +95,11 @@ public class UserProfile implements Serializable { // Serializable Important to 
         this.email = email;
     }
 
-    public int  getScore() {
+    public int getScore() {
         return score;
     }
 
-    public void  setScore(int score) {
+    public void setScore(int score) {
         this.score = score;
     }
 

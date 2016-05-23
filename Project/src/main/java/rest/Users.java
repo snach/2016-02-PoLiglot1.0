@@ -84,7 +84,7 @@ public class Users {
         final String sessionID = request.getSession().getId();
         final UserProfile deleteUser = context.get(AccountService.class).getUserBySession(sessionID);
 
-        if ( (deleteUser != null) && (deleteUser.getUserID() == id)) {
+        if ((deleteUser != null) && (deleteUser.getUserID() == id)) {
             context.get(AccountService.class).deleteSession(sessionID);
             context.get(AccountService.class).deleteUser(id);
             return Response.status(Response.Status.OK).build();

@@ -19,7 +19,7 @@ public class LoginAndScore {
         this.score = score;
     }
 
-    public void setLogin(String login ) {
+    public void setLogin(String login) {
         this.login = login;
     }
 

@@ -10,7 +10,7 @@ import java.util.Map;
 /**
  * Created by Snach on 15.04.16.
  */
-public class SAXHendler extends DefaultHandler{
+public class SAXHendler extends DefaultHandler {
     final Map<Long, String> words = new HashMap<>();
     private long pos = 0;
     private boolean inElement = false;
@@ -20,6 +20,7 @@ public class SAXHendler extends DefaultHandler{
         if (!qName.equals("words"))
             inElement = true;
     }
+
     @Override
     public void endElement(String uri, String localName, String qName) throws SAXException {
         inElement = false;
@@ -27,12 +28,12 @@ public class SAXHendler extends DefaultHandler{
 
     @Override
     public void characters(char[] ch, int start, int length) throws SAXException {
-        if (inElement){
+        if (inElement) {
             words.put(++pos, new String(ch, start, length));
         }
     }
 
-    public long getPos(){
+    public long getPos() {
         return pos;
     }
 
