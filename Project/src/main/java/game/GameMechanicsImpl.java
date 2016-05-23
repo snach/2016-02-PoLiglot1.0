@@ -15,7 +15,7 @@ import java.util.*;
  */
 public class GameMechanicsImpl implements GameMechanics {
 
-    private static final int STEP_TIME = 100;
+    public static final int STEP_TIME = 100;
 
     @SuppressWarnings("PointlessArithmeticExpression")
     private static final int GAME_TIME = 1 * 60 * 1000;
