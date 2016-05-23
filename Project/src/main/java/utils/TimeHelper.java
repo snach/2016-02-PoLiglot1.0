@@ -4,12 +4,12 @@ package utils;
  * Created by Snach on 19.04.16.
  */
 public class TimeHelper {
-    public static void sleep(){
-        if ((long) game.GameMechanicsImpl.STEP_TIME <= 0) {
+    public static void sleep(long period){
+        if (period <= 0) {
             return;
         }
         try {
-            Thread.sleep((long) game.GameMechanicsImpl.STEP_TIME);
+            Thread.sleep(period);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

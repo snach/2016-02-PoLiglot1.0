@@ -76,7 +76,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/utils/TimeHelper.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="7" column="41" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
+              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -142,8 +142,8 @@
       <file leaf-file-name="GameMechanicsImpl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/game/GameMechanicsImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.42402828">
-              <caret line="24" column="12" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
+            <state vertical-scroll-proportion="0.27829313">
+              <caret line="98" column="40" selection-start-line="98" selection-start-column="40" selection-end-line="98" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -208,12 +208,12 @@
         <option value="$PROJECT_DIR$/src/main/test/game/firstlvl/ShuffleWordServiceTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/account/IdAndScore.java" />
         <option value="$PROJECT_DIR$/src/main/java/account/LoginAndScore.java" />
-        <option value="$PROJECT_DIR$/src/main/java/utils/TimeHelper.java" />
         <option value="$PROJECT_DIR$/src/main/java/account/AccountServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/rest/Scoreboard.java" />
         <option value="$PROJECT_DIR$/src/main/java/account/UserProfileDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/game/firstlvl/ShuffleWord.java" />
         <option value="$PROJECT_DIR$/src/main/java/main/cnf/Config.java" />
+        <option value="$PROJECT_DIR$/src/main/java/utils/TimeHelper.java" />
         <option value="$PROJECT_DIR$/src/main/java/game/GameMechanicsImpl.java" />
       </list>
     </option>
@@ -1517,14 +1517,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/utils/TimeHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="41" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/base/GameMechanics.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1533,10 +1525,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/utils/TimeHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/game/GameMechanicsImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42402828">
-          <caret line="24" column="12" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
+        <state vertical-scroll-proportion="0.27829313">
+          <caret line="98" column="40" selection-start-line="98" selection-start-column="40" selection-end-line="98" selection-end-column="40" />
           <folding />
         </state>
       </provider>

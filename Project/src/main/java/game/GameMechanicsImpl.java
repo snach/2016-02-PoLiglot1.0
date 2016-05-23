@@ -15,7 +15,7 @@ import java.util.*;
  */
 public class GameMechanicsImpl implements GameMechanics {
 
-    public static final int STEP_TIME = 100;
+    private static final int STEP_TIME = 100;
 
     @SuppressWarnings("PointlessArithmeticExpression")
     private static final int GAME_TIME = 1 * 60 * 1000;
@@ -96,7 +96,7 @@ public class GameMechanicsImpl implements GameMechanics {
         //noinspection InfiniteLoopStatement
         while (true) {
             gmStep();
-            TimeHelper.sleep();
+            TimeHelper.sleep(STEP_TIME);
         }
     }
 
