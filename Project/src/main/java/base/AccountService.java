@@ -12,20 +12,26 @@ import java.util.List;
 
 public interface AccountService {
 
+    @Nullable
     List<UserProfile> getAllUsers();
 
+    @Nullable
     List<UserProfile> getTopUsers();
 
     boolean addUser(UserProfile user);
 
+    @Nullable
     UserProfile getUserByID(long userID);
 
+    @Nullable
     UserProfile getUserByLogin(String login);
 
     @SuppressWarnings("unused")
+    @Nullable
     UserProfile getUserByEmail(String email);
 
-    UserProfile getUserBySession(@Nullable String sessionID);
+    @Nullable
+    UserProfile getUserBySession(@NotNull String sessionID);
 
     boolean isLoggedIn(String sessionID);
 

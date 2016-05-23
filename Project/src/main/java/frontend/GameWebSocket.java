@@ -62,8 +62,10 @@ public class GameWebSocket {
         final JsonObject json = new JsonObject();
         json.addProperty("action", "startGame");
         json.addProperty("user", user.getMyName());
+        //noinspection ConstantConditions
         json.addProperty("userRecord", accountService.getUserByLogin(user.getMyName()).getScore());
         json.addProperty("enemy", user.getEnemyName());
+        //noinspection ConstantConditions
         json.addProperty("enemyRecord", accountService.getUserByLogin(user.getEnemyName()).getScore());
 
         sendJson(json);
@@ -84,6 +86,7 @@ public class GameWebSocket {
         jsonEndGame.addProperty("enemyName", gameMechanics.getEnemyName(myName));
         jsonEndGame.addProperty("enemyScore", gameMechanics.getEnemyScore(myName));
 
+        @SuppressWarnings("ConstantConditions")
         final int prevScore = accountService.getUserByLogin(myName).getScore();
         final boolean isBestScore;
 

@@ -38,24 +38,23 @@ public class Main {
         final Config serverConfig = new Config(false);
         serverConfig.loadConfig();
 
-        LOGGER.info("Starting at port: " + String.valueOf(Config.getPort()));
+        LOGGER.info("Starting at port: " + String.valueOf(serverConfig.getPort()));
 
         final Context context = new Context();
 
-        final Server server = new Server(Config.getPort());
+        final Server server = new Server(serverConfig.getPort());
         final ServletContextHandler contextHandler = new ServletContextHandler(server, "/api/", ServletContextHandler.SESSIONS);
 
         try {
-            context.put(AccountService.class, new AccountServiceImpl(Config.getConfiguration()));
+            context.put(AccountService.class, new AccountServiceImpl(serverConfig.getConfiguration()));
         } catch (HibernateException e) {
-            LOGGER.error("Fail to connect " + Config.getConfiguration().getProperty("hibernate.connection.url"));
-            e.printStackTrace();
+            LOGGER.error("Fail to connect " + serverConfig.getConfiguration().getProperty("hibernate.connection.url"), e);
             System.exit(1);
         }
 
-        context.put(ShuffleWordService.class, new ShuffleWordService(ReaderXMLData.readXML(),ReaderXMLData.getMaxWordId()));
+        context.put(ShuffleWordService.class, new ShuffleWordService(ReaderXMLData.readXML(), ReaderXMLData.getMaxWordId()));
         context.put(WebSocketServiceImpl.class, new WebSocketServiceImpl());
-        context.put(GameMechanicsImpl.class,new GameMechanicsImpl(context.get(WebSocketServiceImpl.class)));
+        context.put(GameMechanicsImpl.class, new GameMechanicsImpl(context.get(WebSocketServiceImpl.class)));
 
         final ResourceConfig config = new ResourceConfig(Users.class, Sessions.class, Scoreboard.class);
         config.register(new AbstractBinder() {
@@ -73,7 +72,7 @@ public class Main {
         resourceHandler.setDirectoriesListed(true);
         resourceHandler.setResourceBase("public_html");
 
-        handlers.setHandlers(new Handler[]{resourceHandler,contextHandler});
+        handlers.setHandlers(new Handler[]{resourceHandler, contextHandler});
         server.setHandler(handlers);
 
         contextHandler.addServlet(servletHolder, "/*");

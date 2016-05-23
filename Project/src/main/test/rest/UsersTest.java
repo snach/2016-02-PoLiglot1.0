@@ -33,7 +33,7 @@ public class UsersTest extends JerseyTest {
         final Config serverConfig = new Config(true);
         serverConfig.connectToDB();
 
-        context.put(AccountService.class, new AccountServiceImpl(Config.getConfiguration()));
+        context.put(AccountService.class, new AccountServiceImpl(serverConfig.getConfiguration()));
 
         final ResourceConfig config = new ResourceConfig(Users.class, Sessions.class);
         final HttpServletRequest request = mock(HttpServletRequest.class);
@@ -64,7 +64,7 @@ public class UsersTest extends JerseyTest {
     public void setupAccountService() {
         final Config serverConfig = new Config(true);
         serverConfig.connectToDB();
-        accountService = new AccountServiceImpl(Config.getConfiguration());
+        accountService = new AccountServiceImpl(serverConfig.getConfiguration());
     }
 
     @Test

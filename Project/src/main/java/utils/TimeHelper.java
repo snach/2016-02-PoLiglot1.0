@@ -4,7 +4,7 @@ package utils;
  * Created by Snach on 19.04.16.
  */
 public class TimeHelper {
-    public static void sleep(long period) {
+    public static void sleep(@SuppressWarnings("SameParameterValue") long period) {
         if (period <= 0) {
             return;
         }

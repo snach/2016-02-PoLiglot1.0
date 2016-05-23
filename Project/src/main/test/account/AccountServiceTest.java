@@ -18,7 +18,7 @@ public class AccountServiceTest {
 
         final Config serverConfig = new Config(true);
         serverConfig.connectToDB();
-        accountService = new AccountServiceImpl(Config.getConfiguration());
+        accountService = new AccountServiceImpl(serverConfig.getConfiguration());
     }
 
     @Test

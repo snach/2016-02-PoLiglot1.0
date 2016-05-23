@@ -18,23 +18,19 @@ import java.util.*;
  */
 public class Config {
     private static final String SERVER_CONFIG_FILE = "configuration/cfg/server.properties";
-
-    @SuppressWarnings({"InstanceVariableNamingConvention", "NonConstantFieldWithUpperCaseName"})
-    private final String DB_CONFIG_FILE;
+    private static final String DB_CONFIG_FILE = "configuration/cfg/db.properties";
 
     final boolean test;
 
 
     private static final Logger LOGGER = LogManager.getLogger(Config.class);
 
-    private static int port;
-    //private static String host;
+    private int port;
+    //private String host;
 
-    @SuppressWarnings("ConstantNamingConvention")
-    private static final Configuration configuration = new Configuration();
+    private final Configuration configuration = new Configuration();
 
     public Config(boolean test) {
-        DB_CONFIG_FILE = "configuration/cfg/db.properties";
         this.test = test;
     }
 
@@ -95,12 +91,12 @@ public class Config {
     }
 
 
-    public static int getPort() {
-        return port;
+    public int getPort() {
+        return this.port;
     }
 
-    public static Configuration getConfiguration() {
-        return configuration;
+    public Configuration getConfiguration() {
+        return this.configuration;
     }
 
 
