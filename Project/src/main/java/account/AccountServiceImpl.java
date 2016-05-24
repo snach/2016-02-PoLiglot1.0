@@ -11,6 +11,7 @@ import org.jetbrains.annotations.Nullable;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.HashMap;
 import java.util.Map;
@@ -31,28 +32,28 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
-    @Nullable
+    @NotNull
     public List<UserProfile> getAllUsers() {
         try {
             final Session session = sessionFactory.openSession();
             final UserProfileDAO dao = new UserProfileDAO(session);
             return dao.readAll();
         } catch (HibernateException e) {
-            e.printStackTrace();
-            return null;
+            LOGGER.error("Ошибка работы с базой данных ", e);
+            return new ArrayList<>();
         }
     }
 
     @Override
-    @Nullable
+    @NotNull
     public List<UserProfile> getTopUsers() {
         try {
             final Session session = sessionFactory.openSession();
             final UserProfileDAO dao = new UserProfileDAO(session);
             return dao.readTop();
         } catch (HibernateException e) {
-            e.printStackTrace();
-            return null;
+            LOGGER.error("Ошибка работы с базой данных ", e);
+            return new ArrayList<>();
         }
     }
 

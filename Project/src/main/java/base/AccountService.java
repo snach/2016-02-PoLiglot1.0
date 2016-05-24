@@ -12,10 +12,10 @@ import java.util.List;
 
 public interface AccountService {
 
-    @Nullable
+    @NotNull
     List<UserProfile> getAllUsers();
 
-    @Nullable
+    @NotNull
     List<UserProfile> getTopUsers();
 
     boolean addUser(UserProfile user);
